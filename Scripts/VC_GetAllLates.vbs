@@ -13,6 +13,7 @@ sub recGetAllLatest(p)
 	if p.IsVersionControlled then
 		Repository.WriteOutput "Script", Now & " Version controlled package: " & p.Name, 0
 		p.VersionControlGetLatest false
+		p.packages.refresh
 		Repository.EnsureOutputVisible "Script"
 	else
 		Repository.WriteOutput "Script", Now & " Uncontrolled package: " & p.Name, 0
