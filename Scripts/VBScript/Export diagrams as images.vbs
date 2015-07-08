@@ -8,7 +8,7 @@ option explicit
 ' Purpose: Export diagrams to image files. Uses alias as prefix.
 ' Date: 20150411
 '
-const path = "C:\DATA\Standardisering\NVDB\NVDB Datakatalogen\tmp\images\"
+const path = "C:\DATA\Standardisering\ISO\ISOTC211 Modell\images\"
 dim dgr as EA.Diagram
 dim ePIF as EA.Project
 
@@ -33,7 +33,7 @@ sub recLoopSubPackages(p)
             Case p.Name & " Tillatte verdier" : SaveDiagram(strPre & "_UML_Tillatte_verdier")
             Case p.Name & " Assosiasjoner" : SaveDiagram(strPre & "_UML_Assosiasjoner")
             Case p.Name & " Betingelser" : SaveDiagram(strPre & "_UML_Betingelser")
-			'Case else: SaveDiagram(dgr.Name)
+			Case else: SaveDiagram(dgr.Name)
         End Select
 	next
 	dim subP as EA.Package
