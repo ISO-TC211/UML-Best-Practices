@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><ShapeChangeResult xmlns="http://www.interactive-instruments.de/ShapeChange/Result" xmlns:r="http://www.interactive-instruments.de/ShapeChange/Result" config="C:\Data\isotc211\Redlands\UMLdocumentation\WorkshopRedlands\ShapeChange\config\ShapeChangeConfiguration.xml" end="Tue Jun 09 23:47:13 CEST 2015" resultCode="0" start="Tue Jun 09 23:46:50 CEST 2015" version="2.0.0-SNAPSHOT">
+  <Messages>
+    <Error message="One or more errors encountered in OCL constraint in class 'RE_ProposalManagementInformation' : '{status &lt;&gt; #pending implies dateDisposed -&gt;&#13;&#10;notEmpty}' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'operator &quot;/&quot;', ignored."/>
+      <Detail message="Line/column(s) 1/4-7: Colon ':' missing following condition keyword. Found 'identifier &quot;date&quot;'."/>
+      <Detail message="Line/column(s) 1/9-13: Extra tokens following OCL expression ignored, starting with 'identifier &quot;shall&quot;'."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'RE_ProposalManagementInformation' : '{status &lt;&gt; #pending implies disposition&#13;&#10;-&gt; notEmpty}' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'operator &quot;/&quot;', ignored."/>
+      <Detail message="Line/column(s) 1/4-8: Colon ':' missing following condition keyword. Found 'identifier &quot;value&quot;'."/>
+      <Detail message="Line/column(s) 1/10-14: Extra tokens following OCL expression ignored, starting with 'identifier &quot;shall&quot;'."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'RE_Register' : 'count(self.version +self.dateOfLastChange) &gt;= 1' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'end of text', ignored."/>
+      <Detail message="Line/column(s) 1/1: Colon ':' missing following condition keyword. Found 'end of text'."/>
+      <Detail message="Line/column(s) 1/1: Identifier, literal or bracketed expression expected preceding end of text token. Invalid assumed."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'Register' : '{count of(version + dateOfLastChange) &gt;= 1}' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'end of text', ignored."/>
+      <Detail message="Line/column(s) 1/1: Colon ':' missing following condition keyword. Found 'end of text'."/>
+      <Detail message="Line/column(s) 1/1: Identifier, literal or bracketed expression expected preceding end of text token. Invalid assumed."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'RE_RegisterItem' : 'status &lt;&gt; #notValid implies dateAccepted -&gt; notEmpty' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'operator &quot;/&quot;', ignored."/>
+      <Detail message="Line/column(s) 1/9-11: Colon ':' missing following condition keyword. Found 'operator &quot;not&quot;'."/>
+      <Detail message="Line/column(s) 1/32-43: Extra tokens following OCL expression ignored, starting with 'identifier &quot;dateAccepted&quot;'."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'RE_RegisterItem' : 'status = #superseded or status = #retired implies dateAmended -&gt; notEmpty' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'operator &quot;/&quot;', ignored."/>
+      <Detail message="Line/column(s) 1/9: Colon ':' missing following condition keyword. Found 'operator &quot;=&quot;'."/>
+      <Detail message="Line/column(s) 1/9: Identifier, literal or bracketed expression expected preceding operator &quot;=&quot; token. Invalid assumed."/>
+      <Detail message="Line/column(s) 1/11-20: Extra tokens following OCL expression ignored, starting with 'identifier &quot;superseded&quot;'."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'RegisterItem' : '{status = #invalid  implies dateTimeInvalidation -&gt; notEmpty}' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'operator &quot;/&quot;', ignored."/>
+      <Detail message="Line/column(s) 1/22: Unrecognized syntax [&quot;] encountered and ignored."/>
+      <Detail message="Line/column(s) 1/24-25: Colon ':' missing following condition keyword. Found 'identifier &quot;is&quot;'."/>
+      <Detail message="Line/column(s) 1/27-35: Extra tokens following OCL expression ignored, starting with 'identifier &quot;mandatory&quot;'."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'RegisterItem' : '{status = #retired  implies dateTimeRetirement -&gt; notEmpty}' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'operator &quot;/&quot;', ignored."/>
+      <Detail message="Line/column(s) 1/20: Unrecognized syntax [&quot;] encountered and ignored."/>
+      <Detail message="Line/column(s) 1/22-23: Colon ':' missing following condition keyword. Found 'identifier &quot;is&quot;'."/>
+      <Detail message="Line/column(s) 1/25-33: Extra tokens following OCL expression ignored, starting with 'identifier &quot;mandatory&quot;'."/>
+    </Error>
+    <Error message="One or more errors encountered in OCL constraint in class 'RegisterItem' : '{status = #superseded  implies dateTimeSupersession -&gt; notEmpty}' ...">
+      <Detail message="Line/column(s) 1/1: Condition keyword (like inv:) expected introducing expression. Found 'operator &quot;/&quot;', ignored."/>
+      <Detail message="Line/column(s) 1/22: Unrecognized syntax [&quot;] encountered and ignored."/>
+      <Detail message="Line/column(s) 1/24-25: Colon ':' missing following condition keyword. Found 'identifier &quot;is&quot;'."/>
+      <Detail message="Line/column(s) 1/27-35: Extra tokens following OCL expression ignored, starting with 'identifier &quot;mandatory&quot;'."/>
+    </Error>
+    <Warning message="Application schema 'ISO 19135-1 Procedures for Registration - Core schema' with ID '415' is not associated with an XML Schema document. A default name is used: 'ISO19135-1ProceduresforRegistration-Coreschema.xsd'."/>
+    <Info message="Application schema found, package name: 'ISO 19135-1 Procedures for Registration - Core schema', target namespace: 'n/a'"/>
+    <Info message="(Converter.java) Now processing target 'INPUT'."/>
+    <Info message="Application schema found, package name: 'ISO 19135-1 Procedures for Registration - Extended schema', target namespace: 'n/a'"/>
+    <Info message="(Converter.java) Now processing target 'INPUT'."/>
+    <Info message="(Converter.java) Executed target class 'de.interactive_instruments.ShapeChange.Target.FeatureCatalogue.FeatureCatalogue' for input ID: 'INPUT'.&#10;-------------------------------------------------"/>
+    <Info message="(Converter.java) Executed deferred output write for target class 'de.interactive_instruments.ShapeChange.Target.FeatureCatalogue.FeatureCatalogue' for input ID: 'INPUT'."/>
+  </Messages>
+  <Results>
+    <Result href="C:\Data\isotc211\Redlands\UMLdocumentation\WorkshopRedlands\ShapeChange\FC\INPUT\FeatureCatalogue.docx" target="Feature Catalogue">FeatureCatalogue.docx</Result>
+  </Results>
+</ShapeChangeResult>

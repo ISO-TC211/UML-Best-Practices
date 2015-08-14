@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<EncodingRule name="iso19136_2007_INSPIRE_Extensions" extends="gml33">
+		<rule name="req-all-all-documentation"/>
+		<rule name="req-xsd-pkg-targetNamespace"/>
+		<rule name="req-xsd-pkg-xmlns"/>
+		<rule name="req-xsd-pkg-namespace-schema-only"/>
+		<rule name="rec-xsd-pkg-version"/>
+		<rule name="req-xsd-pkg-xsdDocument"/>
+		<rule name="req-xsd-pkg-dependencies"/>
+		<rule name="req-xsd-cls-codelist-asDictionary-true"/>
+		<rule name="req-xsd-prop-codelist-obligation"/>
+		<rule name="req-xsd-cls-codelist-extensibility-values"/>
+		<rule name="req-xsd-cls-codelist-extensibility-vocabulary"/>
+		<rule name="req-xsd-cls-datatype-noPropertyType"/>
+		<rule name="req-xsd-cls-objecttype-noPropertyType"/>
+		<rule name="req-xsd-cls-objecttype-byValuePropertyType"/>
+		<rule name="req-xsd-cls-enum-no-supertypes"/>
+		<rule name="req-xsd-cls-codelist-no-supertypes"/>
+		<rule name="rule-xsd-cls-mixin-classes"/>
+		<rule name="rule-xsd-prop-nillable"/>
+		<rule name="rule-xsd-all-no-documentation"/>
+	</EncodingRule>
+	<EncodingRule name="okstra" extends="iso19136_2007">
+		<rule name="rule-xsd-cls-no-base-class"/>
+		<rule name="rule-xsd-cls-no-abstract-classes"/>
+		<rule name="rule-xsd-cls-okstra-schluesseltabelle"/>
+		<rule name="rule-xsd-cls-okstra-lifecycle"/>
+		<rule name="rule-xsd-cls-okstra-fid"/>
+	</EncodingRule>
+  <EncodingRule name="gml21" extends="iso19136_2007">
+    <rule name="rule-xsd-cls-codelist-anonymous-xlink" />
+    <rule name="rule-xsd-all-gml21" />
+  </EncodingRule>
+	<EncodingRule name="notEncoded" extends="*">
+		<rule name="rule-xsd-all-notEncoded"/>
+	</EncodingRule>
+	<EncodingRule name="citygml-ade" extends="iso19136_2007">
+		<rule name="req-xsd-cls-suppress-supertype"/>
+		<rule name="req-xsd-cls-suppress-subtype"/>
+		<rule name="req-xsd-cls-suppress-no-properties"/>
+		<rule name="rule-xsd-cls-suppress"/>
+		<rule name="rule-xsd-cls-adeelement"/>
+		<rule name="rule-xsd-cls-mixin-classes"/>
+		<rule name="rule-xsd-prop-initialValue"/>		
+	</EncodingRule>
+	<EncodingRule name="metadata-profile" extends="iso19139_2007">
+		<rule name="req-xsd-cls-suppress-supertype"/>
+		<rule name="req-xsd-cls-suppress-subtype"/>
+		<rule name="req-xsd-cls-suppress-no-properties"/>
+		<rule name="rule-xsd-cls-suppress"/>
+		<rule name="rule-xsd-pkg-schematron"/>
+	</EncodingRule>
+	<EncodingRule name="iso19136_2007_ShapeChange_1.0_Extensions" extends="iso19136_2007">
+		<rule name="req-xsd-cls-mixin-supertypes"/>
+		<rule name="req-xsd-cls-codelist-no-supertypes"/>
+		<rule name="rule-xsd-cls-union-asCharacterString"/>
+		<rule name="rule-xsd-cls-union-asGroup"/>
+		<rule name="rule-xsd-cls-enum-supertypes"/>
+		<rule name="rule-xsd-cls-enum-subtypes"/>
+		<rule name="rule-xsd-cls-basictype"/>
+		<rule name="rule-xsd-cls-union-direct"/>		
+		<rule name="rule-xsd-cls-codelist-constraints"/>
+		<rule name="rule-xsd-cls-mixin-classes-as-group"/>
+		<rule name="rule-xsd-cls-mixin-classes"/>
+		<rule name="rule-xsd-prop-exclude-derived"/>
+		<rule name="rule-xsd-prop-length-size-pattern"/>
+		<rule name="rule-xsd-prop-xsdAsAttribute"/>
+		<rule name="rule-xsd-prop-nillable"/>
+		<rule name="rule-xsd-prop-nilReasonAllowed"/>
+		<rule name="rule-xsd-prop-initialValue"/>		
+		<rule name="rule-xsd-prop-att-map-entry"/>
+		<rule name="rule-xsd-pkg-schematron"/>
+		<rule name="rule-xsd-all-tagged-values"/>
+	</EncodingRule>
+	<EncodingRule name="gsip" extends="iso19136_2007">
+		<rule name="req-xsd-cls-mixin-supertypes"/>
+		<rule name="req-xsd-cls-codelist-no-supertypes"/>
+		<rule name="rule-xsd-cls-union-asCharacterString"/>
+		<rule name="rule-xsd-cls-union-asGroup"/>
+		<rule name="rule-xsd-cls-enum-supertypes"/>
+		<rule name="rule-xsd-cls-enum-subtypes"/>
+		<rule name="rule-xsd-cls-basictype"/>
+		<rule name="rule-xsd-cls-union-direct"/>		
+		<rule name="rule-xsd-cls-codelist-constraints"/>
+		<rule name="rule-xsd-cls-mixin-classes-as-group"/>
+		<rule name="rule-xsd-cls-mixin-classes"/>
+		<rule name="rule-xsd-prop-exclude-derived"/>
+		<rule name="rule-xsd-prop-length-size-pattern"/>
+		<rule name="rule-xsd-prop-xsdAsAttribute"/>
+		<rule name="rule-xsd-prop-nillable"/>
+		<rule name="rule-xsd-prop-nilReasonAllowed"/>
+		<rule name="rule-xsd-prop-initialValue"/>		
+		<rule name="rule-xsd-prop-att-map-entry"/>
+		<rule name="rule-xsd-pkg-schematron"/>
+		<rule name="rule-xsd-all-tagged-values"/>
+	</EncodingRule>   
+	<EncodingRule name="external" extends="*">
+		<rule name="rule-xsd-all-notEncoded"/>
+	</EncodingRule>
+	<EncodingRule name="iso19136_2007_NoGmlBaseTypes" extends="*">
+		<rule name="rule-xsd-cls-no-gml-types"/>
+		<rule name="rule-xsd-all-naming-gml"/>
+		<rule name="rule-xsd-cls-global-enumeration"/>
+		<rule name="rule-xsd-cls-standard-gml-property-types"/>
+	</EncodingRule>
+</rules>

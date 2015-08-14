@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmlNamespaces xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <XmlNamespace nsabr="sc" ns="http://www.interactive-instruments.de/ShapeChange/AppInfo" location="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd" />
+  <XmlNamespace nsabr="xlink" ns="http://www.w3.org/1999/xlink" location="http://www.w3.org/1999/xlink.xsd" />
+  <XmlNamespace nsabr="gml" ns="http://www.opengis.net/gml" location="http://schemas.opengis.net/gml/2.1.2/gml.xsd" />
+  <!-- schema for gmldgiwgsp not available at: location="http://schemas.dgiwg.org/gml/3.2/profiles/spatial/1.0/gmldgiwgspLevels.xsd" -->
+  <XmlNamespace nsabr="gmldgiwgsp" ns="http://www.dgiwg.org/gml/3.2/profiles/spatial/1.0/"/>
+  <XmlNamespace nsabr="xsi" ns="http://www.w3.org/2001/XMLSchema-instance"/>
+</xmlNamespaces>

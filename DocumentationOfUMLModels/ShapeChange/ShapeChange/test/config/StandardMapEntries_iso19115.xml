@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <XsdMapEntry type="CI_OnlineResource" xsdEncodingRules="*" xmlType="gmd:CI_OnlineResource_Type" xmlElement="gmd:CI_OnlineResource" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="CI_Address" xsdEncodingRules="*" xmlType="gmd:CI_Address_Type" xmlElement="gmd:CI_Address" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="CI_Citation" xsdEncodingRules="*" xmlType="gmd:CI_Citation_Type" xmlElement="gmd:CI_Citation" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="CI_Contact" xsdEncodingRules="*" xmlType="gmd:CI_Contact_Type" xmlElement="gmd:CI_Contact" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="CI_ResponsibleParty" xsdEncodingRules="*" xmlType="gmd:CI_ResponsibleParty_Type" xmlElement="gmd:CI_ResponsibleParty" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="CI_Series" xsdEncodingRules="*" xmlElement="gmd:CI_Series" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="CI_Telephone" xsdEncodingRules="*" xmlType="gmd:CI_Telephone_Type" xmlElement="gmd:CI_Telephone" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="LI_Lineage" xsdEncodingRules="*" xmlElement="gmd:LI_Lineage" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="DQ_DataQuality" xsdEncodingRules="*" xmlElement="gmd:DQ_DataQuality" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="DQ_RelativeInternalPositionalAccuracy" xsdEncodingRules="*" xmlElement="gmd:DQ_RelativeInternalPositionalAccuracy" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="DQ_PositionalAccuracy" xsdEncodingRules="*" xmlElement="gmd:AbstractDQ_PositionalAccuracy" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="DQ_QuantitativeResult" xsdEncodingRules="*" xmlElement="gmd:DQ_QuantitativeResult" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="EX_Extent" xsdEncodingRules="*" xmlType="gmd:EX_Extent_Type" xmlElement="gmd:EX_Extent" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="EX_GeographicExtent" xsdEncodingRules="*" xmlType="gmd:AbstractEX_GeographicExtent_Type" xmlElement="gmd:AbstractEX_GeographicExtent" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="EX_BoundingPolygon" xsdEncodingRules="*" xmlType="gmd:EX_BoundingPolygon_Type" xmlElement="gmd:EX_BoundingPolygon" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_BrowseGraphic" xsdEncodingRules="*" xmlElement="gmd:MD_BrowseGraphic" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_ClassificationCode" xsdEncodingRules="*" xmlElement="gmd:MD_ClassificationCode" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_Format" xsdEncodingRules="*" xmlElement="gmd:MD_Format" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_Resolution" xsdEncodingRules="*" xmlElement="gmd:MD_Resolution" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_Identifier" xsdEncodingRules="*" xmlElement="gmd:MD_Identifier" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_ImagingConditionCode" xsdEncodingRules="*" xmlElement="gmd:MD_ImagingConditionCode" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_MediumNameCode" xsdEncodingRules="*" xmlElement="gmd:MD_MediumNameCode" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_Metadata" xsdEncodingRules="*" xmlType="gmd:MD_Metadata_Type" xmlElement="gmd:MD_Metadata" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="RS_Identifier" xsdEncodingRules="*" xmlType="gmd:RS_Identifier_Type" xmlElement="gmd:RS_Identifier" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="DQ_AbsoluteExternalPositionalAccuracy" xsdEncodingRules="*" xmlElement="gmd:DQ_AbsoluteExternalPositionalAccuracy" xmlPropertyType="_MP_" />
+  <XsdMapEntry type="MD_CharacterSetCode" xsdEncodingRules="*" xmlPropertyType="gmd:MD_CharacterSetCode_PropertyType" />
+  <XsdMapEntry type="LanguageCode" xsdEncodingRules="*" xmlPropertyType="gmd:LanguageCode_PropertyType" />
+  <XsdMapEntry type="CountryCode" xsdEncodingRules="*" xmlPropertyType="gmd:Country_PropertyType" />
+  <XsdMapEntry type="PT_FreeText" xsdEncodingRules="*" xmlPropertyType="gmd:PT_FreeText_PropertyType" />
+  <XsdMapEntry type="PT_Locale" xsdEncodingRules="*" xmlPropertyType="gmd:PT_Locale_PropertyType" />
+  <XsdMapEntry type="LocalisedCharacterString" xsdEncodingRules="iso19136_2007 iso19139_2007" xmlPropertyType="gmd:LocalisedCharacterString_PropertyType" />
+  <XsdMapEntry type="LocalisedCharacterString" xsdEncodingRules="gml33" xmlPropertyType="gmlxbt:LanguageStringType" />
+  <!-- ... more to be added as required -->
+</xsdMapEntries>

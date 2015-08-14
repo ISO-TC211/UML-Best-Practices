@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="StandardMapEntries_iso19136_2007.xml"/>
+  <xi:include href="StandardMapEntries_iso19139_2007.xml"/>
+  <xi:include href="StandardMapEntries_sweCommon.xml"/>
+  <xi:include href="StandardMapEntries_gsip.xml"/>
+  <xi:include href="StandardMapEntries_iso19107.xml"/>
+  <xi:include href="StandardMapEntries_iso19108.xml"/>
+  <xi:include href="StandardMapEntries_iso19111.xml"/>
+  <xi:include href="StandardMapEntries_iso19115.xml"/>
+  <xi:include href="StandardMapEntries_iso19123.xml"/>
+  <xi:include href="StandardMapEntries_iso19156.xml"/>
+  <xi:include href="StandardMapEntries_gmlcov.xml"/>
+  <!-- ... more to be added as required -->
+</xsdMapEntries>

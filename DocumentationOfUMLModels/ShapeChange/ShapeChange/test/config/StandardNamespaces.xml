@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmlNamespaces xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <XmlNamespace nsabr="sc" ns="http://www.interactive-instruments.de/ShapeChange/AppInfo" location="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd" />
+  <XmlNamespace nsabr="xlink" ns="http://www.w3.org/1999/xlink" location="http://www.w3.org/1999/xlink.xsd" />
+  <XmlNamespace nsabr="gml" ns="http://www.opengis.net/gml/3.2" location="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />
+  <XmlNamespace nsabr="gmlxbt" ns="http://www.opengis.net/gml/3.3/xbt" location="http://schemas.opengis.net/gml/3.3/extdBaseTypes.xsd" />
+  <XmlNamespace nsabr="gmlce" ns="http://www.opengis.net/gml/3.3/ce" location="http://schemas.opengis.net/gml/3.3/geometryCompact.xsd" />
+  <XmlNamespace nsabr="gmltin" ns="http://www.opengis.net/gml/3.3/tin" location="http://schemas.opengis.net/gml/3.3/tin.xsd" />
+  <XmlNamespace nsabr="gmllr" ns="http://www.opengis.net/gml/3.3/lr" location="http://schemas.opengis.net/gml/3.3/linearRef.xsd" />
+  <XmlNamespace nsabr="gmllrtr" ns="http://www.opengis.net/gml/3.3/lrtr" location="http://schemas.opengis.net/gml/3.3/linearRefTowardsReferent.xsd" />
+  <XmlNamespace nsabr="gmllro" ns="http://www.opengis.net/gml/3.3/lro" location="http://schemas.opengis.net/gml/3.3/linearRefOffset.xsd" />
+  <XmlNamespace nsabr="gmllrov" ns="http://www.opengis.net/gml/3.3/lrov" location="http://schemas.opengis.net/gml/3.3/linearRefOffsetVector.xsd" />
+  <XmlNamespace nsabr="gmlrgrid" ns="http://www.opengis.net/gml/3.3/rgrid" location="http://schemas.opengis.net/gml/3.3/referencableGrid.xsd" />
+  <XmlNamespace nsabr="gmlexr" ns="http://www.opengis.net/gml/3.3/exr" location="http://schemas.opengis.net/gml/3.3/extdEncRule.xsd" />
+  <!-- schema for gmldgiwgsp not available at: location="http://schemas.dgiwg.org/gml/3.2/profiles/spatial/1.0/gmldgiwgspLevels.xsd" -->
+  <XmlNamespace nsabr="gmldgiwgsp" ns="http://www.dgiwg.org/gml/3.2/profiles/spatial/1.0/"/>
+  <XmlNamespace nsabr="gmd" ns="http://www.isotc211.org/2005/gmd" location="http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd" />
+  <XmlNamespace nsabr="gco" ns="http://www.isotc211.org/2005/gco" location="http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd" />
+  <XmlNamespace nsabr="gmlcov" ns="http://www.opengis.net/gmlcov/1.0" location="http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd" />
+  <XmlNamespace nsabr="om" ns="http://www.opengis.net/om/2.0" location="http://schemas.opengis.net/om/2.0/observation.xsd" />
+  <XmlNamespace nsabr="sam" ns="http://www.opengis.net/sampling/2.0" location="http://schemas.opengis.net/sampling/2.0/samplingFeature.xsd" />
+  <XmlNamespace nsabr="sams" ns="http://www.opengis.net/samplingSpatial/2.0" location="http://schemas.opengis.net/samplingSpatial/2.0/spatialSamplingFeature.xsd" />
+  <XmlNamespace nsabr="spec" ns="http://www.opengis.net/samplingSpecimen/2.0" location="http://schemas.opengis.net/samplingSpecimen/2.0/specimen.xsd" />
+  <XmlNamespace nsabr="cgu" ns="http://xmlns.geosciml.org/Utilities/3.0" location="http://schemas.geosciml.org/cgiutilities/3.0/cgiUtilities.xsd"/>
+  <XmlNamespace nsabr="gsml" ns="http://xmlns.geosciml.org/GeoSciML-Core/3.0" location="http://schemas.geosciml.org/geosciml-core/3.0/geosciml-core.xsd"/>
+  <XmlNamespace nsabr="gt" ns="http://xmlns.geosciml.org/GeologicTime/3.0" location="http://schemas.geosciml.org/geotime/3.0/geologicTime.xsd"/>
+  <XmlNamespace nsabr="gbh" ns="http://xmlns.geosciml.org/Borehole/3.0" location="http://schemas.geosciml.org/borehole/3.0/borehole.xsd"/>
+  <XmlNamespace nsabr="glab" ns="http://xmlns.geosciml.org/LaboratoryAnalysis-Specimen/3.0" location="http://schemas.geosciml.org/laboratoryanalysis-specimen/3.0/laboratoryAnalysis-Specimen.xsd"/>
+  <XmlNamespace nsabr="gpp" ns="http://xmlns.geosciml.org/PhysicalProperties/3.0" location="http://schemas.geosciml.org/physicalproperties/3.0/physicalProperties.xsd"/>
+  <XmlNamespace nsabr="trs" ns="http://xmlns.geosciml.org/TemporalReferenceSystem/3.0" location="http://schemas.geosciml.org/temporalreferencesystem/3.0/trs.xsd"/>
+  <XmlNamespace nsabr="swe" ns="http://www.opengis.net/swe/2.0" location="http://schemas.opengis.net/sweCommon/2.0/swe.xsd"/>
+  <XmlNamespace nsabr="gmx" ns="http://www.isotc211.org/2005/gmx" location="http://schemas.opengis.net/iso/19139/20070417/gmx/gmx.xsd" />
+  <XmlNamespace nsabr="gsr" ns="http://www.isotc211.org/2005/gsr" location="http://schemas.opengis.net/iso/19139/20070417/gsr/gsr.xsd" />
+  <XmlNamespace nsabr="gss" ns="http://www.isotc211.org/2005/gss" location="http://schemas.opengis.net/iso/19139/20070417/gss/gss.xsd" />
+  <XmlNamespace nsabr="gts" ns="http://www.isotc211.org/2005/gts" location="http://schemas.opengis.net/iso/19139/20070417/gco/gts.xsd" />
+  <XmlNamespace nsabr="xsi" ns="http://www.w3.org/2001/XMLSchema-instance"/>
+  <!-- FIXME
+  <XmlNamespace nsabr="" ns="http://www.w3.org/2001/XMLSchema"/>
+  <XmlNamespace nsabr="rdf" ns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+  <XmlNamespace nsabr="rdfs" ns="http://www.w3.org/2000/01/rdf-schema#"/>
+  <XmlNamespace nsabr="owl" ns="http://www.w3.org/2002/07/owl#"/>
+  <XmlNamespace nsabr="owl2xml" ns="http://www.w3.org/2006/12/owl2-xml#"/>
+  <XmlNamespace nsabr="dc" ns="http://purl.org/dc/elements/1.1/"/>
+  <XmlNamespace nsabr="geo" ns="http://www.opengis.net/geosparql#"/>
+  <XmlNamespace nsabr="skos" ns="http://www.w3.org/2004/02/skos/core#"/>
+  <XmlNamespace nsabr="scr" ns="http://www.interactive-instruments.de/ShapeChange/Result" location="http://shapechange.net/resources/schema/ShapeChangeResult.xsd"/>
+  <XmlNamespace nsabr="sca" ns="http://www.interactive-instruments.de/ShapeChange/AppInfo" location="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
+  <XmlNamespace nsabr="sch" ns="http://purl.oclc.org/dsdl/schematron"/>
+  <XmlNamespace nsabr="def" ns="http://www.interactive-instruments.de/ShapeChange/Definitions/0.5"/>
+  <XmlNamespace nsabr="xs" ns="http://www.interactive-instruments.de/namespaces/XtraServer"/>
+  <XmlNamespace nsabr="gdb" ns="http://www.interactive-instruments.de/namespaces/GdbDoc"/>
+  -->
+</xmlNamespaces>
+

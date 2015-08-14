@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" version="1.1.0b1">
+	<import namespace="http://www.w3.org/2001/XInclude" schemaLocation="XInclude.xsd"/>
+	<element name="ShapeChangeConfiguration" type="sc:ShapeChangeConfigurationType" />
+	<complexType name="ShapeChangeConfigurationType">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element ref="sc:ShapeChangeConfiguration" />
+			<element ref="sc:input" />
+			<element ref="sc:dialog" />
+			<element ref="sc:log" />
+			<element ref="sc:targets" />
+		</choice>
+	</complexType>
+	<element name="input">
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:parameter" />
+				<element ref="sc:stereotypeAliases" />
+				<element ref="sc:packages" />
+				<element ref="xi:include" />
+			</choice>
+		</complexType>
+	</element>
+	<element name="parameter">
+		<complexType>
+			<attribute name="name" type="string" use="required" />
+			<attribute name="value" type="string" use="required" />
+		</complexType>
+	</element>
+	<element name="stereotypeAliases">
+		<complexType>
+			<sequence minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:StereotypeAlias" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="StereotypeAlias" type="sc:StereotypeAliasType" />
+	<complexType name="StereotypeAliasType">
+		<sequence />
+		<attribute name="wellknown" use="required">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="" />
+					<enumeration value="Abstract" />
+					<enumeration value="DataType" />
+					<enumeration value="FeatureType" />
+					<enumeration value="ObjectType" />
+					<enumeration value="Enumeration" />
+					<enumeration value="CodeList" />
+					<enumeration value="Union" />
+					<enumeration value="BasicType" />
+					<enumeration value="Interface" />
+					<enumeration value="Type" />
+					<enumeration value="Union" />
+					<enumeration value="Application Schema" />
+					<enumeration value="Leaf" />
+					<enumeration value="import" />
+					<enumeration value="include" />
+					<enumeration value="disjoint" />
+					<enumeration value="voidable" />
+				</restriction>
+			</simpleType>
+		</attribute>
+		<attribute name="alias" type="string" use="required" />
+	</complexType>
+	<element name="packages">
+		<complexType>
+			<sequence minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:PackageInfo" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="PackageInfo" type="sc:PackageInfoType" />
+	<complexType name="PackageInfoType">
+		<sequence />
+		<attribute name="packageName" type="string" use="required"/>
+		<attribute name="nsabr" type="string" />
+		<attribute name="ns" type="string" />
+		<attribute name="xsdDocument" type="string" />
+		<attribute name="version" type="string" />
+	</complexType>
+	<element name="dialog">
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:parameter" />
+			</choice>
+		</complexType>
+	</element>
+	<element name="log">
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:parameter" />
+			</choice>
+		</complexType>
+	</element>
+	<element name="targets">
+		<complexType>
+			<choice minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:Target" />
+				<element ref="sc:TargetXmlSchema" />
+			</choice>
+		</complexType>
+	</element>
+	<element name="Target" type="sc:TargetType" />
+	<complexType name="TargetType">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element ref="sc:targetParameter" />
+			<element ref="sc:mapEntries"/>
+			<element ref="xi:include" />
+		</choice>
+		<attribute name="class" type="string" use="required" />
+		<attribute name="mode" type="sc:TargetMode" default="enabled"/>
+	</complexType>
+	<simpleType name="TargetMode">
+		<restriction base="string">
+			<enumeration value="enabled" />
+			<enumeration value="disabled" />
+			<enumeration value="diagnostics-only" />
+		</restriction>
+	</simpleType>
+	<element name="targetParameter">
+		<complexType>
+			<attribute name="name" type="string" use="required" />
+			<attribute name="value" type="string" use="required" />
+		</complexType>
+	</element>
+	<element name="mapEntries" type="sc:MapEntriesType"/>
+	<complexType name="MapEntriesType">
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<element ref="sc:MapEntry" />
+		</sequence>
+	</complexType>
+	<element name="MapEntry" type="sc:MapEntryType"/>
+	<complexType name="MapEntryType">
+		<sequence />
+		<attribute name="type" type="string" use="required"/>
+		<attribute name="rule" type="string" use="required"/>
+		<attribute name="targetType" type="string"/>
+		<attribute name="param" type="string"/>
+	</complexType>
+	<element name="TargetXmlSchema" type="sc:TargetXmlSchemaType"/>
+	<complexType name="TargetXmlSchemaType">
+		<choice minOccurs="0" maxOccurs="unbounded">
+			<element ref="sc:targetParameter" />
+			<element ref="sc:xmlNamespaces" />
+			<element ref="sc:xsdMapEntries" />
+			<element ref="xi:include" />
+		</choice>
+		<attribute name="class" type="string" use="required" fixed="de.interactive_instruments.ShapeChange.Target.XmlSchema.XmlSchema"/>
+		<attribute name="mode" type="sc:TargetMode" default="enabled"/>
+	</complexType>
+	<element name="xmlNamespaces">
+		<complexType>
+			<sequence minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:XmlNamespace" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="XmlNamespace" type="sc:XmlNamespaceType" />
+	<complexType name="XmlNamespaceType">
+		<sequence />
+		<attribute name="nsabr" type="string" use="required" />
+		<attribute name="ns" type="string" use="required" />
+		<attribute name="location" type="string" use="required" />
+		<attribute name="packageName" type="string"/>
+	</complexType>
+	<element name="xsdMapEntries">
+		<complexType>
+			<sequence minOccurs="0" maxOccurs="unbounded">
+				<element ref="sc:XsdMapEntry" />
+			</sequence>
+		</complexType>
+	</element>
+	<simpleType name="XsdEncodingRule">
+		<restriction base="string">
+			<enumeration value="*" />
+			<enumeration value="iso19136_2007" />
+			<enumeration value="iso19136_2007_NoGmlBaseTypes" />
+			<enumeration value="iso19136_2007_INSPIRE_Extensions" />
+			<enumeration value="iso19136_2007_ShapeChange_1.0_Extensions" />
+			<enumeration value="iso19139_2007" />
+		</restriction>
+	</simpleType>
+	<element name="XsdMapEntry" type="sc:XsdMapEntryType"/>
+	<complexType name="XsdMapEntryType">
+		<sequence />
+		<attribute name="type" type="string" use="required" />
+		<attribute name="xsdEncodingRules" use="required">
+			<simpleType>
+				<list itemType="sc:XsdEncodingRule"/>
+			</simpleType>
+		</attribute>
+		<attribute name="xmlType" type="string" />
+		<attribute name="xmlTypeContent" default="complex">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="simple" />
+					<enumeration value="complex" />
+				</restriction>
+			</simpleType>
+		</attribute>
+		<attribute name="xmlTypeType" default="complex">
+			<simpleType>
+				<restriction base="string">
+					<enumeration value="simple" />
+					<enumeration value="complex" />
+				</restriction>
+			</simpleType>
+		</attribute>
+		<attribute name="xmlTypeNilReason" type="boolean"/>
+		<attribute name="xmlElement" type="string" />
+		<attribute name="xmlPropertyType" type="string" />
+		<attribute name="xmlAttribute" type="string" />
+		<attribute name="xmlAttributeGroup" type="string" />
+		<attribute name="nsabr" type="string" />
+	</complexType>
+</schema>

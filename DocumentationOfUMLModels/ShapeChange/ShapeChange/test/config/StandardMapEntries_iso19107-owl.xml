@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <!-- ISO 19107 Geometry -->
+  <MapEntry type="GM_Object" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_Point" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_Curve" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_Surface" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_Solid" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_MultiPoint" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_MultiCurve" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_MultiSurface" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_MultiSolid" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_Aggregate" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_CompositePoint" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_CompositeCurve" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_CompositeSurface" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_CompositeSolid" rule="iso19150_2014" targetType="geo:Geometry"/>
+  <MapEntry type="GM_Complex" rule="iso19150_2014" targetType="geo:Geometry"/>
+
+  <!--	Alternative:
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractGeometry" type="GM_Object"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Point" type="GM_Point"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractGriddedSurface" type="GM_GriddedSurface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:PolyhedralSurface" type="GM_PolyhedralSurface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Arc" type="GM_Arc"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:MultiCurve" type="GM_MultiCurve"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:CompositeSurface" type="GM_CompositeSurface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:ArcString" type="GM_ArcString"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Cylinder" type="GM_Cylinder"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Shell" type="GM_Shell"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:PolygonPatch" type="GM_Polygon"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Tin" type="GM_Tin"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:MultiGeometry" type="GM_MultiPrimitive"/>
+  <!- Bug in GML 32 rdf - "Bezler" instead of "Bezier" ->
+  <MapEntry rule="iso19150_2014" targetType="gml:Bezier" type="GM_Bezier"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:BSpline" type="GM_BsplineCurve"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Curve" type="GM_Curve"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractCurveSegment" type="GM_CurveSegment"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:LineStringSegment" type="GM_LineString"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Geodesic" type="GM_Geodesic"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractSurfacePatch" type="GM_SurfacePatch"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:GeometricComplex" type="GM_Complex"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:ArcByCenterPoint" type="ArcByCenterPoint"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:MultiPoint" type="GM_MultiPoint"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:OffsetCurve" type="GM_OffsetCurve"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Circle" type="GM_Circle"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractCurve" type="GM_OrientableCurve"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractSurface" type="GM_OrientableSurface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Clothoid" type="GM_Clothoid"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:ArcStringByBulge" type="GM_ArcStringByBulge"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:TriangulatedSurface" type="GM_TriangulatedSurface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Triangle" type="GM_Triangle"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:CubicSpline" type="GM_CubicSpline"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractGeometricPrimitive" type="GM_Primitive"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Surface" type="GM_Surface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Solid" type="GM_Solid"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Ring" type="GM_Ring"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:CompositeCurve" type="GM_CompositeCurve"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:CompositeSolid" type="GM_CompositeSolid"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:MultiSurface" type="GM_MultiSurface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:MultiSolid" type="GM_MultiSolid"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:GeodesicString" type="GM_GeodesicString"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:AbstractParametricCurveSurface" type="GM_ParametricCurveSurface"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Cone" type="GM_Cone"/>
+  <MapEntry rule="iso19150_2014" targetType="gml:Sphere" type="GM_Sphere"/>
+  -->
+
+  <!-- ... more to be added as required -->
+</mapEntries>

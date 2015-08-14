@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <XsdMapEntry type="CV_Coverage" xsdEncodingRules="*" xmlType="gml:AbstractCoverageType" xmlElement="gml:_Coverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_ContinuousCoverage" xsdEncodingRules="*" xmlType="gml:AbstractContinuousCoverageType" xmlElement="gml:_ContinuousCoverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_DiscreteCoverage" xsdEncodingRules="*" xmlType="gml:AbstractDiscreteCoverageType" xmlElement="gml:_DiscreteCoverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_ContinuousQuadrilateralGridCoverage" xsdEncodingRules="*" xmlType="gml:RectifiedGridCoverageType" xmlElement="gml:RectifiedGridCoverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_DiscreteCurveCoverage" xsdEncodingRules="*" xmlType="gml:MultiCurveCoverageType" xmlElement="gml:MultiCurveCoverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_DiscretePointCoverage" xsdEncodingRules="*" xmlType="gml:MultiPointCoverageType" xmlElement="gml:MultiPointCoverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_DiscreteSurfaceCoverage" xsdEncodingRules="*" xmlType="gml:MultiSurfaceCoverageType" xmlElement="gml:MultiSurfaceCoverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_DiscreteSolidCoverage" xsdEncodingRules="*" xmlType="gml:MultiSolidCoverageType" xmlElement="gml:MultiSolidCoverage" xmlPropertyType="_P_" />
+  <XsdMapEntry type="CV_RectifiedGrid" xsdEncodingRules="*" xmlType="gml:RectifiedGridType" xmlElement="gml:RectifiedGrid" xmlPropertyType="_P_" />
+  <!-- ... more to be added as required -->
+</xsdMapEntries>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="StandardMapEntries_gml31.xml"/>
+  <xi:include href="StandardMapEntries_iso19107-v31.xml"/>
+  <xi:include href="StandardMapEntries_iso19108-v31.xml"/>
+  <xi:include href="StandardMapEntries_iso19111-v31.xml"/>
+  <xi:include href="StandardMapEntries_iso19123-v31.xml"/>
+  <!-- ... more to be added as required -->
+</xsdMapEntries>

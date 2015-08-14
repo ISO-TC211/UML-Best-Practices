@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShapeChangeConfiguration xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 http://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+	<input>
+		<parameter name="inputModelType" value="EA7"/>
+		<parameter name="inputFile" value="ISO19135-1_Full19135_extension.eap"/>
+		<!--parameter name="appSchema" value="ISO 19135-1 Procedures for Registration"/-->
+		<parameter name="publicOnly" value="true"/>
+		<parameter name="checkingConstraints" value="disabled"/>
+		<parameter name="sortedSchemaOutput" value="true"/>
+		<parameter name="tmpDirectory" value="examples/iso/tmp"/>
+		<parameter name="loadDiagrams" value="true"/>
+		<parameter name="packageDiagramRegex" value="^(.*[\W]+)?Overview([\W]+.*)?$"/>
+		<parameter name="classDiagramRegex" value="^(.*[\W]+)?NAME([\W]+.*)?$"/>
+		<xi:include href="http://shapechange.net/resources/config/StandardAliases.xml"/>
+	</input>
+	<log>
+		<parameter name="reportLevel" value="INFO"/>
+		<parameter name="logFile" value="output1/log_19135.xml"/>
+	</log>
+	<targets>
+		<Target class="de.interactive_instruments.ShapeChange.Target.FeatureCatalogue.FeatureCatalogue" mode="enabled">
+			<targetParameter name="outputDirectory" value="output1"/>
+			<targetParameter name="outputFilename" value="19135"/>
+			<targetParameter name="outputFormat" value="DOCX"/>
+			<targetParameter name="name" value="ISO 19135-1 Procedures for Registration"/>
+			<targetParameter name="scope" value="This part of ISO 19135 specifies procedures to be followed in establishing, maintaining and publishing registers of unique, unambiguous and permanent identifiers and meanings that are assigned to items of geographic information. In order to accomplish this purpose, this part of ISO 19135 specifies elements that are necessary to manage the registration of these items."/>
+			<targetParameter name="versionNumber" value="ISO/DIS 19135-1:2013"/>
+			<targetParameter name="versionDate" value="2013"/>
+			<targetParameter name="producer" value="International Organisation for Standardization"/>
+			<targetParameter name="xsltPfad" value="http://shapechange.net/resources/xslt"/>
+			<!--targetParameter name="xsltPfad" value="src/main/resources/xslt"/-->
+			<targetParameter name="xsldocxFile" value="docx.xsl"/>
+			<targetParameter name="featureTerm" value="Object"/>
+			<targetParameter name="includeVoidable" value="false"/>		
+			<targetParameter name="includeTitle" value="false"/>		
+	      		<targetParameter name="includeDiagrams" value="true"/>
+	      		<targetParameter name="xslTransformerFactory" value= "net.sf.saxon.TransformerFactoryImpl"/>
+			<targetParameter name="docxTemplateFilePath" value="template_ISO.docx"/>
+		</Target>
+	</targets>
+</ShapeChangeConfiguration>

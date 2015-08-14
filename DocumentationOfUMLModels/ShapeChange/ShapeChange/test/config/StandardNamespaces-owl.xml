@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<namespaces xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <Namespace nsabr="xsd" ns="http://www.w3.org/2001/XMLSchema#"/>
+  <Namespace nsabr="rdf" ns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+  <Namespace nsabr="rdfs" ns="http://www.w3.org/2000/01/rdf-schema#"/>
+  <Namespace nsabr="owl" ns="http://www.w3.org/2002/07/owl#"/>
+  <Namespace nsabr="dc" ns="http://purl.org/dc/elements/1.1/"/>
+  <Namespace nsabr="prov" ns="http://www.w3.org/ns/prov#"/>
+  <Namespace nsabr="skos" ns="http://www.w3.org/2004/02/skos/core#" location="http://www.w3.org/2004/02/skos/core"/>
+  <Namespace nsabr="iso19150-2" ns="http://def.isotc211.org/iso19150-2/2012/base#" location="http://def.isotc211.org/iso19150-2/2012/base"/>    
+  <Namespace nsabr="geo" ns="http://www.opengis.net/ont/geosparql#" location="http://www.opengis.net/ont/geosparql"/>
+  <Namespace nsabr="sf" ns="http://www.opengis.net/ont/sf#" location="http://www.opengis.net/ont/sf"/>
+  <Namespace nsabr="gml" ns="http://www.opengis.net/ont/gml#" location="http://www.opengis.net/ont/gml"/>
+  <Namespace nsabr="sc" ns="http://shapechange.net/resources/ont/base#" location="http://shapechange.net/resources/ont/base"/>
+  <Namespace nsabr="gfm" ns="http://def.isotc211.org/iso19109/2013/GeneralFeatureModel#" location="http://def.isotc211.org/iso19109/2013/GeneralFeatureModel"/>
+</namespaces>
+

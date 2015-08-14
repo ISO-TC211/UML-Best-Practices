@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19136_2007.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19139_2007.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_sweCommon.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_gsip.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19107.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19108.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19111.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19115.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19123.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_iso19156.xml"/>
+  <xi:include href="http://shapechange.net/resources/config/StandardMapEntries_gmlcov.xml"/>
+  <xi:include href="http://www.arkitektum.no/files/sosi/StandardMapEntries_sosi.xml"/>
+  <!-- ... more to be added as required -->
+</xsdMapEntries>

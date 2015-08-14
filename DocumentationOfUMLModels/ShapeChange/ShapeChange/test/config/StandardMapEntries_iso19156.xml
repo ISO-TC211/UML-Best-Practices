@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <XsdMapEntry type="GFI_Feature" xsdEncodingRules="*" xmlType="gml:AbstractFeatureType" xmlElement="gml:AbstractFeature" xmlPropertyType="gml:FeaturePropertyType" />
+  <XsdMapEntry type="OM_Observation" xsdEncodingRules="*" xmlType="om:OM_ObservationType" xmlElement="om:OM_Observation" xmlPropertyType="om:OM_ObservationPropertyType" />
+  <XsdMapEntry type="OM_Process" xsdEncodingRules="*" xmlPropertyType="om:OM_ProcessPropertyType" />
+  <XsdMapEntry type="SF_SamplingFeature" xsdEncodingRules="*" xmlType="sam:SF_SamplingFeatureType" xmlElement="sam:SF_SamplingFeature" xmlPropertyType="sam:SF_SamplingFeaturePropertyType" />
+  <XsdMapEntry type="SamplingFeatureComplex" xsdEncodingRules="*" xmlType="sam:SamplingFeatureComplexType" xmlElement="sam:SamplingFeatureComplex" xmlPropertyType="sam:SamplingFeatureComplexPropertyType" />
+  <XsdMapEntry type="SF_SamplingFeatureCollection" xsdEncodingRules="*" xmlType="sam:SF_SamplingFeatureCollectionType" xmlElement="sam:SF_SamplingFeatureCollection" xmlPropertyType="sam:SF_SamplingFeatureCollectionPropertyType" />
+  <XsdMapEntry type="SF_Process" xsdEncodingRules="*" xmlPropertyType="sam:SF_ProcessPropertyType" />
+  <XsdMapEntry type="SF_SpatialSamplingFeature" xsdEncodingRules="*" xmlType="sams:SF_SpatialSamplingFeatureType" xmlElement="sams:SF_SpatialSamplingFeature" xmlPropertyType="sams:SF_SpatialSamplingFeaturePropertyType" />
+  <XsdMapEntry type="SF_Specimen" xsdEncodingRules="*" xmlType="spec:SF_SpecimenType" xmlElement="spec:SF_Specimen" xmlPropertyType="spec:SF_SpecimenPropertyType" />
+  <XsdMapEntry type="PreparationStep" xsdEncodingRules="*" xmlType="spec:PreparationStepType" xmlElement="spec:PreparationStep" xmlPropertyType="spec:PreparationStepPropertyType" />
+  <XsdMapEntry type="SamplingCoverageObservation" xsdEncodingRules="*" xmlType="om:OM_ObservationType" xmlElement="om:OM_Observation" xmlPropertyType="om:OM_ObservationPropertyType"/>
+  <!-- ... more to be added as required -->
+</xsdMapEntries>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ShapeChangeConfiguration xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1 http://shapechange.net/resources/schema/ShapeChangeConfiguration.xsd">
+	<input>
+		<xi:include href="http://shapechange.net/resources/config/StandardAliases.xml"/>
+	</input>
+	<targets>
+		<TargetXmlSchema class="de.interactive_instruments.ShapeChange.Target.XmlSchema.XmlSchema" mode="enabled">
+			<xi:include href="http://shapechange.net/resources/config/StandardNamespaces.xml"/>
+			<xi:include href="http://shapechange.net/resources/config/StandardMapEntries.xml"/>
+			<xsdMapEntries>
+				<XsdMapEntry type="URI" xsdEncodingRules="iso19136_2007" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple"/>
+			</xsdMapEntries>
+		</TargetXmlSchema>
+	</targets>
+</ShapeChangeConfiguration>

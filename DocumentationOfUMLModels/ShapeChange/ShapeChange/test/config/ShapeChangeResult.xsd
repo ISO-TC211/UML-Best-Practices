@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.interactive-instruments.de/ShapeChange/Result" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:sc="http://www.interactive-instruments.de/ShapeChange" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="ShapeChangeResult" type="sc:ShapeChangeResultType"/>
+	<complexType name="ShapeChangeResultType">
+		<sequence>
+			<element name="Messages">
+				<complexType>
+					<choice minOccurs="0" maxOccurs="unbounded">
+						<element name="Debug" type="sc:MessageType"/>
+						<element name="Info" type="sc:MessageType"/>
+						<element name="Warning" type="sc:MessageType"/>
+						<element name="Error" type="sc:MessageType"/>
+						<element name="FatalError" type="sc:MessageType"/>
+					</choice>
+				</complexType>
+			</element>
+			<element name="Results">
+				<complexType>
+					<sequence>
+						<element ref="sc:Result" minOccurs="0" maxOccurs="unbounded"/>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+		<attribute name="resultCode" type="integer"/>
+		<attribute name="start" type="string"/>
+		<attribute name="end" type="string"/>
+		<attribute name="config" type="string"/>
+		<attribute name="version" type="string"/>
+	</complexType>
+	<complexType name="MessageType">
+		<sequence>
+			<element name="Detail" type="sc:DetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="message" type="string" use="required"/>
+		<attribute name="source" type="string"/>
+	</complexType>
+	<complexType name="DetailType">
+		<simpleContent>
+			<attribute name="message" type="string" use="required"/>
+		</simpleContent>
+	</complexType>
+	<element name="Result">
+		<complexType>
+			<simpleContent>
+				<extension base="string">
+					<attribute name="target" type="string" use="required"/>
+					<attribute name="href" type="anyURI" use="required"/>
+					<anyAttribute namespace="##local"/>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
+</schema>

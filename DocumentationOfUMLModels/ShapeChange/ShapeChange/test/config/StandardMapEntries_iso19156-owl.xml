@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <MapEntry type="GFI_Feature" rule="iso19150_2014" targetType="geo:Feature"/>
+ <!-- ... more to be added as required -->
+</mapEntries>

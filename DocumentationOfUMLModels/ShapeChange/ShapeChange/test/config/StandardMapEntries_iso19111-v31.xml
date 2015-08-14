@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <XsdMapEntry type="SC_CRS" xsdEncodingRules="*" xmlElement="gml:_CRS" xmlType="gml:AbstractReferenceSystemType" xmlPropertyType="gml:CRSRefType" />
+  <!-- ... more to be added as required -->
+</xsdMapEntries>

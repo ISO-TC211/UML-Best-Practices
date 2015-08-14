@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<!-- ISO 19107 Geometry -->
+	<XsdMapEntry type="GM_Object" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:AbstractGeometryType" xmlElement="gml:_Geometry" xmlPropertyType="gml:GeometryPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Primitive" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:AbstractGeometricPrimitiveType" xmlElement="gml:_GeometricPrimitive" xmlPropertyType="gml:GeometricPrimitivePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="DirectPosition" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:DirectPositionType" xmlPropertyType="gml:DirectPositionType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Position" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:PointType" xmlElement="gml:Point" xmlPropertyType="gml:PointPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Point" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:PointType" xmlElement="gml:Point" xmlPropertyType="gml:PointPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Curve" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:CurveType" xmlElement="gml:Curve" xmlPropertyType="gml:CurvePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Surface" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:SurfaceType" xmlElement="gml:Surface" xmlPropertyType="gml:SurfacePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_PolyhedralSurface" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:PolyhedralSurfaceType" xmlElement="gml:PolyhedralSurface" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_TriangulatedSurface" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:TriangulatedSurfaceType" xmlElement="gml:TriangulatedSurface" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Tin" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:TinType" xmlElement="gml:Tin" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Solid" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:SolidType" xmlElement="gml:Solid" xmlPropertyType="gml:SolidPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_OrientableCurve" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:AbstractCurveType" xmlElement="gml:_Curve" xmlPropertyType="gml:CurvePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_OrientableSurface" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:AbstractSurfaceType" xmlElement="gml:_Surface" xmlPropertyType="gml:SurfacePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Ring" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:RingType" xmlElement="gml:Ring" xmlPropertyType="gml:AbstractRingPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Shell" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:ShellType" xmlElement="gml:Shell" xmlPropertyType="gml:ShellPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_Aggregate" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:MultiGeometryType" xmlElement="gml:MultiGeometry" xmlPropertyType="gml:MultiGeometryPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_CompositePoint" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:PointType" xmlElement="gml:Point" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_CompositeCurve" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:CompositeCurveType" xmlElement="gml:CompositeCurve" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_CompositeSurface" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:CompositeSurfaceType" xmlElement="gml:CompositeSurface" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_CompositeSolid" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:CompositeSolidType" xmlElement="gml:CompositeSolid" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Complex" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:GeometricComplexType" xmlElement="gml:GeometricComplex" xmlPropertyType="gml:GeometricComplexPropertyType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_MultiPoint" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:MultiPointType" xmlElement="gml:MultiPoint" xmlPropertyType="gml:MultiPointPropertyType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_MultiCurve" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:MultiCurveType" xmlElement="gml:MultiCurve" xmlPropertyType="gml:MultiCurvePropertyType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_MultiSurface" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:MultiSurfaceType" xmlElement="gml:MultiSurface" xmlPropertyType="gml:MultiSurfacePropertyType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_MultiSolid" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:MultiSolidType" xmlElement="gml:MultiSolid" xmlPropertyType="gml:MultiSolidPropertyType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_MultiPrimitive" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:MultiGeometryType" xmlElement="gml:MultiGeometry" xmlPropertyType="gml:MultiGeometryPropertyType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GM_CurveSegment" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:_CurveSegment" xmlType="gml:AbstractCurveSegmentType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Arc" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Arc" xmlType="gml:ArcType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_ArcByBulge" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:ArcByBulge" xmlType="gml:ArcByBulgeType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_ArcString" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:ArcString" xmlType="gml:ArcStringType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_ArcStringByBulge" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:ArcStringByBulge" xmlType="gml:ArcStringByBulgeType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Bezier" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Bezier" xmlType="gml:BezierType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_BsplineCurve" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:BSpline" xmlType="gml:BSplineType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Circle" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Circle" xmlType="gml:CircleType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Clothoid" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Clothoid" xmlType="gml:ClothoidType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_CubicSpline" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:CubicSpline" xmlType="gml:CubicSplineType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_GeodesicString" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:GeodesicString" xmlType="gml:GeodesicStringType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_LineString" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:LineStringSegment" xmlType="gml:LineStringSegmentType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_OffsetCurve" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:OffsetCurve" xmlType="gml:OffsetCurveType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_SurfacePatch" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:_SurfacePatch" xmlType="gml:AbstractSurfacePatchType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_GriddedSurface" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:_GriddedSurface" xmlType="gml:AbstractGriddedSurfaceType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_ParametricCurveSurface" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:_ParametricCurveSurface" xmlType="gml:AbstractParametricCurveSurfaceType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Cone" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Cone" xmlType="gml:ConeType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Cylinder" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Cylinder" xmlType="gml:CylinderType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Geodesic" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Geodesic" xmlType="gml:GeodesicType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Polygon" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:PolygonPatch" xmlType="gml:PolygonPatchType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Sphere" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Sphere" xmlType="gml:SphereType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Triangle" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:Triangle" xmlType="gml:TriangleType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="GM_Envelope" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:EnvelopeType" xmlElement="gml:Envelope" xmlPropertyType="_P_" />
+	<!-- ISO 19107 Topology -->
+	<XsdMapEntry type="TP_Object" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:AbstractTopologyType" xmlElement="gml:_Topology" xmlPropertyType="_P_" />
+	<XsdMapEntry type="TP_Node" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:NodeType" xmlElement="gml:Node" xmlPropertyType="gml:DirectedNodePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_Edge" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:EdgeType" xmlElement="gml:Edge" xmlPropertyType="gml:DirectedEdgePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_Face" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:FaceType" xmlElement="gml:Face" xmlPropertyType="gml:DirectedFacePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_Solid" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:TopoSolidType" xmlElement="gml:TopoSolid" xmlPropertyType="gml:DirectedTopoSolidPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_DirectedNode" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:DirectedNodePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_DirectedEdge" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:DirectedEdgePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_DirectedFace" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:DirectedFacePropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_DirectedSolid" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:DirectedTopoSolidPropertyType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TP_Complex" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:TopoComplexType" xmlElement="gml:TopoComplex" xmlPropertyType="gml:TopoComplexMemberType" xmlTypeNilReason="false"/>
+	<!-- ... more to be added as required -->
+</xsdMapEntries>

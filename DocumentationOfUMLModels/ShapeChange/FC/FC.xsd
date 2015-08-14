@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:element name="FeatureCatalogue">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="scope" type="xs:string"/>
+				<xs:element name="versionNumber" type="xs:string"/>
+				<xs:element name="versionDate" type="xs:string"/>
+				<xs:element name="producer" type="xs:string"/>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="ApplicationSchema"/>
+					<xs:element ref="Package"/>
+					<xs:element ref="FeatureType"/>
+					<xs:element ref="FeatureAttribute"/>
+					<xs:element ref="FeatureRelationship"/>
+					<xs:element ref="FeatureOperation"/>
+					<xs:element ref="RelationshipRole"/>
+					<xs:element ref="Value"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ApplicationSchema">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="versionNumber" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Package">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="code" type="xs:string" minOccurs="0"/>
+				<xs:element name="diagram" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="src" type="xs:anyURI" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="parent" type="ReferenceType"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FeatureType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="code" type="xs:string" minOccurs="0"/>
+				<xs:element name="subtypeOf" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="characterizedBy" type="ReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="package" type="ReferenceType" minOccurs="0"/>
+				<xs:element name="type" type="xs:string" minOccurs="0"/>
+				<xs:element name="lastChange" type="xs:string" minOccurs="0"/>
+				<xs:element name="diagram" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="src" type="xs:anyURI" use="required"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="constraint" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FeatureAttribute">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="cardinality" type="xs:string" minOccurs="0"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="code" type="xs:string" minOccurs="0"/>
+				<xs:element name="voidable" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="lastChange" type="xs:string" minOccurs="0"/>
+				<xs:element name="ValueDataType" type="ReferenceType"/>
+				<xs:element name="ValueDomainType" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="0"/>
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="enumeratedBy" type="ReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FeatureRelationship">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="roles" type="ReferenceType" minOccurs="0" maxOccurs="2"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FeatureOperation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="objectFeatureTypeNames" type="ReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RelationshipRole">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element name="cardinality" type="xs:string" minOccurs="0"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="code" type="xs:string" minOccurs="0"/>
+				<xs:element name="voidable" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="lastChange" type="xs:string" minOccurs="0"/>
+				<xs:element name="FeatureTypeIncluded" type="ReferenceType"/>
+				<xs:element name="relation" type="ReferenceType"/>
+				<xs:element name="InverseRole" type="ReferenceType" minOccurs="0"/>
+				<xs:element name="constraints" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="orderIndicator">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="0"/>
+							<xs:enumeration value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Value">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="label" type="xs:string"/>
+				<xs:element name="code" type="xs:string" minOccurs="0"/>
+				<xs:element name="definition" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="lastChange" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:ID" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ReferenceType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="idref" type="xs:IDREF"/>
+				<xs:attribute name="category" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

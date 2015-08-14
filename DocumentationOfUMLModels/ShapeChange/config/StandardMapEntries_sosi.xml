@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <!-- SOSI profilen heleid geometri -->
+  <XsdMapEntry type="Høyde" xsdEncodingRules="*" xmlPropertyType="string" xmlType="string" xmlTypeType="simple" xmlTypeContent="simple"/>
+  <XsdMapEntry type="Punkt" xsdEncodingRules="*" xmlType="gml:PointType" xmlElement="gml:Point" xmlPropertyType="gml:PointPropertyType" />
+  <XsdMapEntry type="Kurve" xsdEncodingRules="*" xmlType="gml:CurveType" xmlElement="gml:Curve" xmlPropertyType="gml:CurvePropertyType" />
+  <XsdMapEntry type="Flate" xsdEncodingRules="*" xmlType="gml:SurfaceType" xmlElement="gml:Surface" xmlPropertyType="gml:SurfacePropertyType" />
+  <XsdMapEntry type="Sverm" xsdEncodingRules="*" xmlType="gml:MultiPointType" xmlElement="gml:MultiPoint" xmlPropertyType="gml:MultiPointPropertyType" />
+  <!-- SOSI profilen delt geometri -->
+  <XsdMapEntry type="DeltPunkt" xsdEncodingRules="*" xmlType="gml:CompositePointType" xmlElement="gml:CompositePoint" xmlPropertyType="gml:CompositePointPropertyType" />
+  <XsdMapEntry type="DeltKurve" xsdEncodingRules="*" xmlType="gml:CompositeCurveType" xmlElement="gml:CompositeCurve" xmlPropertyType="gml:CompositeCurvePropertyType" />
+  <XsdMapEntry type="DeltFlate" xsdEncodingRules="*" xmlType="gml:CompositeSurfaceType" xmlElement="gml:CompositeSurface" xmlPropertyType="gml:CompositeSurfacePropertyType" />
+  <XsdMapEntry type="DeltSverm" xsdEncodingRules="*" xmlType="gml:CompositeMultiPointType" xmlElement="gml:CompositeMultiPoint" xmlPropertyType="gml:CompositeMultiPointPropertyType" />
+</xsdMapEntries>
+

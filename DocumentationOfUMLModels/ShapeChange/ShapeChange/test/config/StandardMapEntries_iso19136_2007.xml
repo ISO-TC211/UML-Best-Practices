@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<!-- ISO/TS 19103 -->
+	<XsdMapEntry type="Character" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="string" xmlType="string" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="CharacterString" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="string" xmlType="string" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Integer" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="integer" xmlType="integer" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Boolean" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="boolean" xmlType="boolean" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Number" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="double" xmlType="double" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Real" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="double" xmlType="double" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Date" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="date" xmlType="date" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="DateTime" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="dateTime" xmlType="dateTime" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="ClockTime" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="time" xmlType="time" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Bit" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="boolean" xmlType="boolean" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Decimal" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="double" xmlType="double" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Vector" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:VectorType" xmlType="gml:VectorType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="GenericName" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:CodeType" xmlType="gml:CodeType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="LocalName" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:CodeType" xmlType="gml:CodeType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="ScopedName" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:CodeWithAuthorityType" xmlType="gml:CodeWithAuthorityType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Distance" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:LengthType" xmlType="gml:LengthType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Length" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:LengthType" xmlType="gml:LengthType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Angle" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:AngleType" xmlType="gml:AngleType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Speed" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:SpeedType" xmlType="gml:SpeedType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Velocity" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:SpeedType" xmlType="gml:SpeedType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Scale" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:ScaleType" xmlType="gml:ScaleType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Area" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:AreaType" xmlType="gml:AreaType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Volume" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:VolumeType" xmlType="gml:VolumeType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Measure" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:MeasureType" xmlType="gml:MeasureType" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="UnitOfMeasure" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:UnitOfMeasureType" xmlType="gml:UnitOfMeasureType"  xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Record" xsdEncodingRules="iso19136_2007 gml33" xmlType="gco:Record_Type" xmlElement="gco:Record" xmlPropertyType="_P_" />
+	<XsdMapEntry type="RecordType" xsdEncodingRules="iso19136_2007 gml33" xmlType="gco:RecordType_Type" xmlElement="gco:RecordType" xmlPropertyType="_P_" />
+	<XsdMapEntry type="Sign" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:SignType" xmlType="gml:SignType" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Time" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="time" xmlType="time"  xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Year" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gYear" xmlType="gYear"  xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Any" xsdEncodingRules="iso19136_2007 gml33" xmlElement="gml:AbstractObject" xmlPropertyType="_P_" />
+	<XsdMapEntry type="Dictionary" xsdEncodingRules="iso19136_2007 gml33" xmlType="gml:DictionaryType" xmlElement="gml:Dictionary" xmlPropertyType="_P_" />
+	<!-- ISO 19136 / GML -->
+	<XsdMapEntry type="doubleOrNilReason" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:doubleOrNilReason" xmlType="gml:doubleOrNilReason" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="MeasureList" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="gml:MeasureListType" xmlType="gml:MeasureListType" xmlTypeType="simple" xmlTypeContent="complex"/>
+	<!-- ISO 19118 -->
+	<XsdMapEntry type="Binary" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="hexBinary" xmlType="hexBinary"  xmlTypeType="simple" xmlTypeContent="simple"/>
+	<!-- ... more to be added as required -->
+</xsdMapEntries>

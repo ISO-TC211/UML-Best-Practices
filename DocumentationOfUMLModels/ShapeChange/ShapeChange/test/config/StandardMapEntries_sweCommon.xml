@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<!-- ISO/TS 19103 -->
+	<XsdMapEntry type="Character" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="string" xmlType="string" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="CharacterString" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="string" xmlType="string" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Integer" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="integer" xmlType="integer" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Boolean" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="boolean" xmlType="boolean" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Number" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="double" xmlType="double" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Real" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="double" xmlType="double" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Date" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="date" xmlType="date" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="DateTime" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="dateTime" xmlType="dateTime" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="ClockTime" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="string" xmlType="string" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Bit" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="boolean" xmlType="boolean" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Decimal" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="double" xmlType="double" xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Time" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="time" xmlType="time"  xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="Year" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="gYear" xmlType="gYear"  xmlTypeType="simple" xmlTypeContent="simple"/>
+	<XsdMapEntry type="GenericName" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="LocalName" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="ScopedName" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Any" xsdEncodingRules="ogcSweCommon2" xmlElement="any" xmlPropertyType="anyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="UnitOfMeasure" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:UnitReference" xmlType="swe:UnitReference" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="UomTime" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:UnitReference" xmlType="swe:UnitReference" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="Dictionary" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:Reference" xmlType="swe:Reference" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<!-- ISO 19108 -->
+	<XsdMapEntry type="TM_Position" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:TimePosition" xmlType="swe:TimePosition" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TM_TemporalCRS" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TM_IndeterminateValue" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:TimeIndeterminateValue" xmlType="swe:TimeIndeterminateValue" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<!-- ISO 19111 -->
+	<XsdMapEntry type="SC_CRS" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="anyURI" xmlType="anyURI" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<!-- ISO 19118 -->
+	<XsdMapEntry type="Binary" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="hexBinary" xmlType="hexBinary"  xmlTypeType="simple" xmlTypeContent="simple"/>
+	<!-- SWE Common Basic Types -->
+	<XsdMapEntry type="TokenPair" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:TokenPair" xmlType="swe:TokenPair" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="IntegerPair" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:IntegerPair" xmlType="swe:IntegerPair" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="RealPair" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:RealPair" xmlType="swe:RealPair" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TimePair" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:TimePair" xmlType="swe:TimePair" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="EncodedValues" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:EncodedValuesPropertyType" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="NilValue" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:NilValue" xmlType="swe:NilValue" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TimePosition" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:TimePosition" xmlType="swe:TimePosition" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="TimeIso8601" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:TimeIso8601" xmlType="swe:TimeIso8601" xmlTypeType="simple" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<XsdMapEntry type="UnitReference" xsdEncodingRules="ogcSweCommon2" xmlPropertyType="swe:UnitReference" xmlType="swe:UnitReference" xmlTypeContent="simple" xmlTypeNilReason="false"/>
+	<!-- ... more to be added as required -->
+</xsdMapEntries>

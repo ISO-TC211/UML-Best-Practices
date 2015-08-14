@@ -1,0 +1,23 @@
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+  <XsdMapEntry type="Character" xsdEncodingRules="iso19139_2007" xmlElement="gco:CharacterString" xmlPropertyType="gco:CharacterString_PropertyType" xmlType="gco:CharacterString_Type"/>
+  <XsdMapEntry type="CharacterString" xsdEncodingRules="iso19139_2007" xmlElement="gco:CharacterString" xmlPropertyType="gco:CharacterString_PropertyType" xmlType="gco:CharacterString_Type"/>
+  <XsdMapEntry type="Integer" xsdEncodingRules="iso19139_2007" xmlElement="gco:Integer" xmlPropertyType="gco:Integer_PropertyType" xmlType="gco:Integer_Type"/>
+  <XsdMapEntry type="Boolean" xsdEncodingRules="iso19139_2007" xmlElement="gco:Boolean" xmlPropertyType="gco:Boolean_PropertyType" xmlType="gco:Boolean_Type"/>
+  <XsdMapEntry type="Real" xsdEncodingRules="iso19139_2007" xmlElement="gco:Real" xmlPropertyType="gco:Real_PropertyType" xmlType="gco:Real_Type"/>
+  <XsdMapEntry type="Decimal" xsdEncodingRules="iso19139_2007" xmlElement="gco:Decimal" xmlPropertyType="gco:Decimal_PropertyType" xmlType="gco:Decimal_Type"/>
+  <XsdMapEntry type="DateTime" xsdEncodingRules="iso19139_2007" xmlElement="gco:DateTime" xmlPropertyType="gco:DateTime_PropertyType" xmlType="gco:DateTime_Type"/>
+  <XsdMapEntry type="MemberName" xsdEncodingRules="iso19139_2007" xmlElement="gco:MemberName" xmlPropertyType="gco:MemberName_PropertyType" xmlType="gco:MemberName_Type"/>
+  <XsdMapEntry type="GenericName" xsdEncodingRules="iso19139_2007" xmlElement="gco:GenericName" xmlPropertyType="gco:GenericName_PropertyType" xmlType="gco:GenericName_Type"/>
+  <XsdMapEntry type="UnitOfMeasure" xsdEncodingRules="iso19139_2007" xmlElement="gco:UnitOfMeasure" xmlPropertyType="gco:UnitOfMeasure_PropertyType" xmlType="gco:UnitOfMeasure_Type"/>
+  <XsdMapEntry type="ScopedName" xsdEncodingRules="iso19139_2007" xmlElement="gco:ScopedName" xmlPropertyType="gco:ScopedName_PropertyType" xmlType="gco:ScopedName_Type"/>
+  <XsdMapEntry type="Distance" xsdEncodingRules="iso19139_2007" xmlElement="gco:Distance" xmlPropertyType="gco:Distance_PropertyType" xmlType="gco:Distance_Type"/>
+  <XsdMapEntry type="Angle" xsdEncodingRules="iso19139_2007" xmlElement="gco:Angle" xmlPropertyType="gco:Angle_PropertyType" xmlType="gco:Angle_Type"/>
+  <XsdMapEntry type="Measure" xsdEncodingRules="iso19139_2007" xmlElement="gco:Measure" xmlPropertyType="gco:Measure_PropertyType" xmlType="gco:Measure_Type"/>
+  <XsdMapEntry type="Record" xsdEncodingRules="iso19139_2007" xmlElement="gco:Record" xmlPropertyType="gco:Record_PropertyType" xmlType="gco:Record_Type"/>
+  <XsdMapEntry type="RecordType" xsdEncodingRules="iso19139_2007" xmlElement="gco:RecordType" xmlPropertyType="gco:RecordType_PropertyType" xmlType="gco:RecordType_Type"/>
+  <XsdMapEntry type="BinaryData" xsdEncodingRules="iso19139_2007" xmlElement="gco:Binary" xmlPropertyType="gco:Binary_PropertyType" xmlType="gco:Binary_Type"/>
+  <XsdMapEntry type="GF_PropertyType" xsdEncodingRules="iso19139_2007" xmlPropertyType="gco:ObjectReference_PropertyType"/>
+  <XsdMapEntry type="GF_AttributeType" xsdEncodingRules="iso19139_2007" xmlPropertyType="gco:ObjectReference_PropertyType"/>
+  <XsdMapEntry type="GF_FeatureType" xsdEncodingRules="iso19139_2007" xmlPropertyType="gco:ObjectReference_PropertyType"/>
+  <XsdMapEntry type="FC_FeatureCatalogue" xsdEncodingRules="iso19139_2007" xmlPropertyType="gco:ObjectReference_PropertyType"/>
+</xsdMapEntries>

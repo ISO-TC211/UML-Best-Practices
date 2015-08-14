@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><ShapeChangeResult xmlns="http://www.interactive-instruments.de/ShapeChange/Result" xmlns:r="http://www.interactive-instruments.de/ShapeChange/Result" config="19135_doc_compact.xml" end="Tue Jun 09 23:49:50 CEST 2015" resultCode="0" start="Tue Jun 09 23:49:25 CEST 2015" version="2.0.0-SNAPSHOT">
+  <Messages>
+    <Warning message="Application schema 'ISO 19135-1 Procedures for Registration - Core schema' with ID '415' is not associated with an XML Schema document. A default name is used: 'ISO19135-1ProceduresforRegistration-Coreschema.xsd'."/>
+    <Info message="Application schema found, package name: 'ISO 19135-1 Procedures for Registration - Extended schema', target namespace: 'n/a'"/>
+    <Info message="(Converter.java) Now processing target 'INPUT'."/>
+    <Info message="Application schema found, package name: 'ISO 19135-1 Procedures for Registration - Core schema', target namespace: 'n/a'"/>
+    <Info message="(Converter.java) Now processing target 'INPUT'."/>
+    <Info message="(Converter.java) Executed target class 'de.interactive_instruments.ShapeChange.Target.FeatureCatalogue.FeatureCatalogue' for input ID: 'INPUT'.&#10;-------------------------------------------------"/>
+    <Info message="(Converter.java) Executed deferred output write for target class 'de.interactive_instruments.ShapeChange.Target.FeatureCatalogue.FeatureCatalogue' for input ID: 'INPUT'."/>
+  </Messages>
+  <Results>
+    <Result href="C:\Data\isotc211\Redlands\UMLdocumentation\WorkshopRedlands\ShapeChange\output2\INPUT\19135-compact.docx" target="Feature Catalogue">19135-compact.docx</Result>
+  </Results>
+</ShapeChangeResult>

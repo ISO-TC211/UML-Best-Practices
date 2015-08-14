@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsdMapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<!--  ISO/TS 19115 Metadata -->
+	<XsdMapEntry type="CI_Citation" xsdEncodingRules="iso19136_2007 gml33" xmlPropertyType="string" xmlType="string" xmlTypeType="simple" xmlTypeContent="simple"/>	
+	<!-- ... more to be added as required -->
+</xsdMapEntries>

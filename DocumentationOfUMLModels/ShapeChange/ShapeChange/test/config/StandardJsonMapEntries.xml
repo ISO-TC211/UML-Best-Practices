@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<!-- ISO/TS 19103 -->
+	<MapEntry type="Character" rule="*" targetType="string" param=""/>
+	<MapEntry type="CharacterString" rule="*" targetType="string" param=""/>
+	<MapEntry type="Boolean" rule="*" targetType="boolean" param=""/>
+	<MapEntry type="Integer" rule="*" targetType="integer" param=""/>
+	<MapEntry type="Decimal" rule="*" targetType="number" param=""/>
+	<MapEntry type="Number" rule="*" targetType="number" param=""/>
+	<MapEntry type="Real" rule="*" targetType="number" param=""/>
+	<MapEntry type="Date" rule="*" targetType="string" param="format:time"/>
+	<MapEntry type="DateTime" rule="geoservices" targetType="integer" param="format:utc-millisec"/>
+	<MapEntry type="DateTime" rule="geoservices_extended" targetType="string" param="format:date-time"/>
+	<MapEntry type="Time" rule="*" targetType="string" param="format:time"/>
+	<MapEntry type="Year" rule="*" targetType="integer" param=""/>
+	<MapEntry type="URI" rule="*" targetType="string" param="format:uri"/>
+	<MapEntry type="GenericName" rule="*" targetType="string" param=""/>
+	<MapEntry type="LocalName" rule="*" targetType="string" param=""/>
+	<MapEntry type="ScopedName" rule="*" targetType="string" param=""/>
+	<MapEntry type="Measure" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Measure" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Distance" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Distance" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Length" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Length" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Angle" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Angle" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Speed" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Speed" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Velocity" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Velocity" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Area" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Area" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Volume" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Volume" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Weight" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Weight" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Height" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Height" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Pressure" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Pressure" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Percentage" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Percentage" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Temperature" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Temperature" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="Bearing" rule="geoservices" targetType="number" param=""/>
+	<MapEntry type="Bearing" rule="geoservices_extended" targetType="ref:http://shapechange.net/tmp/ows9/json/measure.json" param=""/>
+	<MapEntry type="GM_Envelope" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/envelope.json" param="geometry"/>
+	<MapEntry type="DirectPosition" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/point.json" param="geometry"/>
+	<MapEntry type="GM_Point" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/point.json" param="geometry"/>
+	<MapEntry type="GM_MultiPoint" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/multipoint.json" param="geometry"/>
+	<MapEntry type="GM_PointArray" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/multipoint.json" param="geometry"/>
+	<MapEntry type="GM_Curve" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polyline.json" param="geometry"/>
+	<MapEntry type="GM_LineString" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polyline.json" param="geometry"/>
+	<MapEntry type="GM_CompositeCurve" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polyline.json" param="geometry"/>
+	<MapEntry type="GM_MultiCurve" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polyline.json" param="geometry"/>
+	<MapEntry type="GM_Surface" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polygon.json" param="geometry"/>
+	<MapEntry type="GM_Polygon" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polygon.json" param="geometry"/>
+	<MapEntry type="GM_CompositeSurface" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polygon.json" param="geometry"/>
+	<MapEntry type="GM_MultiSurface" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/polygon.json" param="geometry"/>
+	<MapEntry type="GM_Primitive" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/geometry.json" param="geometry"/>
+	<MapEntry type="GM_Object" rule="*" targetType="ref:http://schemas.opengis.net/gsr/1.0/geometry.json" param="geometry"/>
+	<!-- ... more to be added as required -->
+</mapEntries>

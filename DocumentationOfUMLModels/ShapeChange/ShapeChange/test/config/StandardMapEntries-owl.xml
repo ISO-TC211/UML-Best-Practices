@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1"
+  xmlns:xi="http://www.w3.org/2001/XInclude">
+  <xi:include href="StandardMapEntries_iso19103-owl.xml"/>
+  <xi:include href="StandardMapEntries_iso19136_2007-owl.xml"/>
+  <xi:include href="StandardMapEntries_iso19107-owl.xml"/>
+  <xi:include href="StandardMapEntries_iso19115-owl.xml"/>
+  <xi:include href="StandardMapEntries_iso19156-owl.xml"/>
+  <!-- ... more to be added as required -->
+</mapEntries>

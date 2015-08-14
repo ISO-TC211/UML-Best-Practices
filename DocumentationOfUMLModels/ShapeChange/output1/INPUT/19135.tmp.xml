@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="Windows-1252"?><?xml-stylesheet type='text/xsl' href='./html.xsl'?><!--Feature catalogue created using ShapeChange--><FeatureCatalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FC.xsd">
+  <name>ISO 19135-1 Procedures for Registration</name>
+  <scope>This part of ISO 19135 specifies procedures to be followed in establishing, maintaining and publishing registers of unique, unambiguous and permanent identifiers and meanings that are assigned to items of geographic information. In order to accomplish this purpose, this part of ISO 19135 specifies elements that are necessary to manage the registration of these items.</scope>
+  <versionNumber>ISO/DIS 19135-1:2013</versionNumber>
+  <versionDate>2013</versionDate>
+  <producer>International Organisation for Standardization</producer>
+  <ApplicationSchema id="_P416">
+    <name>ISO 19135-1 Procedures for Registration - Extended schema</name>
+    <taggedValues/>
+  </ApplicationSchema>
+  <FeatureType id="_C2806">
+    <name>RE_AdditionInformation</name>
+    <definition>The subclass RE_AdditionInformation contains management information about a proposal to add an item to a register.</definition>
+    <subtypeOf idref="_C2793">RE_ProposalManagementInformation</subtypeOf>
+    <characterizedBy idref="_AS2429"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1308" id="img7" idAsInt="0" name="Fig B7 RE_AmendmentInformation, RE_ClarificationInformation and RE_AdditionInformation" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img7.jpg" width="1842"/>
+    </images>
+  </FeatureType>
+  <FeatureRelationship id="__S2429">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2429"/>
+    <roles idref="_AT2429"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2429">
+    <name>item</name>
+    <cardinality>1</cardinality>
+    <definition>The role "addtionInformation"  identifies the class RE_AdditionInformation for addtional information about the registerItem</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2823">RE_RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S2429"/>
+    <InverseRole idref="_AT2429"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2429">
+    <name>additionInformation</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "item"  identifies the class RE_RegisterItem  for addtional nformation in the RE_AdditionalInformation</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2806">RE_AdditionInformation</FeatureTypeIncluded>
+    <relation idref="__S2429"/>
+    <InverseRole idref="_AS2429"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2791">
+    <name>RE_AlternativeExpression</name>
+    <definition>The class RE_AlternativeExpression is a data type used to provide information about a register item in an alternative language. Subclasses of</definition>
+    <definition>RE_AlternativeExpression may be specified in order to add additional attributes appropriate for particular item classes.</definition>
+    <definition/>
+    <definition>EXAMPLE A specification for a metadata element register could identify a subclass of RE_AlternativeExpression that would include the data dictionary fields specified in ISO 19115-1(obligation/condition, data type, and domain) as additional attributes.</definition>
+    <characterizedBy idref="_A2791_5131"/>
+    <characterizedBy idref="_A2791_5132"/>
+    <characterizedBy idref="_A2791_5133"/>
+    <characterizedBy idref="_A2791_5134"/>
+    <characterizedBy idref="_AT2441"/>
+    <package idref="_P416"/>
+    <type>Data Type</type>
+    <taggedValues/>
+  </FeatureType>
+  <FeatureAttribute id="_A2791_5131">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "name"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString whose content meets the requirements of RE_RegisterItem.name&lt;i&gt; &lt;/i&gt;except that the applicable locale shall be that specified in RE_AlternativeExpression.locale.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2791_5132">
+    <name>definition</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute "definition"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString whose content meets the requirements of RE_RegisterItem.definition&lt;i&gt; &lt;/i&gt;except that the applicable locale shall be that specified in RE_AlternativeExpression.locale.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2791_5133">
+    <name>description</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute description&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString whose content meets the requirements of RE_RegisterItem.description&lt;i&gt; &lt;/i&gt;except that the applicable locale shall be that specified in RE_AlternativeExpression.locale.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2791_5134">
+    <name>fieldOfApplication</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute fieldOfApplication&lt;i&gt; &lt;/i&gt;shall be represented as a set of instances of RE_FieldOfApplication whose content meets the requirements of RE_RegisterItem.fieldOfApplication&lt;i&gt; &lt;/i&gt;except that the applicable locale shall be that specified in RE_AlternativeExpression.locale</definition>
+    <taggedValues/>
+    <ValueDataType>Set&lt;RE_FieldOfApplication&gt;</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__T2441">
+    <name>(unbestimmt)</name>
+    <roles idref="_AT2441"/>
+    <roles idref="_AS2441"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AT2441">
+    <name>locale</name>
+    <cardinality>1</cardinality>
+    <definition>The role "expression"  identifies the class RE_AlternativeExpression for language information as specified in RE_Locale</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2824">RE_Locale</FeatureTypeIncluded>
+    <relation idref="__T2441"/>
+    <InverseRole idref="_AS2441"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AS2441">
+    <name>expression</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "locale"  identifies the class RE_Locale for further information about the language used for the alternative expression</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2791">RE_AlternativeExpression</FeatureTypeIncluded>
+    <relation idref="__T2441"/>
+    <InverseRole idref="_AT2441"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2821">
+    <name>RE_AlternativeName</name>
+    <definition>The class RE_AlternativeName is a data type used to provide the name of an item class in an alternative language.</definition>
+    <characterizedBy idref="_A2821_5188"/>
+    <characterizedBy idref="_AT2406"/>
+    <package idref="_P416"/>
+    <type>Data Type</type>
+    <taggedValues/>
+  </FeatureType>
+  <FeatureAttribute id="_A2821_5188">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__T2406">
+    <name>(unbestimmt)</name>
+    <roles idref="_AT2406"/>
+    <roles idref="_AS2406"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AT2406">
+    <name>locale</name>
+    <cardinality>1</cardinality>
+    <definition>The role "name" identifies that information in the class RE_Locale gives further information about the language of the name i RE_AlternativeName</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2824">RE_Locale</FeatureTypeIncluded>
+    <relation idref="__T2406"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AS2406">
+    <name>name</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "locale" identifies the class RE_Locale for further information about the name used in RE_AlternativeName</definition>
+    <description>This is a non-navigable relationship role.</description>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2821">RE_AlternativeName</FeatureTypeIncluded>
+    <relation idref="__T2406"/>
+    <InverseRole idref="_AT2406"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2803">
+    <name>RE_AmendmentInformation</name>
+    <definition>The subclass RE_AmendmentInformation contains management information about a proposal to amend an item in a register.</definition>
+    <subtypeOf idref="_C2793">RE_ProposalManagementInformation</subtypeOf>
+    <characterizedBy idref="_A2803_5162"/>
+    <characterizedBy idref="_AS2432"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1308" id="img7" idAsInt="2" name="Fig B7 RE_AmendmentInformation, RE_ClarificationInformation and RE_AdditionInformation" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img7.jpg" width="1842"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2803_5162">
+    <name>amendmentType</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "amendmentType"&lt;i&gt; &lt;/i&gt;shall be represented as an instance of RE_AmendmentType that identifies the type of amendment proposed.</definition>
+    <taggedValues/>
+    <ValueDataType category="enumeration">RE_AmendmentType</ValueDataType>
+    <ValueDomainType>1</ValueDomainType>
+    <enumeratedBy idref="_A2800_5160"/>
+    <enumeratedBy idref="_A2800_5161"/>
+  </FeatureAttribute>
+  <FeatureRelationship id="__S2432">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2432"/>
+    <roles idref="_AT2432"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2432">
+    <name>item</name>
+    <cardinality>1</cardinality>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2823">RE_RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S2432"/>
+    <InverseRole idref="_AT2432"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2432">
+    <name>amendmentInformation</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "amendmentInformation"  identifies that amendment information to the register item may be available in the RE_AmendmentInformation class</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2803">RE_AmendmentInformation</FeatureTypeIncluded>
+    <relation idref="__S2432"/>
+    <InverseRole idref="_AS2432"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2805">
+    <name>RE_ClarificationInformation</name>
+    <definition>The subclass RE_ClarificationInformation contains management information about a proposal to clarify an item in a register.</definition>
+    <subtypeOf idref="_C2793">RE_ProposalManagementInformation</subtypeOf>
+    <characterizedBy idref="_A2805_5165"/>
+    <characterizedBy idref="_AS2430"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1308" id="img7" idAsInt="4" name="Fig B7 RE_AmendmentInformation, RE_ClarificationInformation and RE_AdditionInformation" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img7.jpg" width="1842"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2805_5165">
+    <name>proposedChange</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "proposedChange"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString containing a description of the clarification that shall identify the elements of the register item that are changed and the prior and subsequent values of each.</definition>
+    <definition/>
+    <definition>EXAMPLE The definition of this item was changed to correct a typographical error. The misspelled word “phenomnon” was changed to “phenomenon”.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__S2430">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2430"/>
+    <roles idref="_AT2430"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2430">
+    <name>item</name>
+    <cardinality>1</cardinality>
+    <definition>The role "clarificationInformation "  identifies the class RE_ClarificationInformation for clarifying information about the registerItem</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2823">RE_RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S2430"/>
+    <InverseRole idref="_AT2430"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2430">
+    <name>clarificationInformation</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "item"  identifies that the information in the class RE_ClarificationInormation s related to a register item.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2805">RE_ClarificationInformation</FeatureTypeIncluded>
+    <relation idref="__S2430"/>
+    <InverseRole idref="_AS2430"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2813">
+    <name>RE_FieldOfApplication</name>
+    <definition>RE_FieldOfApplication  is a data type used to provide information about a use for a register item.</definition>
+    <characterizedBy idref="_A2813_5172"/>
+    <characterizedBy idref="_A2813_5173"/>
+    <package idref="_P416"/>
+    <type>Data Type</type>
+    <taggedValues/>
+  </FeatureType>
+  <FeatureAttribute id="_A2813_5172">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "name"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString used to identify the field of application.</definition>
+    <definition/>
+    <definition>EXAMPLE “Agricultural Production”, “Marine Navigation”.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2813_5173">
+    <name>description</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute description provides as a CharacterString a description of the field of application.</definition>
+    <definition/>
+    <definition>EXAMPLE “Pertaining to the science, art, and business of cultivating soil, producing crops, and raising livestock.”</definition>
+    <definition>“Pertaining to the science or art of conducting ships or vessels from one place to another at sea.”</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureType id="_C2807">
+    <name>RE_ItemClass</name>
+    <definition>RE_ItemClass  is a description of a class of geographic information items specified in a technical standard.</definition>
+    <subtypeOf idref="_C6220">ItemClass</subtypeOf>
+    <characterizedBy idref="_A2807_5166"/>
+    <characterizedBy idref="_A2807_5167"/>
+    <characterizedBy idref="_A2807_5168"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1048" id="img3" idAsInt="6" name="Fig B3 RE_ItemClass" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img3.jpg" width="1244"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2807_5166">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "name"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString containing a compact and human-readable designator that is used to denote a class of item.</definition>
+    <definition/>
+    <definition>The "name"&lt;i&gt; &lt;/i&gt;that designates an item class held in a register that conforms to this International Standard shall:</definition>
+    <definition/>
+    <definition>a) uniquely denote the item class within the context of the register; and</definition>
+    <definition/>
+    <definition>b) be based on the item class designation used in the applicable technical standard.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2807_5167">
+    <name>technicalStandard</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute technicalStandard&lt;i&gt; &lt;/i&gt;shall be represented as an instance of CI_Citation [ISO 19115-1] that shall specify the technical standard (and the specific portion thereof) to which items in the item class shall conform.</definition>
+    <taggedValues/>
+    <ValueDataType>CI_Citation</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2807_5168">
+    <name>alternativeName</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute alternativeNames&lt;i&gt; &lt;/i&gt;contains a set of instances of RE_AlternativeName, each of which is a translation of the "name" of the RE_ItemClass into a language other than the "operatingLanguage"&lt;i&gt; &lt;/i&gt;of the RE_Register.</definition>
+    <taggedValues/>
+    <ValueDataType>Set&lt;RE_AlternativeName&gt;</ValueDataType>
+  </FeatureAttribute>
+  <FeatureType id="_C2824">
+    <name>RE_Locale</name>
+    <definition>The class RE_Locale provides information about languages used in a register.</definition>
+    <characterizedBy idref="_A2824_5200"/>
+    <characterizedBy idref="_A2824_5201"/>
+    <characterizedBy idref="_A2824_5202"/>
+    <characterizedBy idref="_A2824_5203"/>
+    <characterizedBy idref="_A2824_5204"/>
+    <characterizedBy idref="_AS2441"/>
+    <package idref="_P416"/>
+    <type>Data Type</type>
+    <taggedValues/>
+  </FeatureType>
+  <FeatureAttribute id="_A2824_5200">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "name"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString that describes the locale.</definition>
+    <definition>EXAMPLE “Welsh”</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2824_5201">
+    <name>language</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute &lt;i&gt;language &lt;/i&gt;shall take as its value a 3-character language code as specified in ISO 639-2.</definition>
+    <definition/>
+    <definition>NOTE The list of codes maintained by the ISO 639-2 Registration Authority is available at the URL</definition>
+    <definition>http://www.loc.gov/standards/iso639-2/langcodes.html.</definition>
+    <taggedValues/>
+    <ValueDataType>LanguageCode</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2824_5202">
+    <name>country</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute &lt;i&gt;country &lt;/i&gt;shall be represented as a CharacterString that holds a 3-character numerical country code as specified in ISO 3166-1.</definition>
+    <definition>NOTE The list of codes is available from the URL ftp.ics.uci.edu/pub/ietf/http/related/iso3166.txt or the ISO 3166</definition>
+    <definition>Maintenance Agency at URL http://www.iso.ch/iso/en/prods-services/iso3166ma/index.html.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2824_5203">
+    <name>characterEncoding</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute &lt;i&gt;characterEncoding &lt;/i&gt;shall be represented as an instance of MD_CharacterSetCode that specifies the name of the character coding standard used.</definition>
+    <taggedValues/>
+    <ValueDataType>MD_CharacterSetCode</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2824_5204">
+    <name>citation</name>
+    <cardinality>1</cardinality>
+    <definition>The optional attribute "citation"&lt;i&gt; &lt;/i&gt;shall be represented as an instance of CI_Citation [ISO 19115-1] that identifies a resource that provides more information about the locale.</definition>
+    <definition/>
+    <definition>EXAMPLE An instance of CI_Citation could provide information about a specific dialect of the language identified for the locale, or about some other culturally significant aspect of information presentation, such as a specific method of formatting numbers.</definition>
+    <taggedValues/>
+    <ValueDataType>CI_Citation</ValueDataType>
+  </FeatureAttribute>
+  <FeatureType id="_C2793">
+    <name>RE_ProposalManagementInformation</name>
+    <definition>The class RE_ProposalManagementInformation specifies elements of management information to be recorded for each proposal to add or modify a register item.</definition>
+    <isAbstract>1</isAbstract>
+    <characterizedBy idref="_A2793_5135"/>
+    <characterizedBy idref="_A2793_5136"/>
+    <characterizedBy idref="_A2793_5137"/>
+    <characterizedBy idref="_A2793_5138"/>
+    <characterizedBy idref="_A2793_5139"/>
+    <characterizedBy idref="_A2793_5140"/>
+    <characterizedBy idref="_A2793_5141"/>
+    <characterizedBy idref="_A2793_5142"/>
+    <characterizedBy idref="_AS2440"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1392" id="img5" idAsInt="8" name="Fig B5 RE_ProposalManagementInformation" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img5.jpg" width="1380"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2793_5135">
+    <name>dateProposed</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "dateProposed" shall be represented as an instance of the class &lt;&lt;Date&gt;&gt; [ISO 19103] and specify the (full precision) date on which the item was entered into the register.</definition>
+    <definition>EXAMPLE 2002-11-27.</definition>
+    <taggedValues/>
+    <ValueDataType>Date</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2793_5136">
+    <name>justification</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute justification&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString that explains why the proposed change</definition>
+    <definition>should be implemented.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2793_5137">
+    <name>status</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "status"&lt;i&gt; &lt;/i&gt;shall be represented as an instance of RE_DecisionStatus that identifies the standing of the proposed change within the approval process.</definition>
+    <taggedValues/>
+    <ValueDataType category="enumeration">RE_DecisionStatus</ValueDataType>
+    <ValueDomainType>1</ValueDomainType>
+    <enumeratedBy idref="_A2794_5143"/>
+    <enumeratedBy idref="_A2794_5144"/>
+    <enumeratedBy idref="_A2794_5145"/>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2793_5138">
+    <name>disposition</name>
+    <cardinality>0..1</cardinality>
+    <definition>The conditional attribute &lt;i&gt;disposition &lt;/i&gt;shall be represented as an instance of RE_Disposition that identifies the disposition of the proposal.</definition>
+    <taggedValues/>
+    <ValueDataType category="enumeration">RE_Disposition</ValueDataType>
+    <ValueDomainType>1</ValueDomainType>
+    <enumeratedBy idref="_A2815_5181"/>
+    <enumeratedBy idref="_A2815_5182"/>
+    <enumeratedBy idref="_A2815_5183"/>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2793_5139">
+    <name>dateDisposed</name>
+    <cardinality>0..1</cardinality>
+    <definition>The conditional attribute dateDisposed&lt;i&gt; &lt;/i&gt;shall be represented as an instance of the class &lt;&lt;Date&gt;&gt; [ISO 19103] and specify the (full precision) date on which the disposition of the proposal was</definition>
+    <definition>determined.</definition>
+    <taggedValues/>
+    <ValueDataType>Date</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2793_5140">
+    <name>controlBodyDecisionEvent</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute controlBodyDecisionEvent&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString that identifies a meeting or other event associated with the control body’s decision concerning the proposed change.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2793_5141">
+    <name>controlBodyNotes</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute "controlBodyNotes" shall be represented as a CharacterString containing notes relevant to the control body’s decision concerning the proposal. Individual entries within the notes should be dated.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2793_5142">
+    <name>registerManagerNotes</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute registerManagerNotes&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString containing notes relevant to the register manager’s handling of the proposal. Individual entries within the notes should be dated.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__S2440">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2440"/>
+    <roles idref="_AT2440"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2440">
+    <name>sponsor</name>
+    <cardinality>1</cardinality>
+    <definition>The role "sponsor "  identifies the class RE_RegisterStakeholder to be submitting proposal management information to the registry</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2799">RE_RegisterStakeholder</FeatureTypeIncluded>
+    <relation idref="__S2440"/>
+    <InverseRole idref="_AT2440"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2440">
+    <name>proposalInformation</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "proposalnformation"  identifies that the stakeholder in the function of a proposer has proposed proposal managment information to the registry.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2793">RE_ProposalManagementInformation</FeatureTypeIncluded>
+    <relation idref="__S2440"/>
+    <InverseRole idref="_AS2440"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2817">
+    <name>RE_Reference</name>
+    <definition>The class RE_Reference specifies information about the source and/or lineage of a specific RE_RegisterItem  derived from an external document or register.</definition>
+    <characterizedBy idref="_A2817_5184"/>
+    <characterizedBy idref="_A2817_5185"/>
+    <characterizedBy idref="_A2817_5186"/>
+    <characterizedBy idref="_A2817_5187"/>
+    <characterizedBy idref="_AT2417"/>
+    <characterizedBy idref="_AS2407"/>
+    <characterizedBy idref="_AS2408"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1312" id="img6" idAsInt="10" name="Fig B6 RE_Reference and RE_ReferenceSource" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img6.jpg" width="1358"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2817_5184">
+    <name>itemIdentifierAtSource</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "itemIdentifierAtSource"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString that provides the value of the item identifier in the source document or register from which the specification of the RE_RegisterItem is derived.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2817_5185">
+    <name>similarity</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "similarity"&lt;i&gt; &lt;/i&gt;shall use a value from the &lt;&lt;CodeList&gt;&gt; RE_SimilarityToSource that specifies the type of change that has been made to the item specification relative to the item specification in the external source.</definition>
+    <taggedValues/>
+    <ValueDataType category="code list">RE_SimilarityToSource</ValueDataType>
+    <ValueDomainType>1</ValueDomainType>
+    <enumeratedBy idref="_A2796_5146"/>
+    <enumeratedBy idref="_A2796_5147"/>
+    <enumeratedBy idref="_A2796_5148"/>
+    <enumeratedBy idref="_A2796_5149"/>
+    <enumeratedBy idref="_A2796_5150"/>
+    <enumeratedBy idref="_A2796_5151"/>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2817_5186">
+    <name>referenceText</name>
+    <cardinality>0..1</cardinality>
+    <definition>The optional attribute "referenceText"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString that may be used to provide a copy of documentation about the item from the RE_ReferenceSource.</definition>
+    <definition/>
+    <definition>NOTE This attribute is intended for use in cases where the RE_ReferenceSource may not be readily accessible to users of the register.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2817_5187">
+    <name>notes</name>
+    <cardinality>0..1</cardinality>
+    <definition>The optional attribute "notes"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString that may be used to provide additional information about the derivation of the specification of a register item from an external source.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__T2417">
+    <name>(unbestimmt)</name>
+    <roles idref="_AT2417"/>
+    <roles idref="_AS2417"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AT2417">
+    <name>sourceCitation</name>
+    <cardinality>1</cardinality>
+    <definition>The role "itemReference" identifies that the information in the RE_ReferenceSource is the citation for the RE_Reference.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2810">RE_ReferenceSource</FeatureTypeIncluded>
+    <relation idref="__T2417"/>
+    <InverseRole idref="_AS2417"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AS2417">
+    <name>itemReference</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "sourceCitation" identifies the information in RE_ReferenceSource is the source for the reference information for the register item.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2817">RE_Reference</FeatureTypeIncluded>
+    <relation idref="__T2417"/>
+    <InverseRole idref="_AT2417"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureRelationship id="__S2407">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2407"/>
+    <roles idref="_AT2407"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2407">
+    <name>item</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "item" identifies the information in RE_Reference is for the register item.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2823">RE_RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S2407"/>
+    <InverseRole idref="_AT2407"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2407">
+    <name>specificationLineage</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "item" identifies the information in RE_Reference is for the register item.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2817">RE_Reference</FeatureTypeIncluded>
+    <relation idref="__S2407"/>
+    <InverseRole idref="_AS2407"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureRelationship id="__S2408">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2408"/>
+    <roles idref="_AT2408"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2408">
+    <name>specifiedItem</name>
+    <cardinality>1</cardinality>
+    <definition>The role "specificationSource" identifies the reference infromation for the register item.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2823">RE_RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S2408"/>
+    <InverseRole idref="_AT2408"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2408">
+    <name>specificationSource</name>
+    <cardinality>0..1</cardinality>
+    <definition>The role "specifiedItem " describes that the RE_Reference for the association "source"  is the reference source for specification of the register item.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2817">RE_Reference</FeatureTypeIncluded>
+    <relation idref="__S2408"/>
+    <InverseRole idref="_AS2408"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2810">
+    <name>RE_ReferenceSource</name>
+    <definition>The class RE_ReferenceSource specifies information about the source of RE_RegisterItem specifications taken from an external document or register.</definition>
+    <characterizedBy idref="_A2810_5169"/>
+    <characterizedBy idref="_AS2417"/>
+    <characterizedBy idref="_AS2418"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1312" id="img6" idAsInt="12" name="Fig B6 RE_Reference and RE_ReferenceSource" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img6.jpg" width="1358"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2810_5169">
+    <name>citation</name>
+    <cardinality>1</cardinality>
+    <taggedValues/>
+    <ValueDataType>CI_Citation</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__S2418">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2418"/>
+    <roles idref="_AT2418"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2418">
+    <name>register</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "citation"  identifies reference source for the items in the RE_Register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2814">RE_Register</FeatureTypeIncluded>
+    <relation idref="__S2418"/>
+    <InverseRole idref="_AT2418"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2418">
+    <name>citation</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "register" describes that the register for  the association Reference is the reference for one or more items in the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C2810">RE_ReferenceSource</FeatureTypeIncluded>
+    <relation idref="__S2418"/>
+    <InverseRole idref="_AS2418"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2814">
+    <name>RE_Register</name>
+    <definition>The class RE_Register specifies information about the register itself. It is a subtype of the Register class in the core profile</definition>
+    <subtypeOf idref="_C6216">Register</subtypeOf>
+    <characterizedBy idref="_A2814_7944"/>
+    <characterizedBy idref="_A2814_5175"/>
+    <characterizedBy idref="_A2814_5176"/>
+    <characterizedBy idref="_A2814_5177"/>
+    <characterizedBy idref="_A2814_5178"/>
+    <characterizedBy idref="_AT2418"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1058" id="img1" idAsInt="14" name="Fig B1 RE_Register" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img1.jpg" width="1256"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2814_7944">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "name"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString containing a compact and human-readable designator that is used to uniquely denote that register within the set of registers maintained by the register owner. In the case of a hierarchical register, the &lt;i&gt;name &lt;/i&gt;of a subregister shall uniquely identify that subregister within the scope of all registers established by the owner of the principal register.</definition>
+    <definition/>
+    <definition>EXAMPLE “ISO/TC 211 Register of Feature Data Dictionaries and Feature Catalogues” might be the name of the principal register of a hierarchical register. “DGIWG FACC Data Dictionary” and “IHO S-57 Object Dictionary” might be the names of subregisters within the hierarchy.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2814_5175">
+    <name>contentSummary</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "contentSummary"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString containing a general statement of the purpose for which items in the register are made available to potential users. It should also specify any limits to the scope of the register and identify the types of applications for which the items are intended.</definition>
+    <definition/>
+    <definition>NOTE The scope of a register could be limited by theme, by region, by language or other criteria.</definition>
+    <definition/>
+    <definition>EXAMPLE The scope of a terminology register could be limited to Spanish terms used to describe landforms in Latin America.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2814_5176">
+    <name>uniformResourceIdentifier</name>
+    <cardinality>1..*</cardinality>
+    <definition>The attribute "uniformResourceIdentifier"&lt;i&gt; &lt;/i&gt;shall take as its value a set of URI's, each referencing information about online resources associated with the register.</definition>
+    <definition/>
+    <definition>EXAMPLE “http://www.digest.org/Navigate2.htm” and “http://www.epa.gov/opppmsd1/PPISdata/index.html” are</definition>
+    <definition>sample values</definition>
+    <definition>&lt;i&gt;</definition>
+    <definition>&lt;/i&gt;&lt;i&gt;</definition>
+    <definition>&lt;/i&gt;</definition>
+    <definition/>
+    <definition/>
+    <definition/>
+    <definition/>
+    <definition>corresponding value of the attribute &lt;i&gt;OnLineResource.linkage &lt;/i&gt;specifies a resource providing access to the</definition>
+    <definition>complete content of the register.</definition>
+    <definition>EXAMPLE “http://www.digest.org/Navigate2.htm” and “http://www.epa.gov/opppmsd1/PPISdata/index.html” are</definition>
+    <definition>sample values of &lt;i&gt;OnLineResource.linkage&lt;/i&gt;.</definition>
+    <taggedValues/>
+    <ValueDataType>URI</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2814_5177">
+    <name>operatingLanguage</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "operatingLanguage"&lt;i&gt; &lt;/i&gt;shall be represented as an instance of class RE_Locale that is used to specify language, country information and character encoding for the proper interpretation of the content of character strings in the register.</definition>
+    <definition/>
+    <definition>The values of all character strings in the register shall be in accordance with the value of "operatingLanguage", unless otherwise stated.</definition>
+    <taggedValues/>
+    <ValueDataType category="data type" idref="_C2824">RE_Locale</ValueDataType>
+    <ValueDomainType>0</ValueDomainType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2814_5178">
+    <name>alternativeLanguages</name>
+    <cardinality>0..*</cardinality>
+    <definition>The attribtue "alternativeLanguages" supports cultural and linguistic adaptability, individual items in a register may provide elements of information in additional languages other than the operating language of the register.</definition>
+    <definition/>
+    <definition>The attribute &lt;i&gt;alternativeLanguages &lt;/i&gt;shall be represented as a set of instances of RE_Locale, each specifying an additional unique locale used by items in the register. Every member of the set shall be used by at least one item in the register. The &lt;i&gt;locale &lt;/i&gt;of every &lt;i&gt;alternativeExpression &lt;/i&gt;used by any item in the register shall be included in this set of RE_Locales.</definition>
+    <definition/>
+    <definition>This attribute provides a summary of alternative locales used by items in a register. Register owners shall specify and publish their policy as to whether all or only some of the items in a register shall have alternative expressions.</definition>
+    <taggedValues/>
+    <ValueDataType category="data type" idref="_C2824">RE_Locale</ValueDataType>
+    <ValueDomainType>0</ValueDomainType>
+  </FeatureAttribute>
+  <FeatureType id="_C2823">
+    <name>RE_RegisterItem</name>
+    <definition>The class RE_RegisterItem specifies elements of information to be recorded for each item held in a register. It has nine attributes and eight associations. The technical standard that specified an item class may specify additional elements to be recorded.</definition>
+    <subtypeOf idref="_C6219">RegisterItem</subtypeOf>
+    <characterizedBy idref="_A2823_5192"/>
+    <characterizedBy idref="_A2823_5196"/>
+    <characterizedBy idref="_A2823_5199"/>
+    <characterizedBy idref="_A2823_7946"/>
+    <characterizedBy idref="_A2823_7947"/>
+    <characterizedBy idref="_A2823_7948"/>
+    <characterizedBy idref="_A2823_7949"/>
+    <characterizedBy idref="_AT2429"/>
+    <characterizedBy idref="_AT2430"/>
+    <characterizedBy idref="_AT2432"/>
+    <characterizedBy idref="_AT2407"/>
+    <characterizedBy idref="_AT2408"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="1818" id="img2" idAsInt="16" name="Fig B2 RE_RegisterItem" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img2.jpg" width="2266"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2823_5192">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "name"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString containing a compact and human-readable designator that is used to denote a register concept. Each "name"&lt;i&gt; &lt;/i&gt;shall:</definition>
+    <definition/>
+    <definition>- denote an item concept in the scope of an item class; and</definition>
+    <definition/>
+    <definition>-  be a succinct expression of the item concept it denotes.</definition>
+    <definition/>
+    <definition/>
+    <definition>EXAMPLE “Lift” and “buoy shape”.</definition>
+    <definition/>
+    <definition>The "name"&lt;i&gt; &lt;/i&gt;shall be unique within a register according to the following rules:</definition>
+    <definition/>
+    <definition>- Multiple items of the same item class may use the same value for "name"&lt;i&gt; &lt;/i&gt;but only one such item may have a status of “valid”.</definition>
+    <definition/>
+    <definition>- Items in different item classes may use the same value for name.</definition>
+    <definition/>
+    <definition>The "name"&lt;i&gt; &lt;/i&gt;may be used to support searches for items of interest to a human user of the register.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2823_5196">
+    <name>definition</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "definition"&lt;i&gt; &lt;/i&gt;shall be represented as a CharacterString containing the definition of the concept</definition>
+    <definition>embodied by that item and expressed in the operating language of the register. The "definition" shall be a precise statement of the nature, properties, scope or essential qualities of the concept as realized by the item.</definition>
+    <definition/>
+    <definition>If a definition is taken from an external source, RE_Reference shall be used to provide information about that source together with the unique identifier of the item in the external source where available.</definition>
+    <definition/>
+    <definition>EXAMPLE “Equipment consisting of a platform, which is often enclosed, that is raised and lower ed in a vertical shaft to transport humans, equipment or materials; a lift or (U.S.) elevator” and “The shape of a buoy”.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2823_5199">
+    <name>alternativeExpressions</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute "alternativeExpressions"&lt;i&gt; &lt;/i&gt;represents as a set of instances of RE_AlternativeExpression, each specifying an alternative name and optionally additional information in a locale different from that of the register. No two instances of RE_AlternativeExpression within the set shall have the same value for &lt;i&gt;locale&lt;/i&gt;.</definition>
+    <taggedValues/>
+    <ValueDataType>Set&lt;RE_AlternativeExpression&gt;</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2823_7946">
+    <name>dateAccepted</name>
+    <cardinality>0..1</cardinality>
+    <definition>The conditional attribute "dateAccepted" shall specify the date on which a proposal to add the item to the register was accepted. The condition is identified by the constraint:</definition>
+    <definition/>
+    <definition>{status &lt;&gt; #notValid implies dateAccepted -&gt; notEmpty}.</definition>
+    <definition/>
+    <definition>The value is derived from information in RE_AdditionInformation:</definition>
+    <definition/>
+    <definition>DateAccepted = self.additionInformation.dateDisposed</definition>
+    <taggedValues/>
+    <ValueDataType>Date</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2823_7947">
+    <name>dateAmended</name>
+    <cardinality>0..1</cardinality>
+    <definition>The conditional attribute "dateAmended"&lt;i&gt; &lt;/i&gt;specifies the date on which a proposal to supersede or retire the item was accepted. The condition is identified by the constraint:</definition>
+    <definition/>
+    <definition>{status = #superseded or status = #retired implies dateAmended -&gt; notEmpty}.</definition>
+    <definition/>
+    <definition>The value is derived from information in RE_AmendmentInformation:</definition>
+    <definition/>
+    <definition>DataAmended = self.amendmentInformation.dateDisposed</definition>
+    <taggedValues/>
+    <ValueDataType>Date</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2823_7948">
+    <name>description</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute "description"&lt;i&gt; &lt;/i&gt;shall be&lt;i&gt; &lt;/i&gt; represented as a CharacterString containing a description of the concept embodied by that item and expressed in the operating language of the register. The "description"&lt;i&gt; &lt;/i&gt;shall be a statement of the nature, properties, scope, or non-essential qualities of the concept that are realized by the item but are not specified by the "definition"&lt;i&gt; &lt;/i&gt;element.</definition>
+    <definition/>
+    <definition>EXAMPLE 1 “A lift may be moved through a system of overhead cables, lateral traction or under-floor hydraulics.”</definition>
+    <definition/>
+    <definition>EXAMPLE 2 “Buoy shape is generally based on the portion visible above the water line.”</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2823_7949">
+    <name>fieldOfApplication</name>
+    <cardinality>0..*</cardinality>
+    <definition>The attribute "fieldOfApplication"&lt;i&gt; &lt;/i&gt;shall be represented as a set of instances of RE_FieldOfApplication, each of which shall describe a kind of use of the item. The fieldOfApplication&lt;i&gt; &lt;/i&gt;may be used as the basis for creating metadata for submission to search engines.</definition>
+    <definition/>
+    <definition>EXAMPLES “Agricultural Production” and “Marine Navigation”.</definition>
+    <taggedValues/>
+    <ValueDataType category="data type" idref="_C2813">RE_FieldOfApplication</ValueDataType>
+    <ValueDomainType>0</ValueDomainType>
+  </FeatureAttribute>
+  <FeatureType id="_C2799">
+    <name>RE_RegisterStakeholder</name>
+    <subtypeOf idref="_C6218">RegisterStakeholder</subtypeOf>
+    <characterizedBy idref="_AT2440"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+  </FeatureType>
+  <FeatureType id="_C2822">
+    <name>RE_SubregisterDescription</name>
+    <definition>RE_SubregisterDescription is a subclass of SubregisterDescription that shall be used  in the principal register of a hierarchical register to describe additional information for each of the affiliated subregisters.</definition>
+    <subtypeOf idref="_C6221">SubregisterDescription</subtypeOf>
+    <characterizedBy idref="_A2822_5189"/>
+    <characterizedBy idref="_A2822_5190"/>
+    <package idref="_P416"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="750" id="img4" idAsInt="18" name="Fig B4 RE_SubregisterDescription" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Extended_schema/img4.jpg" width="1280"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A2822_5189">
+    <name>uniformResourceIdentifier</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "uniformResourceIdentifier"&lt;i&gt; &lt;/i&gt;shall take as its value a set of URI's, each referencing information about online resources associated with the register.</definition>
+    <taggedValues/>
+    <ValueDataType>URI</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2822_5190">
+    <name>operatingLanguage</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "operatingLanguage"&lt;i&gt; &lt;/i&gt;shall be represented as an instance of class RE_Locale that is used to specify language, country information and character encoding for the proper interpretation of the content of character strings in the subregister.</definition>
+    <taggedValues/>
+    <ValueDataType category="data type" idref="_C2824">RE_Locale</ValueDataType>
+    <ValueDomainType>0</ValueDomainType>
+  </FeatureAttribute>
+  <ApplicationSchema id="_P415">
+    <name>ISO 19135-1 Procedures for Registration - Core schema</name>
+    <taggedValues/>
+    <images>
+      <image height="1082" id="img8" idAsInt="20" name="Fig 04 Overview" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Core_schema/img8.jpg" width="1194"/>
+    </images>
+  </ApplicationSchema>
+  <FeatureType id="_C6220">
+    <name>ItemClass</name>
+    <definition>The class "ItemClass"  is a description of a class of geographic information items specified in a technical standard.</definition>
+    <characterizedBy idref="_A6220_7942"/>
+    <characterizedBy idref="_AS2426"/>
+    <characterizedBy idref="_AS2422"/>
+    <characterizedBy idref="_AS2425"/>
+    <package idref="_P415"/>
+    <type>Object Type</type>
+    <taggedValues/>
+  </FeatureType>
+  <FeatureAttribute id="_A6220_7942">
+    <name>identifier</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "identifier" shall be represented as a CharacterString containing a compact and human-readable designator that is used to denote a class of item.</definition>
+    <definition>The &lt;i&gt;identifier&lt;/i&gt; that designates an item class held in a register that conforms to this International Standard shall uniquely denote the item class within the context of the register.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__S2426">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2426"/>
+    <roles idref="_AT2426"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2426">
+    <name>subregister</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role subregister connects an instance of an item class to a subregister</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6221">SubregisterDescription</FeatureTypeIncluded>
+    <relation idref="__S2426"/>
+    <InverseRole idref="_AT2426"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2426">
+    <name>containedItemClass</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "containedItemClass" describes that the "ItemClass" for the association "SubregisterContentDescription" contains the item classes in the subregister.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6220">ItemClass</FeatureTypeIncluded>
+    <relation idref="__S2426"/>
+    <InverseRole idref="_AS2426"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureRelationship id="__S2422">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2422"/>
+    <roles idref="_AT2422"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2422">
+    <name>describedItem</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role describedItem connects an instance of a "RegisterItem" to an "ItemClass"</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6219">RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S2422"/>
+    <InverseRole idref="_AT2422"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2422">
+    <name>itemClass</name>
+    <cardinality>1</cardinality>
+    <definition>The role "itemClass" describes that the "ItemClass" for the association "Categorization" describes the class that the register items belong to.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6220">ItemClass</FeatureTypeIncluded>
+    <relation idref="__S2422"/>
+    <InverseRole idref="_AS2422"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureRelationship id="__S2425">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2425"/>
+    <roles idref="_AT2425"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2425">
+    <name>register</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role register connects an instance of an item class to a register</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6216">Register</FeatureTypeIncluded>
+    <relation idref="__S2425"/>
+    <InverseRole idref="_AT2425"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2425">
+    <name>containedItemClass</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "containedItemClass" describes that the "ItemClass" for the association "ContentDescription" contains the item classes in the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6220">ItemClass</FeatureTypeIncluded>
+    <relation idref="__S2425"/>
+    <InverseRole idref="_AS2425"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C2804">
+    <name>RE_Version</name>
+    <definition>A  dataType that uniquely defines a version</definition>
+    <characterizedBy idref="_A2804_5163"/>
+    <characterizedBy idref="_A2804_5164"/>
+    <package idref="_P415"/>
+    <type>Data Type</type>
+    <taggedValues/>
+  </FeatureType>
+  <FeatureAttribute id="_A2804_5163">
+    <name>versionNumber</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "versionNumber" shall be represented as a constrained CharacterString that denotes the version. The CharacterString shall be of the form &lt;first positive integer&gt; &lt;dot&gt; &lt;second positive integer&gt; &lt;letter characters&gt; (“#.#a”), where:</definition>
+    <definition/>
+    <definition>&lt;ul&gt;</definition>
+    <definition>&lt;li&gt;&lt;first positive integer&gt; (one or more digits) shall specify the major version designation;&lt;/li&gt;</definition>
+    <definition>&lt;/ul&gt;</definition>
+    <definition/>
+    <definition>&lt;ul&gt;</definition>
+    <definition>&lt;li&gt;&lt;dot&gt; (“.”) shall delimit the &lt;first positive integer&gt; from the &lt;second positive integer&gt; when there is a &lt;second positive integer&gt;;&lt;/li&gt;</definition>
+    <definition>&lt;/ul&gt;</definition>
+    <definition/>
+    <definition>&lt;ul&gt;</definition>
+    <definition>&lt;li&gt;&lt;second positive integer&gt; (one or more digits) shall optionally specify the minor version designation; and&lt;/li&gt;</definition>
+    <definition>&lt;/ul&gt;</definition>
+    <definition/>
+    <definition>&lt;ul&gt;</definition>
+    <definition>&lt;li&gt;&lt;letters&gt; (one or more characters) shall optionally specify the minor subversion designation.&lt;/li&gt;</definition>
+    <definition>&lt;/ul&gt;</definition>
+    <definition/>
+    <definition>EXAMPLE	“2.1a”.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A2804_5164">
+    <name>versionDate</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "date" shall be represented as an instance of the class &lt;&lt;Date&gt;&gt; [ISO 19103] that specifies the date (which may be of reduced precision) of the version.</definition>
+    <definition>EXAMPLE	2002-10-21.</definition>
+    <taggedValues/>
+    <ValueDataType>Date</ValueDataType>
+  </FeatureAttribute>
+  <FeatureType id="_C6216">
+    <name>Register</name>
+    <definition>The class RE_Register specifies information about the register itself.</definition>
+    <characterizedBy idref="_A6216_7931"/>
+    <characterizedBy idref="_A6216_7932"/>
+    <characterizedBy idref="_A6216_7933"/>
+    <characterizedBy idref="_AT2425"/>
+    <characterizedBy idref="_AT2413"/>
+    <characterizedBy idref="_AT2414"/>
+    <characterizedBy idref="_AT7597"/>
+    <characterizedBy idref="_AT7598"/>
+    <package idref="_P415"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="942" id="img9" idAsInt="22" name="Fig 05 Register" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Core_schema/img9.jpg" width="1298"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A6216_7931">
+    <name>identifier</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "identifier" represents a designator that is used to uniquely denote that register within the set of registers maintained by the register owner. In the case of a hierarchical register, the "identifier" of a subregister shall uniquely identify that subregister within the scope of all registers established by the owner of the principal register.  It shall be represented as a CharacterString containing a compact and human-readable designator.</definition>
+    <definition/>
+    <definition>EXAMPLE: “ISO/TC 211 Register of Feature Data Dictionaries and Feature Catalogues” might be the identifier of the principal register of a hierarchical register. “DGIWG FACC Data Dictionary” and “IHO S-57 Object Dictionary” might be the identifiers of subregisters within the hierarchy.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6216_7932">
+    <name>version</name>
+    <cardinality>0..1</cardinality>
+    <definition>The conditional attribute "version" shall be represented as an instance of class RE_Version  that specifies a unique state in the life of the register. A value shall be provided for this attribute if a value of "dateOfLastChange"  is not supplied.</definition>
+    <taggedValues/>
+    <ValueDataType category="data type" idref="_C2804">RE_Version</ValueDataType>
+    <ValueDomainType>0</ValueDomainType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6216_7933">
+    <name>dateOfLastChange</name>
+    <cardinality>0..1</cardinality>
+    <definition>The conditional attribute "dateOfLastChange" shall be represented as an instance of the class &lt;&lt;Date&gt;&gt; [ISO 19103] and specify the (full precision) date of the most recent change to the status of an item in the register was made. A value shall be provided for this attribute if a value of "version" is not supplied.</definition>
+    <taggedValues/>
+    <ValueDataType>Date</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__T2413">
+    <name>(unbestimmt)</name>
+    <roles idref="_AT2413"/>
+    <roles idref="_AS2413"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AT2413">
+    <name>containedItem</name>
+    <cardinality>1..*</cardinality>
+    <definition>Describes that the RegisterItem  for the association Content describes the contained items held in the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6219">RegisterItem</FeatureTypeIncluded>
+    <relation idref="__T2413"/>
+    <InverseRole idref="_AS2413"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AS2413">
+    <name>register</name>
+    <cardinality>1..*</cardinality>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6216">Register</FeatureTypeIncluded>
+    <relation idref="__T2413"/>
+    <InverseRole idref="_AT2413"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureRelationship id="__T2414">
+    <name>(unbestimmt)</name>
+    <roles idref="_AT2414"/>
+    <roles idref="_AS2414"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AT2414">
+    <name>manager</name>
+    <cardinality>1</cardinality>
+    <definition>The role "manages" describes that the RegisterStakeholder for the association RegisterManager is the manager for  the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6218">RegisterStakeholder</FeatureTypeIncluded>
+    <relation idref="__T2414"/>
+    <InverseRole idref="_AS2414"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AS2414">
+    <name>manages</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "manager" identifies the register stakeholder as the manager of the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6216">Register</FeatureTypeIncluded>
+    <relation idref="__T2414"/>
+    <InverseRole idref="_AT2414"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureRelationship id="__T7597">
+    <name>(unbestimmt)</name>
+    <roles idref="_AT7597"/>
+    <roles idref="_AS7597"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AT7597">
+    <name>owner</name>
+    <cardinality>1</cardinality>
+    <definition>The role name owner describes that the RegisterStakeholder for the association RegisterOwner is the owner of the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6218">RegisterStakeholder</FeatureTypeIncluded>
+    <relation idref="__T7597"/>
+    <InverseRole idref="_AS7597"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AS7597">
+    <name>owns</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role name "owns" identifies the register stakeholder as the owner of the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6216">Register</FeatureTypeIncluded>
+    <relation idref="__T7597"/>
+    <InverseRole idref="_AT7597"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureRelationship id="__T7598">
+    <name>(unbestimmt)</name>
+    <roles idref="_AT7598"/>
+    <roles idref="_AS7598"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AT7598">
+    <name>submitter</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role "submitter" describes that the RegisterStakeholder for the association RegisterStakeholder is the submitting organization for  the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6218">RegisterStakeholder</FeatureTypeIncluded>
+    <relation idref="__T7598"/>
+    <InverseRole idref="_AS7598"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AS7598">
+    <name>submits</name>
+    <cardinality>1..*</cardinality>
+    <definition>The role name "submits" identifies the register stakeholder as the submitting organization of the register.</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6216">Register</FeatureTypeIncluded>
+    <relation idref="__T7598"/>
+    <InverseRole idref="_AT7598"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C6219">
+    <name>RegisterItem</name>
+    <definition>The class RegisterItem) specifies elements of information to be recorded for each item held in a register. The technical standard that specified an item class may specify additional elements to be recorded.</definition>
+    <characterizedBy idref="_A6219_7936"/>
+    <characterizedBy idref="_A6219_7937"/>
+    <characterizedBy idref="_A6219_7938"/>
+    <characterizedBy idref="_A6219_7939"/>
+    <characterizedBy idref="_A6219_7940"/>
+    <characterizedBy idref="_A6219_7941"/>
+    <characterizedBy idref="_AT2422"/>
+    <characterizedBy idref="_AS2413"/>
+    <characterizedBy idref="_AS7602"/>
+    <characterizedBy idref="_AT7602"/>
+    <package idref="_P415"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="978" id="img12" idAsInt="24" name="Fig 10 RegisterItem" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Core_schema/img12.jpg" width="1268"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A6219_7936">
+    <name>itemIdentifier</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "itemIdentifier" shall be represented as a Character that is used to uniquely denote that item within the register and is intended for information processing. Values shall be assigned sequentially in the order in which items are proposed for entry into the register. Once a value has been assigned, it shall not be reused.</definition>
+    <definition/>
+    <definition>&lt;b&gt;NOTE&lt;/b&gt;	When a register contains items from different item classes, each item will be uniquely identifiable by the item identifier alone.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6219_7937">
+    <name>status</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "status" shall be represented as an instance of RE_ItemStatus that identifies the registration status of the RegisterItem</definition>
+    <taggedValues/>
+    <ValueDataType category="enumeration">RE_ItemStatus</ValueDataType>
+    <ValueDomainType>1</ValueDomainType>
+    <enumeratedBy idref="_A2798_5154"/>
+    <enumeratedBy idref="_A2798_5155"/>
+    <enumeratedBy idref="_A2798_5156"/>
+    <enumeratedBy idref="_A2798_5157"/>
+    <enumeratedBy idref="_A2798_7943"/>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6219_7938">
+    <name>dateTimeAddition</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "dateTimeAddition" shall specify the date on which the item was added</definition>
+    <taggedValues/>
+    <ValueDataType>DateTime</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6219_7939">
+    <name>dateTimeSupersession</name>
+    <cardinality>0..1</cardinality>
+    <definition>The attribute "dateTimeSupersession" shall specify the date and time on which an item has been superseeded. This attribute is mandatory if status is superseded.</definition>
+    <taggedValues/>
+    <ValueDataType>DateTime</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6219_7940">
+    <name>dateTimeRetirement</name>
+    <cardinality>0..1</cardinality>
+    <taggedValues/>
+    <ValueDataType>DateTime</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6219_7941">
+    <name>dateTimeInvalidation</name>
+    <cardinality>0..1</cardinality>
+    <taggedValues/>
+    <ValueDataType>DateTime</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__S7602">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS7602"/>
+    <roles idref="_AT7602"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS7602">
+    <name>predecessor</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "predecessor" describes a previous concept of the "RegisterItem"</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6219">RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S7602"/>
+    <InverseRole idref="_AT7602"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT7602">
+    <name>sucessor</name>
+    <cardinality>0..*</cardinality>
+    <definition>The role "sucessor" describes a later concept of the "RegisterItem"</definition>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6219">RegisterItem</FeatureTypeIncluded>
+    <relation idref="__S7602"/>
+    <InverseRole idref="_AS7602"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C6218">
+    <name>RegisterStakeholder</name>
+    <definition>The class RegisterStakeholder specifies information about the register stakeholder, which is either a manager, owner or submitter. A stakeholder can serve one or more roles.</definition>
+    <definition/>
+    <definition>NOTE	This International Standard does not require that a register stakeholder name be unique, since an stakeholder will, in general, have had a name before undertaking a role in connection with a register.</definition>
+    <characterizedBy idref="_A6218_7934"/>
+    <characterizedBy idref="_A6218_7935"/>
+    <characterizedBy idref="_AS2415"/>
+    <characterizedBy idref="_AS2414"/>
+    <characterizedBy idref="_AS7597"/>
+    <characterizedBy idref="_AS7598"/>
+    <package idref="_P415"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="662" id="img10" idAsInt="26" name="Fig 06 RegisterStakeholder" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Core_schema/img10.jpg" width="1092"/>
+    </images>
+  </FeatureType>
+  <FeatureAttribute id="_A6218_7934">
+    <name>name</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute &lt;i&gt;name&lt;/i&gt; shall be represented as a CharacterString containing a compact and human-readable designator that is used to denote the stakeholder of that register.</definition>
+    <definition>EXAMPLE “ISO/TC 211,” “Digital Geographic Information Working Group,” and “International Hydrographic Bureau”.</definition>
+    <taggedValues/>
+    <ValueDataType>CharacterString</ValueDataType>
+  </FeatureAttribute>
+  <FeatureAttribute id="_A6218_7935">
+    <name>contact</name>
+    <cardinality>1</cardinality>
+    <definition>The attribute "contact" shall be represented as an instance of CI_Responsibility [ISO 19115-1], either in the form of  contact information for an individual or an organization that ist he contact point for the stakeholder, either in the role as manager, owner or submitter of register information the register.</definition>
+    <taggedValues/>
+    <ValueDataType>CI_Responsibility</ValueDataType>
+  </FeatureAttribute>
+  <FeatureRelationship id="__S2415">
+    <name>(unbestimmt)</name>
+    <roles idref="_AS2415"/>
+    <roles idref="_AT2415"/>
+  </FeatureRelationship>
+  <RelationshipRole id="_AS2415">
+    <name>subregister</name>
+    <cardinality>0..*</cardinality>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6221">SubregisterDescription</FeatureTypeIncluded>
+    <relation idref="__S2415"/>
+    <InverseRole idref="_AT2415"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <RelationshipRole id="_AT2415">
+    <name>subregisterManager</name>
+    <cardinality>1</cardinality>
+    <taggedValues/>
+    <FeatureTypeIncluded category="object type" idref="_C6218">RegisterStakeholder</FeatureTypeIncluded>
+    <relation idref="__S2415"/>
+    <InverseRole idref="_AS2415"/>
+    <orderIndicator>0</orderIndicator>
+  </RelationshipRole>
+  <FeatureType id="_C6221">
+    <name>SubregisterDescription</name>
+    <definition>"SubregisterDescription" is a subclass of "RegisterItem" that shall be used in the principal register of a hierarchical register to describe each of the affiliated subregisters. Their semantics are unchanged, but a few are subject to additional</definition>
+    <definition>constraints or conditions specified.</definition>
+    <definition/>
+    <definition>NOTE Because a subregister is a type of register, it contains an instance of "Register" that describes itself. "SubregisterDescription" carries similar information about the subregister, but it is contained within the principal register.</definition>
+    <subtypeOf idref="_C6219">RegisterItem</subtypeOf>
+    <characterizedBy idref="_AT2415"/>
+    <characterizedBy idref="_AT2426"/>
+    <package idref="_P415"/>
+    <type>Object Type</type>
+    <taggedValues/>
+    <images>
+      <image height="954" id="img13" idAsInt="28" name="Fig 11 SubregisterDescription" relPath="images/ISO_19135-1_Procedures_for_Registration_-_Core_schema/img13.jpg" width="1648"/>
+    </images>
+  </FeatureType>
+  <Value id="_A2794_5143">
+    <label>pending</label>
+    <code>pending</code>
+    <definition>No decision has been made.</definition>
+  </Value>
+  <Value id="_A2794_5144">
+    <label>tentative</label>
+    <code>tentative</code>
+    <definition>A decision has been made, but it is still subject to appeal.</definition>
+  </Value>
+  <Value id="_A2794_5145">
+    <label>final</label>
+    <code>final</code>
+    <definition>A decision has been made and the time limit for appeal has run out or an appeal has been resolved.</definition>
+  </Value>
+  <Value id="_A2796_5146">
+    <label>identical</label>
+    <code>1</code>
+    <definition>No change has been made to the specification.</definition>
+  </Value>
+  <Value id="_A2796_5147">
+    <label>restyled</label>
+    <code>2</code>
+    <definition>The style of the specification has been changed to match the style and structure of other specifications in the register that has imported the specification.</definition>
+  </Value>
+  <Value id="_A2796_5148">
+    <label>contextAdded</label>
+    <code>3</code>
+    <definition>The specification includes information about its context that is not explicit in the specification in the external source.</definition>
+  </Value>
+  <Value id="_A2796_5149">
+    <label>generalization</label>
+    <code>4</code>
+    <definition>The specification of the register item has been generalized to have a broader</definition>
+    <definition>meaning than the item specified in the external source.</definition>
+  </Value>
+  <Value id="_A2796_5150">
+    <label>specialization</label>
+    <code>5</code>
+    <definition>The specification of the register item has been specialized to have a narrower meaning than the item specified in the external source.</definition>
+  </Value>
+  <Value id="_A2796_5151">
+    <label>unspecified</label>
+    <code>6</code>
+    <definition>The nature of the differences between the register item and the similar item in the external source is unspecified.</definition>
+  </Value>
+  <Value id="_A2800_5160">
+    <label>supersession</label>
+    <code>supersession</code>
+    <definition>The proposal requests that an item be superseded.</definition>
+  </Value>
+  <Value id="_A2800_5161">
+    <label>retirement</label>
+    <code>retirement</code>
+    <definition>The proposal requests that an item be retired.</definition>
+  </Value>
+  <Value id="_A2815_5181">
+    <label>withdrawn</label>
+    <code>withdrawn</code>
+    <definition>The submitting organization has withdrawn the proposal.</definition>
+  </Value>
+  <Value id="_A2815_5182">
+    <label>accepted</label>
+    <code>accepted</code>
+    <definition>The control body decided to accept the proposal.</definition>
+  </Value>
+  <Value id="_A2815_5183">
+    <label>notAccepted</label>
+    <code>notAccepted</code>
+    <definition>The control body decided not to accept the proposal.</definition>
+  </Value>
+  <Value id="_A2798_5154">
+    <label>submitted</label>
+    <code>submitted</code>
+    <definition>The item has been entered into the register, but the control body has not accepted the proposal to add it.</definition>
+  </Value>
+  <Value id="_A2798_5155">
+    <label>valid</label>
+    <code>valid</code>
+    <definition>The item has been accepted, is recommended for use, and has not been superseded or retired.</definition>
+  </Value>
+  <Value id="_A2798_5156">
+    <label>superseded</label>
+    <code>superseded</code>
+    <definition>The item has been superseded by another item and is no longer recommended for use.</definition>
+  </Value>
+  <Value id="_A2798_5157">
+    <label>retired</label>
+    <code>retired</code>
+    <definition>A decision has been made that the item is no longer recommended for use. It has not been superseded by another item.</definition>
+  </Value>
+  <Value id="_A2798_7943">
+    <label>invalid</label>
+    <code>invalid</code>
+    <definition>A decision has been made that a previously valid register item contains a substantial error and is invalid,  and will normally have been replaced by a corrected item.</definition>
+  </Value>
+</FeatureCatalogue>

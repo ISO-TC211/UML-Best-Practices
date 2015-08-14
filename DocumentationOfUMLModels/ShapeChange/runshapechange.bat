@@ -1,0 +1,1 @@
+"java" -Dfile.encoding=UTF-8 -jar "C:\Program Files\Arkitektum AS\ShapeChange\ShapeChange.jar" -c "C:\Data\isotc211\Redlands\UMLdocumentation\WorkshopRedlands\ShapeChange\config\ShapeChangeConfiguration.xml"

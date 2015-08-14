@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<!-- ISO/TS 19103 -->
+	<MapEntry type="CharacterString" rule="*" targetType="text" param=""/>
+	<MapEntry type="URI" rule="*" targetType="text" param=""/>
+	<MapEntry type="Boolean" rule="*" targetType="boolean" param=""/>
+	<MapEntry type="Integer" rule="*" targetType="integer" param=""/>
+	<MapEntry type="Decimal" rule="*" targetType="number" param=""/>
+	<MapEntry type="Number" rule="*" targetType="number" param=""/>
+	<MapEntry type="Real" rule="*" targetType="number" param=""/>
+	<MapEntry type="Measure" rule="*" targetType="number" param=""/>
+	<MapEntry type="Date" rule="*" targetType="date" param=""/>
+	<MapEntry type="DateTime" rule="*" targetType="timestamp" param=""/>
+	<!-- ISO/TS 19107 -->
+	<MapEntry type="GM_Point" rule="*" targetType="geometry" param=""/>
+	<MapEntry type="GM_MultiPoint" rule="*" targetType="geometry" param=""/>
+	<MapEntry type="GM_Curve" rule="*" targetType="geometry" param=""/>
+	<MapEntry type="GM_MultiCurve" rule="*" targetType="geometry" param=""/>
+	<MapEntry type="GM_Surface" rule="*" targetType="geometry" param=""/>
+	<MapEntry type="GM_MultiSurface" rule="*" targetType="geometry" param=""/>
+	<MapEntry type="GM_Object" rule="*" targetType="geometry" param=""/>
+	<!-- ... more to be added as required -->
+</mapEntries>

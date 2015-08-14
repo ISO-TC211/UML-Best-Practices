@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+	<!-- ISO/TS 19103 -->
+	<!-- types covered in table 12 of ISO 19150-2: -->
+  <MapEntry type="CharacterString" rule="iso19150_2014" targetType="xsd:string" param="datatype"/>
+  <MapEntry type="Date" rule="iso19150_2014" targetType="xsd:date" param="datatype" />
+  <MapEntry type="DateTime" rule="iso19150_2014" targetType="xsd:dateTime" param="datatype" />
+  <MapEntry type="Integer" rule="iso19150_2014" targetType="xsd:integer" param="datatype" />
+  <MapEntry type="Decimal" rule="iso19150_2014" targetType="xsd:double" param="datatype" />
+  <MapEntry type="Real" rule="iso19150_2014" targetType="xsd:double" param="datatype"/>
+  <MapEntry type="Boolean" rule="iso19150_2014" targetType="xsd:boolean" param="datatype" />
+  <MapEntry type="GenericName" rule="iso19150_2014" targetType="xsd:Name" param="datatype" />
+  <MapEntry type="LocalName" rule="iso19150_2014" targetType="xsd:NCName" param="datatype" />
+  <MapEntry type="ScopedName" rule="iso19150_2014" targetType="rdfs:Resource" />
+  <MapEntry type="TypeName" rule="iso19150_2014" targetType="xsd:NCName" param="datatype" />
+  <MapEntry type="MemberName" rule="iso19150_2014" targetType="xsd:Name" param="datatype" />
+  
+  <MapEntry type="Character" rule="iso19150_2014" targetType="xsd:string" param="datatype"/>
+  <MapEntry type="Number" rule="iso19150_2014" targetType="xsd:double" param="datatype" />
+  <MapEntry type="ClockTime" rule="iso19150_2014" targetType="xsd:time" param="datatype" />
+  <MapEntry type="Bit" rule="iso19150_2014" targetType="xsd:boolean" param="datatype" />
+ 
+  <MapEntry type="URI" rule="iso19150_2014" targetType="xsd:anyURI" param="datatype" />
+  <MapEntry type="Time" rule="iso19150_2014" targetType="xsd:time" param="datatype" />
+  
+	<!-- basic types NOT covered in table 12 of ISO 19150-2: -->
+  <MapEntry type="Measure" rule="iso19150_2014" targetType="sc:Measure" param="datatype"/>
+  <MapEntry type="Length" rule="iso19150_2014" targetType="sc:Measure" param="datatype"/>
+  <MapEntry type="Distance" rule="iso19150_2014" targetType="sc:Measure" param="datatype"/>
+  <MapEntry type="Area" rule="iso19150_2014" targetType="sc:Measure" param="datatype"/>
+  <MapEntry type="Volume" rule="iso19150_2014" targetType="sc:Measure" param="datatype"/>
+  <MapEntry type="Velocity" rule="iso19150_2014" targetType="sc:Measure" param="datatype"/>
+
+  <MapEntry type="Any" rule="iso19150_2014" targetType="owl:Class" param="class"/>
+
+  <!-- ... more to be added as required -->
+</mapEntries>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapEntries xmlns="http://www.interactive-instruments.de/ShapeChange/Configuration/1.1">
+
+  <!--    
+  <MapEntry type="Curve" rule="iso19150_2014" targetType="sf:Curve"/>
+  <MapEntry type="PolyhedralSurface" rule="iso19150_2014" targetType="sf:PolyhedralSurface"/>
+  <MapEntry type="MultiPoint" rule="iso19150_2014" targetType="sf:MultiPoint"/>
+  <MapEntry type="MultiLineString" rule="iso19150_2014" targetType="sf:MultiLineString"/>
+  <MapEntry type="Line" rule="iso19150_2014" targetType="sf:Line"/>
+  <MapEntry type="Point" rule="iso19150_2014" targetType="sf:Point"/>
+  <MapEntry type="Polygon" rule="iso19150_2014" targetType="sf:Polygon"/>
+  <MapEntry type="MultiPolygon" rule="iso19150_2014" targetType="sf:MultiPolygon"/>
+  <MapEntry type="Triangle" rule="iso19150_2014" targetType="sf:Triangle"/>
+  <MapEntry type="LineString" rule="iso19150_2014" targetType="sf:LineString"/>
+  <MapEntry type="LinearRing" rule="iso19150_2014" targetType="sf:LinearRing"/>
+  <MapEntry type="Geometry" rule="iso19150_2014" targetType="sf:Geometry"/>
+  <MapEntry type="Surface" rule="iso19150_2014" targetType="sf:Surface"/>
+  <MapEntry type="MultiSurface" rule="iso19150_2014" targetType="sf:MultiSurface"/>
+  <MapEntry type="GeometryCollection" rule="iso19150_2014" targetType="sf:GeometryCollection"/>
+  <MapEntry type="TIN" rule="iso19150_2014" targetType="sf:TIN"/>
+  <MapEntry type="MultiCurve" rule="iso19150_2014" targetType="sf:MultiCurve"/>
+  -->
+  <!-- ... more to be added as required -->
+</mapEntries>
