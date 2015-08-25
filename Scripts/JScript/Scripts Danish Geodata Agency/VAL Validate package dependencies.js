@@ -151,11 +151,15 @@ function validateNoOtherConnectorsModelled(package /* EA.Package */) {/*: intege
 		if (connector.Type != "Usage") {
 			var relatedElement as EA.Element;
 			var relatedPackage as EA.Package;
-			if ((package.Element.ElementID == connector.ClientID && connector.SupplierEnd.IsNavigable) ||
-				(package.Element.ElementID == connector.SupplierID && connector.ClientEnd.IsNavigable)) {
-				// only consider connectors from the given package to another package, not the other way round
+			// only consider connectors from the given package to another package, not the other way round
+			if (package.Element.ElementID == connector.ClientID && connector.SupplierEnd.IsNavigable) {
 				relatedElement = Repository.GetElementByID(connector.SupplierID);
 				relatedPackage = Repository.GetPackageByGuid(relatedElement.ElementGUID);
+			} else if (package.Element.ElementID == connector.SupplierID && connector.ClientEnd.IsNavigable) {
+				relatedElement = Repository.GetElementByID(connector.ClientID);
+				relatedPackage = Repository.GetPackageByGuid(relatedElement.ElementGUID);
+			}
+			if (relatedElement != null) {
 				noOfErrorsFound++;
 				var message = package.Name + " has the following connector towards package " + relatedPackage.Name + " but that one should not be present:";
 				message += "\r\nConnectorGUID=" + connector.ConnectorGUID + ";ConnectorID=" + connector.ConnectorID + ";Type=" + connector.Type + ";Stereotype=" + connector.Stereotype;
