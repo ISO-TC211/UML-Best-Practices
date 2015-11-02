@@ -1,0 +1,93 @@
+<MDG.Technology version="1.0"><Documentation id="Geodata" name="Geodatamodellering" version="1.0" notes="MDG Technology til modellering af grunddata som er (delvist) geodata"/><UMLProfiles><UMLProfile profiletype="uml2">
+			<Documentation id="BEF07FBE-0" name="Geodata" version="1.0" notes="Indeholder (1) alle stereotyper defineret i &quot;Modelregler for grunddata&quot; og (2) stereotyperne DKFeaturetype og DKPlaceholder."/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="DKFeaturetype" notes="Definerer en type med identitet der er geodata" generalizes="Grunddata::DKObjekttype" baseStereotypes="Grunddata::DKObjekttype">
+						<AppliesTo>
+							<Apply type="Class">
+								<Property name="isActive" value=""/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="DKPlaceholder" notes="Definerer en klasse som pladsholder for en anden (endnu ikke defineret) klasse." generalizes="Grunddata::DKObjekttype" baseStereotypes="Grunddata::DKObjekttype">
+						<AppliesTo>
+							<Apply type="Class">
+								<Property name="isActive" value=""/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+			</Content>
+		</UMLProfile>
+	</UMLProfiles><DiagramProfile><UMLProfile profiletype="uml2">
+			<Documentation id="E2794E89-6" name="Geodata" version="1.0" notes="Diagramtyper til geodatamodellering."/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="GeodataKlasser" alias="Geodata-klassediagram" notes="UML-klassediagram for grunddata som er (delvist) geodata.">
+						<AppliesTo>
+							<Apply type="Diagram_Logical">
+								<Property name="alias" value="Geodata Class"/>
+								<Property name="diagramID" value="geodata"/>
+								<Property name="toolbox" value="Geodata"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+					<Stereotype name="GeodataPakker" alias="Geodata-pakkediagram" notes="UML-pakkediagram for grunddata som er (delvist) geodata.">
+						<AppliesTo>
+							<Apply type="Diagram_Package">
+								<Property name="alias" value="Geodata Package"/>
+								<Property name="diagramID" value="geodata"/>
+								<Property name="toolbox" value="Geodata"/>
+							</Apply>
+						</AppliesTo>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+			</Content>
+		</UMLProfile>
+	</DiagramProfile><UIToolboxes><UMLProfile profiletype="uml2">
+			<Documentation id="4C919EB6-D" name="Geodata" version="1.0" notes="&quot;Toolbox pages&quot; til geodatamodellering"/>
+			<Content>
+				<Stereotypes>
+					<Stereotype name="GeodataPakker" alias="Geodata Pakker" notes="Stereotyper for pakker i geodatamodellering">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="isCollapsed" type="" description="" unit="" values="" default="true"/>
+							<Tag name="Grunddata::DKDomænemodel(UML::Package)" type="" description="" unit="" values="" default="Domænemodel"/>
+							<Tag name="UML::Package" type="" description="" unit="" values="" default="pakke"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="GeodataKlasserOgEgenskaber" alias="Geodata Klasser og Egenskaber" notes="Stereotyper for klasser og egenskaber i geodatamodellering">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="Grunddata::DKObjekttype(UML::Class)" type="" description="" unit="" values="" default="Objekttype"/>
+							<Tag name="Geodata::DKFeaturetype(UML::Class)" type="" description="" unit="" values="" default="Featuretype"/>
+							<Tag name="Geodata::DKPlaceholder(UML::Class)" type="" description="" unit="" values="" default="Placeholder"/>
+							<Tag name="Grunddata::DKDatatype(UML::DataType)" type="" description="" unit="" values="" default="Datatype"/>
+							<Tag name="Grunddata::DKEnumeration(UML::Enumeration)" type="" description="" unit="" values="" default="Enumeration"/>
+							<Tag name="Grunddata::DKKodeliste(UML::Enumeration)" type="" description="" unit="" values="" default="Kodeliste"/>
+							<Tag name="Grunddata::DKKlassifikation(UML::Enumeration)" type="" description="" unit="" values="" default="Klassifikation"/>
+							<Tag name="Grunddata::DKEgenskab(UML::Property)" type="" description="" unit="" values="" default="attribut"/>
+						</TaggedValues>
+					</Stereotype>
+					<Stereotype name="GeodataRelationer" alias="Geodata Relationer" notes="Relationer i geodatamodellering">
+						<AppliesTo>
+							<Apply type="ToolboxPage"/>
+						</AppliesTo>
+						<TaggedValues>
+							<Tag name="UML::Association" type="" description="" unit="" values="" default="associering"/>
+							<Tag name="UML::Composition" type="" description="" unit="" values="" default="komposition"/>
+							<Tag name="UML::Generalization" type="" description="" unit="" values="" default="generalisering"/>
+							<Tag name="UML::Usage" type="" description="" unit="" values="" default="usage dependency (mellem pakker/domænemodeller)"/>
+						</TaggedValues>
+					</Stereotype>
+				</Stereotypes>
+				<TaggedValueTypes/>
+			</Content>
+		</UMLProfile>
+	</UIToolboxes></MDG.Technology>
