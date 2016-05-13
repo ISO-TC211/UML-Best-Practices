@@ -9,7 +9,7 @@ option explicit
 ' Date: 20150508
 '
 
-const path = "C:\DATA\Standardisering\NVDBGML\XSD"
+const path = "C:\DATA\GitHub\NVDBGML\XSD\OLFV\V350"
 dim dgr as EA.Diagram
 
 dim objFSO, objFtFile, objPtFile, objEnFile
@@ -20,6 +20,7 @@ sub recLoopSubPackages(p)
 	dim a as EA.Attribute
 	dim tv as EA.TaggedValue
 	dim atv as EA.AttributeTag
+	dim nvdb_id, nvdb_navn
 	
 	for each e in p.elements
 	   If e.Stereotype="featureType" then
@@ -27,6 +28,8 @@ sub recLoopSubPackages(p)
 			if not tv is nothing then
 				objFtFile.Write tv.Value & ";" & e.Name & vbCrLf
 				for each a in e.Attributes
+					set atv=nothing
+					On error resume next
 					set atv=a.TaggedValues.GetByName("NVDB_ID")
 					if not atv is nothing then
 						objPtFile.Write "fme_feature_type;" & tv.Value & ";" & atv.Value & ";" & a.Name & vbCrLf
@@ -37,10 +40,15 @@ sub recLoopSubPackages(p)
 			set tv=e.TaggedValues.GetByName("NVDB_ID")
 			if not tv is nothing then
 				for each a in e.Attributes
+					set atv=nothing
+					On error resume next
 					set atv=a.TaggedValues.GetByName("NVDB_ID")
-					if not atv is nothing then
-						objEnFile.Write tv.Value & ";" & atv.Value & ";" & a.Name & vbCrLf
-					end if	
+					if not atv is nothing then nvdb_id=atv.Value
+					set atv=a.TaggedValues.GetByName("NVDB_navn")
+					if not atv is nothing then nvdb_navn=atv.Value
+					
+					objEnFile.Write tv.Value & ";" & nvdb_id & ";" & a.Name & ";" & nvdb_navn & vbCrLf 
+
 				next
 			end if	
 		end if
@@ -65,14 +73,19 @@ sub exportMappingFiles()
 	set thePackage = Repository.GetTreeSelectedPackage()
 	
 	if not thePackage is nothing and thePackage.ParentID <> 0 then
+		dim tv as EA.TaggedValue
+		set tv=thePackage.Element.TaggedValues.GetByName("xsdDocument")
+		dim name 
+		name=Replace(tv.value,".xsd","")
+	
 		Set objFSO=CreateObject("Scripting.FileSystemObject")
-		Set objFtFile = objFSO.CreateTextFile(path & "\" & thePackage.name & "_ftMapping.csv",True)
-		Set objPtFile = objFSO.CreateTextFile(path & "\" & thePackage.name & "_ptMapping.csv",True)
-		Set objEnFile = objFSO.CreateTextFile(path & "\" & thePackage.name & "_enMapping.csv",True)
+		Set objFtFile = objFSO.CreateTextFile(path & "\" & name & "_ftMapping.csv",True)
+		Set objPtFile = objFSO.CreateTextFile(path & "\" & name & "_ptMapping.csv",True)
+		Set objEnFile = objFSO.CreateTextFile(path & "\" & name & "_enMapping.csv",True)
 		
 		objFtFile.Write "ftid;name" & vbCrLf
 		objPtFile.Write "ft_attr;ftid;ptid;name" & vbCrLf
-		objEnFile.Write "ptid;enid;name" & vbCrLf
+		objEnFile.Write "ptid;enid;name;fullname" & vbCrLf
 		
 		recLoopSubPackages(thePackage)
 	    
