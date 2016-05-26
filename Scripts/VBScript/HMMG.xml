@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<MDG.Technology version="1.0"><Documentation id="HMMG" name="ISO/TC211 HMMG" version="1.0" notes="Scripts for controling and maintaining th ISO/TC211 Harmonized model."/><Scripts><Script name="Export diagrams as images" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwARQB4AHAA
+bwByAHQAIABkAGkAYQBnAHIAYQBtAHMAIABhAHMAIABpAG0AYQBnAGUAcwAuAHYAYgBz
+AA==</Content></Script><Script name="Sort elements" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwAUwBvAHIA
+dAAgAGUAbABlAG0AZQBuAHQAcwAuAHYAYgBzAA==</Content></Script><Script name="VC_Resync status" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwAVgBDAF8A
+UgBlAHMAeQBuAGMAIABzAHQAYQB0AHUAcwAuAHYAYgBzAA==</Content></Script><Script name="List data type references" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwATABpAHMA
+dAAgAGQAYQB0AGEAIAB0AHkAcABlACAAcgBlAGYAZQByAGUAbgBjAGUAcwAuAHYAYgBz
+AA==</Content></Script><Script name="Duplicate element names" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwARAB1AHAA
+bABpAGMAYQB0AGUAIABlAGwAZQBtAGUAbgB0ACAAbgBhAG0AZQBzAC4AdgBiAHMA</Content></Script><Script name="Missing definitions" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwATQBpAHMA
+cwBpAG4AZwAgAGQAZQBmAGkAbgBpAHQAaQBvAG4AcwAuAHYAYgBzAA==</Content></Script><Script name="Control elements in diagrams" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwAQwBvAG4A
+dAByAG8AbAAgAGUAbABlAG0AZQBuAHQAcwAgAGkAbgAgAGQAaQBhAGcAcgBhAG0AcwAuAHYA
+YgBzAA==</Content></Script><Script name="VC_GetAllLates" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwAVgBDAF8A
+RwBlAHQAQQBsAGwATABhAHQAZQBzAC4AdgBiAHMA</Content></Script></Scripts></MDG.Technology>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<MDG.Technology version="1.0"><Documentation id="VC" name="Version Control" version="1.0" notes="Scripts for handling version control"/><Scripts><Script name="VC_GetAllLates" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwAVgBDAF8A
+RwBlAHQAQQBsAGwATABhAHQAZQBzAC4AdgBiAHMA</Content></Script><Script name="VC_Add subpackages" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwAVgBDAF8A
+QQBkAGQAIABzAHUAYgBwAGEAYwBrAGEAZwBlAHMALgB2AGIAcwA=</Content></Script><Script name="VC_Resync status" type="normal" language="VBScript"><Content xmlns:dt="urn:schemas-microsoft-com:datatypes" dt:dt="bin.base64">QwA6AFwARABBAFQAQQBcAEcAaQB0AEgAdQBiAFwAVQBNAEwALQBCAGUAcwB0AC0AUAByAGEA
+YwB0AGkAYwBlAHMAXABTAGMAcgBpAHAAdABzAFwAVgBCAFMAYwByAGkAcAB0AFwAVgBDAF8A
+UgBlAHMAeQBuAGMAIABzAHQAYQB0AHUAcwAuAHYAYgBzAA==</Content></Script></Scripts></MDG.Technology>
