@@ -12,3 +12,9 @@
 * [Add packages to version control](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC_Add%20subpackages.vbs)
 * [Get all latest for a selected package and subpackages, and not all other packages in the project](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC_GetAllLates.vbs)
 * [Clean up version control - loop trough a selected package and subpackages, and resync status with VC Provider](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC_Resync%20status.vbs)
+
+Scripts from the list above, grouped in MDG Technology:
+* [HMMG Scripts](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/HMMG.xml)
+* [Version Control Scripts](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC.xml)
+
+How to import MDG Technologies to an EA Model:  http://www.sparxsystems.com/enterprise_architect_user_guide/12.1/building_models/importmdgtechnologies.html
