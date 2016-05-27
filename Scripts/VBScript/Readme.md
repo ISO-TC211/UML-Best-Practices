@@ -12,6 +12,7 @@
 * [Add packages to version control](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC_Add%20subpackages.vbs)
 * [Get all latest for a selected package and subpackages, and not all other packages in the project](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC_GetAllLates.vbs)
 * [Clean up version control - loop trough a selected package and subpackages, and resync status with VC Provider](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC_Resync%20status.vbs)
+* [Document prefixes](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/DOC%20Prefixes.vbs)
 
 Scripts from the list above, grouped in MDG Technology:
 * [HMMG Scripts](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/HMMG.xml)
