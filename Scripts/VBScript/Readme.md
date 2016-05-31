@@ -19,3 +19,6 @@ Scripts from the list above, grouped in MDG Technology:
 * [Version Control Scripts](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC.xml)
 
 How to import MDG Technologies to an EA Model:  http://www.sparxsystems.com/enterprise_architect_user_guide/12.1/building_models/importmdgtechnologies.html
+
+Scripts from the Norwegian Mapping Authority: [https://github.com/kartverket/UML-modelleringsskript](https://github.com/kartverket/UML-modelleringsskript)
+
