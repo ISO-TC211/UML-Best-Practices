@@ -14,20 +14,22 @@ sub recListPrefixes(p,strP, apfx)
 	Repository.WriteOutput "Script", Now & " Package: " & strP, 0
 	dim el as EA.Element
 	for each el In p.elements
-		Repository.WriteOutput "Script", Now & " " & el.Stereotype & " " & strP & "." & el.Name, 0
-		dim pstn
-		pstn=InStr (el.name,"_")
-		if pstn > 0 then 
-			dim pfx
-			pfx = left(el.name,pstn-1) & "#" & strP 
-		    'Repository.WriteOutput "Prefix", Now & " Element with prefix: " & el.Name, 0
-		    apfx.Add pfx
+	    if el.Type="Class" or el.Type="Interface" then
+			'Repository.WriteOutput "Script", Now & " " & el.Stereotype & " " & strP & "." & el.Name, 0
+			dim pstn
+			pstn=InStr (el.name,"_")
+			if pstn > 0 then 
+				dim pfx
+				pfx = left(el.name,pstn-1) & "#" & strP 	
+				Repository.WriteOutput "Script", Now & " Element with prefix: " & el.Name, 0
+				apfx.Add pfx
+			end if
 		end if
 	next
 	
 	dim subP as EA.Package
 	for each subP in p.packages
-	    recListPrefixes subP,strP & "." & subP.Name, apfx
+	    recListPrefixes subP,strP & "#" & subP.Name, apfx
 	next
 end sub
 
@@ -74,7 +76,7 @@ sub listPrefixes()
 			'str=a(i)
 			pfx=left(str, instr(str,"#")-1)
 			pck=mid(str,instr(str,"#")+1)
-			lstPfx.Add pfx & " # " & pck, pfx & " # " & pck & " # " & d.Item(str)
+			lstPfx.Add pfx & " # " & pck, pfx & "#" & d.Item(str) & "#" & pck
 		Next
 		
 		for i = 0 to lstPfx.count - 1

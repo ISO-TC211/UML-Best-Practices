@@ -19,7 +19,7 @@ sub recListMissingDefinitions(p)
 	Repository.WriteOutput "Script", Now & " Package: " & p.Name, 0
 	dim el as EA.Element
 	for each el In p.elements
-		if el.Type="Class" and el.Stereotype <> "codeList" and el.Stereotype <> "CodeList" and el.Stereotype <> "enumeration" then
+		if el.Type="Class" then 'and el.Stereotype <> "codeList" and el.Stereotype <> "CodeList" and el.Stereotype <> "enumeration"
 			Repository.WriteOutput "Script", Now & " " & el.Stereotype & " " & el.Name, 0
 			if el.Notes = "" then
 				Repository.WriteOutput "Error", "Missing element definition: " & el.Name,0
@@ -28,7 +28,11 @@ sub recListMissingDefinitions(p)
 			for each attr in el.Attributes
 				Repository.WriteOutput "Script", Now & " " & el.Name & "." & attr.Name, 0
 				if attr.Notes = "" then
-					Repository.WriteOutput "Error", "Missing attribute definition: " & el.Name & "." & attr.Name,0
+					if el.Stereotype = "codeList" or el.Stereotype = "CodeList" or el.Stereotype = "enumeration" then
+						Repository.WriteOutput "Error", "Missing code value definition: " & el.Name & "." & attr.Name,0	
+				    else
+						Repository.WriteOutput "Error", "Missing attribute definition: " & el.Name & "." & attr.Name,0
+					end if	
 				end if
 			next
 		end if
