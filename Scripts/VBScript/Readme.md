@@ -27,5 +27,6 @@
 
 How to import MDG Technologies to an EA Model:  http://www.sparxsystems.com/enterprise_architect_user_guide/12.1/building_models/importmdgtechnologies.html
 
+### Other scripts:
 Scripts from the Norwegian Mapping Authority: [https://github.com/kartverket/UML-modelleringsskript](https://github.com/kartverket/UML-modelleringsskript)
 
