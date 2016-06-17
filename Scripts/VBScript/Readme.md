@@ -3,6 +3,7 @@
 
 ### Scripts for changing models (CHG)
 * [CHG Sort elements.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/CHG%20Sort%20elements.vbs) - Sort elements in the selected package
+* [CHG Save Project As.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/CHG%20Save%20Project%20As.vbs) - Save a copy of a project
 
 ### Scripts for documentation (DOC)
 * [DOC Count subpackages.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/DOC%20Count%20subpackages.vbs) - Count first level subpackages in the selected package
@@ -20,6 +21,7 @@
 * [VC Add Subpackages.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC%20Add%20Subpackages.vbs) - Add packages to version control
 * [VC Get All Lates.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC%20Get%20All%20Lates.vbs) - Get all latest for a selected package and subpackages, and not all other packages in the project
 * [VC Resync Status.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC%20Resync%20Status.vbs) - Clean up version control - loop trough a selected package and subpackages, and resync status with VC Provider
+* [VC RemoveVersionControl.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC%20RemoveVersionControl.vbs) - Remove version control - loop trough a selected package and subpackages, and remove version control
 
 ##Scripts from the list above, grouped in MDG Technology:
 * [HMMG Scripts](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/HMMG.xml)
