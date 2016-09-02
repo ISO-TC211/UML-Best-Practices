@@ -9,7 +9,7 @@ option explicit
 ' Date: 20150508
 '
 
-const path = "C:\DATA\GitHub\NVDBGML\XSD\OLFV\V350"
+const path = "C:\DATA\GitHub\NVDBGML\XSD\GLA"
 dim dgr as EA.Diagram
 
 dim objFSO, objFtFile, objPtFile, objEnFile

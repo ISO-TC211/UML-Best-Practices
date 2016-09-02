@@ -3,36 +3,32 @@ option explicit
 !INC Local Scripts.EAConstants-VBScript
 
 '
-' Script Name: VC Get all lates
+' Script Name: VC Check in
 ' Author: Knut Jetlund
-' Purpose: Get all latest for a selected package and subpackages, and not all other packages in the project
-' Date: 20150424
+' Purpose: Check in selected package and subpackages, and not all other packages in the project
+' Date: 20160623
 '
+const strComment = "Fjerna SOSI Fellesegenskaper, som var lagt inn ved en feil"
 
-sub recGetAllLatest(p)
-'Get all latest for a package and subpackages
-	dim localP as EA.Package
-	set localP = p
-	
-	if localP.IsVersionControlled then
-		dim pGUID
-		pGUID = localP.PackageGUID
-		Session.Output(Now & " Version controlled package: " & localP.Name & " (" & localP.PackageGUID &")")
-		localP.VersionControlGetLatest false
-		set localP = Repository.GetPackageByGuid(pGUID)
-		localP.Packages.Refresh
+sub recCheckIn(p)
+	if p.IsVersionControlled then
+		Repository.WriteOutput "Script", Now & " Version controlled package: " & p.Name & " (Status " & p.VersionControlGetStatus & ")", 0
+		if p.VersionControlGetStatus = 2 then
+			p.VersionControlCheckinEx  strComment,false
+			p.packages.refresh
+		end if	
 		Repository.EnsureOutputVisible "Script"
 	else
-		Session.Output(Now & " Uncontrolled package: " & localP.Name)
+		Repository.WriteOutput "Script", Now & " Uncontrolled package: " & p.Name, 0
 	end if	
 	
 	dim subP as EA.Package
-	for each subP in localP.Packages
-	    recGetAllLatest(subP)
+	for each subP in p.packages
+	    recCheckIn(subP)
 	next
 end sub
 
-sub getAllLatest
+sub main
 	' Show and clear the script output window
 	Repository.ClearOutput "Script"
 	Repository.EnsureOutputVisible "Script"
@@ -45,7 +41,7 @@ sub getAllLatest
 	set thePackage = Repository.GetTreeSelectedPackage()
 		
 	if not thePackage is nothing then
-		recGetAllLatest(thePackage)
+		recCheckIn(thePackage)
 		Repository.WriteOutput "Script", Now & " Finished, check the Version Control tab", 0 
 		Repository.EnsureOutputVisible "Script"
 	else
@@ -55,4 +51,4 @@ sub getAllLatest
 	end if
 end sub
 
-getAllLatest
+main
