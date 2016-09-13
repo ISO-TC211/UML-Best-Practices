@@ -6,7 +6,7 @@ option explicit
 ' Script Name: VC Get all lates
 ' Author: Knut Jetlund
 ' Purpose: Get all latest for a selected package and subpackages, and not all other packages in the project
-' Date: 20150424
+' Date: 20160902
 '
 
 sub recGetAllLatest(p)
@@ -19,6 +19,7 @@ sub recGetAllLatest(p)
 		pGUID = localP.PackageGUID
 		Session.Output(Now & " Version controlled package: " & localP.Name & " (" & localP.PackageGUID &")")
 		localP.VersionControlGetLatest false
+		'Get new version of the package, after GetLatest. to be sure new subpackages are included
 		set localP = Repository.GetPackageByGuid(pGUID)
 		localP.Packages.Refresh
 		Repository.EnsureOutputVisible "Script"
