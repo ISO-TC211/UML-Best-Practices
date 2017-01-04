@@ -8,7 +8,7 @@ option explicit
 ' Purpose: Export diagrams to image files. Uses alias as prefix.
 ' Date: 20150411
 '
-const path = "C:\DATA\GitHub\SOSI-Vegnett\Figurer\"
+const path = "C:\DATA\Standardisering\NVDB\NVDB Datakatalogen\trunk\private\Figurer\"
 dim dgr as EA.Diagram
 dim ePIF as EA.Project
 
@@ -30,9 +30,12 @@ sub recLoopSubPackages(p)
 		dim strPre 
 		strPre=p.Alias
 	    Select Case dgr.Name
-            Case p.Name & " Tillatte verdier" : SaveDiagram(strPre & "_UML_Tillatte_verdier")
-            Case p.Name & " Assosiasjoner" : SaveDiagram(strPre & "_UML_Assosiasjoner")
-            Case p.Name & " Betingelser" : SaveDiagram(strPre & "_UML_Betingelser")
+            Case p.Name & " Tillatte verdier" : SaveDiagram(p.Alias & "_UML_Tillatte_verdier")
+            Case p.Name & " Assosiasjoner" : SaveDiagram(p.Alias & "_UML_Assosiasjoner")
+            Case p.Name & " Betingelser" : SaveDiagram(p.Alias & "_UML_Betingelser")
+            'Case p.Name & " Tillatte verdier" : SaveDiagram("Tillatte_verdier\" & p.Alias & "_UML_Tillatte_verdier")
+            'Case p.Name & " Assosiasjoner" : SaveDiagram("Assosiasjoner\" & p.Alias & "_UML_Assosiasjoner")
+            'Case p.Name & " Betingelser" : SaveDiagram("Betingelser\" & p.Alias & "_UML_Betingelser")
 			Case else: SaveDiagram(dgr.Name)
         End Select
 	next

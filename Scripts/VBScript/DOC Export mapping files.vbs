@@ -9,7 +9,7 @@ option explicit
 ' Date: 20150508
 '
 
-const path = "C:\DATA\GitHub\NVDBGML\XSD"
+const path = "C:\DATA\GitHub\NVDBGML\XSD\"
 dim dgr as EA.Diagram
 
 dim objFSO, objFtFile, objPtFile, objEnFile
@@ -32,6 +32,7 @@ sub recLoopSubPackages(p)
 					On error resume next
 					set atv=a.TaggedValues.GetByName("NVDB_ID")
 					if not atv is nothing then
+						Session.Output(Now & " Attribute: " & a.Name)
 						objPtFile.Write "fme_feature_type;" & tv.Value & ";" & atv.Value & ";" & a.Name & vbCrLf
 					end if	
 				next
@@ -47,8 +48,13 @@ sub recLoopSubPackages(p)
 					set atv=a.TaggedValues.GetByName("NVDB_navn")
 					if not atv is nothing then nvdb_navn=atv.Value
 					
-					objEnFile.Write tv.Value & ";" & nvdb_id & ";" & a.Name & ";" & nvdb_navn & vbCrLf 
-
+					if IsNull(a.Default) or a.Default = "" then
+						Session.Output(Now & " Code value: " & a.Name)
+						objEnFile.Write tv.Value & ";" & nvdb_id & ";" & a.Name & ";" & nvdb_navn & vbCrLf 
+					else
+						Session.Output(Now & " Code value: " & a.Name & "(" & a.Default & ")")
+						objEnFile.Write tv.Value & ";" & nvdb_id & ";" & a.Default & ";" & nvdb_navn & vbCrLf 
+					end if
 				next
 			end if	
 		end if
