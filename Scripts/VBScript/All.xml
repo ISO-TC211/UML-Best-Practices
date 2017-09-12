@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<RefData version="1.0" exporter="EA.25">
+	<DataSet name="Automation Scripts" table="t_script" filter="ScriptName='#ScriptName#' and ScriptCategory='#ScriptCategory#'" stoplist=";ScriptID;">
+		<DataRow>
+			<Column name="ScriptID" value="71"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{24C1D0A8-C147-4ab2-A063-A2D82AC04573}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG Hide second level connectors&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG Hide second level connectors.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="72"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{2908C75E-3216-40b6-98C7-46D45B7ACCC3}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG Remove Connector&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG Remove Connector.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="73"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{A14ABE1F-D29B-4d0a-A77F-A819029199D3}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG Save Project As&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG Save Project As.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="74"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{F7FDC256-F245-47d8-87A6-3CB28305213E}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG Sort elements&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG Sort elements.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="75"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{898E9207-B02C-4240-9474-6C516FBF8D25}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;DOC Count subpackages&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\DOC Count subpackages.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="76"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{CBDCD692-8094-4709-BEEF-82E5C519E5F1}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;DOC Export diagrams as images&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\DOC Export diagrams as images.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="77"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{1D38BC15-BFE9-4fdc-A261-E3D5A5604969}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;DOC Export mapping files&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\DOC Export mapping files.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="78"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{77B83AC4-D4BD-4a14-B2FD-A10A56B70AE5}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;DOC List prefixes&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\DOC List prefixes.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="79"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{30B9384E-7FDC-48ae-BC39-55632DC83D63}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;EXP Export to XMI&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\EXP Export to XMI.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="80"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{3B030264-7118-42e7-A7D3-F26D167FAD17}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VAL Data type references&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VAL Data type references.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="81"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{BCC5FD61-3156-4b08-9692-9E4BD7A9B5BB}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VAL Dupliacte element names&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VAL Dupliacte element names.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="82"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{8EC37E2B-57F6-4677-9BDC-9311182045E6}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VAL Elements in diagrams&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VAL Elements in diagrams.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="83"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{FAF2E90A-2B77-4620-B597-6DFEDF043C0D}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VAL Missing definitions&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VAL Missing definitions.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="84"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{190CFC4F-85BE-4ce4-BE52-E0E0BE75705B}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG Add package tags&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG Add package tags.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="7"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="8"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="9"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="59"/>
+			<Column name="ScriptCategory" value="3955A83E-9E54-4810-8053-FACC68CD4782"/>
+			<Column name="ScriptName" value="{D6AC5D6C-67D3-43ed-9C81-5513E5810398}"/>
+			<Column name="Notes" value="&lt;Group Type=&quot;WORKFLOW&quot; Notes=&quot;&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="VC"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="60"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{A3B479CA-F16A-48e1-88C1-DAAF8F7FBBFB}"/>
+			<Column name="ScriptAuthor" value="{D6AC5D6C-67D3-43ed-9C81-5513E5810398}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VC Add Subpackages&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VC Add Subpackages.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="61"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{08965CCC-E519-4ff2-BB7E-9359774668D6}"/>
+			<Column name="ScriptAuthor" value="{D6AC5D6C-67D3-43ed-9C81-5513E5810398}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VC Check in&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VC Check in.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="62"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{9A0D7559-F54A-4c4f-BE40-DC9BDE11E05F}"/>
+			<Column name="ScriptAuthor" value="{D6AC5D6C-67D3-43ed-9C81-5513E5810398}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VC Get All Lates&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VC Get All Lates.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="63"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{5A97D431-BDA3-4edf-855D-CD30C7E69939}"/>
+			<Column name="ScriptAuthor" value="{D6AC5D6C-67D3-43ed-9C81-5513E5810398}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VC Massive Update&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VC Massive Update.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="64"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{06A86D94-3443-4a47-8C63-8E475DA02F89}"/>
+			<Column name="ScriptAuthor" value="{D6AC5D6C-67D3-43ed-9C81-5513E5810398}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VC RemoveVersionControl&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VC RemoveVersionControl.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="65"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{1CABB554-20D2-4cc9-A95A-AB118CF402DC}"/>
+			<Column name="ScriptAuthor" value="{D6AC5D6C-67D3-43ed-9C81-5513E5810398}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;VC Resync Status&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\VC Resync Status.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="66"/>
+			<Column name="ScriptCategory" value="3955A83E-9E54-4810-8053-FACC68CD4782"/>
+			<Column name="ScriptName" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Group Type=&quot;WORKFLOW&quot; Notes=&quot;&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="HMMG"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="67"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{7D963A4D-CEC7-4ce9-8806-79AF775FA92E}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;_Browse for folder&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\_Browse for folder.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="68"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{7D9252D6-8FCF-469f-BD20-91D25B1E9CB5}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG Association to attribute&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG Association to attribute.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="69"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{5CE9461A-7F7D-45b6-850F-41C06E6A9199}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG Change Data Type Reference&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG Change Data Type Reference.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="70"/>
+			<Column name="ScriptCategory" value="605A62F7-BCD0-4845-A8D0-7DC45B4D2E3F"/>
+			<Column name="ScriptName" value="{BF1696CE-F554-4b73-BD1B-CF1AB9DFD68C}"/>
+			<Column name="ScriptAuthor" value="{7F02046E-8E21-4846-98D6-45AD8CB3341E}"/>
+			<Column name="Notes" value="&lt;Script Name=&quot;CHG FeatureType to DataType&quot; Type=&quot;File&quot; Language=&quot;VBScript&quot;/&gt;&#xA;"/>
+			<Column name="Script" value="C:\DATA\GitHub\UML-Best-Practices\Scripts\VBScript\CHG FeatureType to DataType.vbs"/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="17"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="18"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="19"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="20"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="21"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="22"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="23"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="24"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="25"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="26"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="27"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="28"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="29"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="30"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="31"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="32"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="33"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="34"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="35"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="36"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="37"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="38"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+		<DataRow>
+			<Column name="ScriptID" value="39"/>
+			<Column name="ScriptCategory" value="ScriptDebugging"/>
+			<Column name="ScriptName" value="ScriptDebugging"/>
+			<Column name="ScriptAuthor" value="ScriptDebugging"/>
+			<Column name="Notes" value="&lt;?xml version=&quot;1.0&quot;?&gt;&#xA;&lt;DATA&gt;&lt;Debugger value=&quot;Scripting&quot;/&gt;&lt;/DATA&gt;&#xA;"/>
+			<Column name="Script" value=" "/>
+		</DataRow>
+	</DataSet>
+</RefData>
