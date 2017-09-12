@@ -8,7 +8,7 @@ option explicit
 ' Date: 20151202
 
 Const strVC  = "SOSI"
-Const strPath = "Andre viktige komponenter\NVDB\NVDB Datakatalogen versjon 2.09\"
+Const strPath = "Andre viktige komponenter\NVDB\NVDB Datakatalogen versjon 2.10\"
 
 sub subPackages2VC
 	' Show and clear the script output window
