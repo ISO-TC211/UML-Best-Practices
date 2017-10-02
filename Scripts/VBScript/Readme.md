@@ -16,6 +16,7 @@
 * [VAL Dupliacte element names.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VAL%20Dupliacte%20element%20names.vbs) - Identify duplicate element names
 * [VAL Elements in diagrams.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VAL%20Elements%20in%20diagrams.vbs) - Identify elements that are not used in any diagrams in the selected package or any of it's subpackages.
 * [VAL Missing definitions.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VAL%20Missing%20definitions.vbs) - List elements and attributes that don't have definitions
+* [VAL Model Validation.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VAL%20Model%20Validation.vbs) - Validation of model elements according to rules defined in ISO19103:2015 & ISO19109:2015
 
 ### Scripts for handling version control (VC)
 * [VC Add Subpackages.vbs](https://github.com/ISO-TC211/UML-Best-Practices/blob/master/Scripts/VBScript/VC%20Add%20Subpackages.vbs) - Add packages to version control
