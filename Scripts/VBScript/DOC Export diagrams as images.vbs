@@ -8,14 +8,15 @@ option explicit
 ' Purpose: Export diagrams to image files. Uses alias as prefix.
 ' Date: 20150411
 '
-const path = "C:\DATA\GitHub\NVDB-Datakatalogen\PNG\"
+const path = "C:\DATA\GitHub\TN-ITS\Figures\"
+const suffix = "PNG"
 dim dgr as EA.Diagram
-dim ePIF as EA.Project
 
+dim ePIF as EA.Project
 'Save current diagram
 sub saveDiagram(strName)
 	dim fullName
-	fullName=path & strName & ".png"
+	fullName=path & suffix & "\" & strName & "." & suffix
 	Session.Output(Now & " Eksporter diagram: " & dgr.Name & " som " & fullName)
 	ePIF.LoadDiagram(ePIF.GUIDtoXML(dgr.DiagramGUID))
 	ePIF.SaveDiagramImageToFile(fullName)
