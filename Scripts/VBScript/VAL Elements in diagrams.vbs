@@ -25,11 +25,14 @@ sub recListDiagramObjects(p)
 	dim d as EA.Diagram
 	dim Dobj as EA.DiagramObject
 	for each d In p.diagrams
-		for each Dobj in d.DiagramObjects
-			If not lstDobj.ContainsKey(Dobj.ElementID) Then
-			  lstDobj.Add Dobj.ElementID, Dobj.DiagramID
-			end if   
-		next	
+		'if Left(d.Name,7) = "Figure " then
+			Repository.WriteOutput "Script", Now & " Adding diagramobjects from diagram " & d.Name, 0 
+			for each Dobj in d.DiagramObjects
+				If not lstDobj.ContainsKey(Dobj.ElementID) Then
+				  lstDobj.Add Dobj.ElementID, Dobj.DiagramID
+				end if   
+			next	
+		'end if	
 	next
 		
 	dim subP as EA.Package
@@ -44,13 +47,14 @@ sub recElementNotInDiagram(p)
 	Repository.EnsureOutputVisible "Script"
 	dim e as EA.Element
 	for each e In p.elements
-		If e.Type="Class" and not lstDobj.ContainsKey(e.ElementID) Then
-			Repository.WriteOutput "Error", e.Type & " not in diagram: " & p.Name & "." & e.Name, 0 
+		If (e.Type="Class" or e.Type = "DataType") and not lstDobj.ContainsKey(e.ElementID) Then
+			'Repository.WriteOutput "Error", e.Type & " not in diagram: " & p.Name & "." & e.Name, 0 
+			Repository.WriteOutput "Error", "Package """ & p.Name & """, " & e.Type & " not in any diagram in the model: " & e.Name ,0	
 			Repository.EnsureOutputVisible "Error"
 		elseif e.Type="Object" and not lstDobj.ContainsKey(e.ElementID) Then 	
-			dim ce as EA.Element
-			set ce= Repository.GetElementByID(e.ClassifierID)
-			Repository.WriteOutput "Error", e.Type & " not in diagram: " & p.Name & "." & e.Name & " (instance of " & ce.Name & ")", 0 
+			'dim ce as EA.Element
+			'set ce= Repository.GetElementByID(e.ClassifierID)
+			'Repository.WriteOutput "Error", e.Type & " not in diagram: " & p.Name & "." & e.Name & " (instance of " & ce.Name & ")", 0 
 			Repository.EnsureOutputVisible "Error"
 		end if   
 	next

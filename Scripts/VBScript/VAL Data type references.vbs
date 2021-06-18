@@ -14,38 +14,65 @@ option explicit
 '
 ' NOTE: Requires a package to be selected in the Project Browser
 
+'Recursicve loop to get complete namespace
+function namespaceString(element)
+	dim elP as EA.Package
+	set elP = Repository.GetPackageByID(element.PackageID)
+	namespaceString = elP.Name
+	
+	dim parentId 
+	parentId = elP.ParentID 
+	do until parentId=0
+		set elP = Repository.GetPackageByID(parentId)
+		parentId = elP.ParentID 
+		if parentId <> 0 then
+			namespaceString = elP.Name & "." & namespaceString
+		end if	
+	loop
+
+end function
+
 'Recursive loop through subpackages and their elements, with controll of attributes
 sub recListClassifier(p)
 	dim lstEl
 	Set lstEl = CreateObject("System.Collections.Sortedlist" )
+	dim pStr, fullPath
+	fullPath = namespaceString(p.Element)
 	Repository.WriteOutput "Script", Now & " Package: " & p.Name, 0
 	dim el as EA.Element
+	dim cEl as EA.Element
 	for each el In p.elements
 		Repository.WriteOutput "Script", Now & " " & el.Stereotype & " " & el.Name, 0
-		if el.Type="Class" and el.Stereotype <> "codeList" and el.Stereotype <> "CodeList" and el.Stereotype <> "enumeration" then
+		if el.Type="Class" and UCase(el.Stereotype) <> "CODELIST" and el.Stereotype <> "enumeration" then
 			dim attr as EA.Attribute
 			for each attr in el.Attributes
 				if attr.ClassifierID <> 0 then
-					dim cEl as EA.Element
 					set cEl = Repository.GetElementByID(attr.ClassifierID)
-					dim dtP as EA.Package
-					set dtP = Repository.GetPackageByID(cEl.PackageID)
-					dim parentId 
-					parentId = dtP.ParentID 
-					dim pStr
-					pStr = dtP.Name
-					do until parentId=0
-						set dtP = Repository.GetPackageByID(parentId)
-						parentId = dtP.ParentID 
-						if parentId <> 0 then
-							pStr = dtP.Name & "." & pStr
-						end if	
-					loop
+					pStr = namespaceString(cEl)
 					Repository.WriteOutput "Types", p.Name & "." & el.Name & "." & attr.Name & " (Data type: " & cEl.Name & " from package " & pStr & ")",0
+					Repository.WriteOutput "TypesStructured", fullPath & ";" & p.Name & ";" & el.Name & ";" & attr.Name & ";" & pStr & ";" & cEl.Name,0
 				else
 					Repository.WriteOutput "Error", "Missing data type connection for attribute: " & el.Name & "." & attr.Name & " (Data type: " & attr.Type & ")",0
 				end if
 			next
+			
+			dim con as EA.Connector
+			for each con in el.Connectors
+				dim cEnd as EA.Connector
+				if con.SupplierID = el.ElementID then
+					set cEl = Repository.GetElementByID(con.ClientID)
+					set cEnd = con.ClientEnd
+				else
+					set cEl = Repository.GetElementByID(con.SupplierID)
+					set cEnd = con.SupplierEnd
+				end if
+								
+				pStr = namespaceString(cEl)
+				Repository.WriteOutput "TypesStructured", fullPath & ";" & p.Name & ";" & el.Name & ";" & cEnd.Role & ";" & pStr & ";" & cEl.Name,0
+					
+			next
+			
+			
 		end if
 	next
 	
@@ -63,12 +90,19 @@ sub ControllClassifierID()
 	Repository.ClearOutput "Types"
 	Repository.CreateOutputTab "Error"
 	Repository.ClearOutput "Error"
+	Repository.CreateOutputTab "TypesStructured"
+	Repository.ClearOutput "TypesStructured"
+	
 		
 	' Get the currently selected package in the tree to work on
 	dim thePackage as EA.Package
 	set thePackage = Repository.GetTreeSelectedPackage()
 		
 	if not thePackage is nothing and thePackage.ParentID <> 0 then
+	
+		Repository.WriteOutput "TypesStructured", "FullPath;Package;Element;Property;DependentPackage;DependendElement",0
+		
+
 		recListClassifier(thePackage)
 		Repository.WriteOutput "Script", Now & " Finished, check the Error and Types tabs", 0 
 		Repository.EnsureOutputVisible "Script"

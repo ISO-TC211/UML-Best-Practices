@@ -80,14 +80,14 @@ sub exportMappingFiles()
 	
 	if not thePackage is nothing and thePackage.ParentID <> 0 then
 		dim tv as EA.TaggedValue
-		set tv=thePackage.Element.TaggedValues.GetByName("xsdDocument")
-		dim name 
-		name=Replace(tv.value,".xsd","")
+		set tv=thePackage.Element.TaggedValues.GetByName("xmlns")
+		'dim name 
+		'name=Replace(tv.value,".xsd","")
 	
 		Set objFSO=CreateObject("Scripting.FileSystemObject")
-		Set objFtFile = objFSO.CreateTextFile(path & "\" & name & "_ftMapping.csv",True)
-		Set objPtFile = objFSO.CreateTextFile(path & "\" & name & "_ptMapping.csv",True)
-		Set objEnFile = objFSO.CreateTextFile(path & "\" & name & "_enMapping.csv",True)
+		Set objFtFile = objFSO.CreateTextFile(path & "\" & tv.value & "_ftMapping.csv",True)
+		Set objPtFile = objFSO.CreateTextFile(path & "\" & tv.value & "_ptMapping.csv",True)
+		Set objEnFile = objFSO.CreateTextFile(path & "\" & tv.value & "_enMapping.csv",True)
 		
 		objFtFile.Write "ftid;name" & vbCrLf
 		objPtFile.Write "ft_attr;ftid;ptid;name" & vbCrLf

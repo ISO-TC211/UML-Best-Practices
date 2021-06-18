@@ -8,7 +8,7 @@ option explicit
 ' Purpose: Massive update from Version Control, with export of HTML View and XMI files
 ' Date: 2016-09-30
 '
-const cMainFolder = "C:\DATA\GitHub\HMMG"
+const cMainFolder = "C:\DATA\GitHub\ISO TC211\HMMG"
 
 Sub copyTheFile(strFile, strCopy)
 'Copy repository file
@@ -160,7 +160,7 @@ sub main
 		
 		for each eaPackage in eaMod.Packages
 			Session.Output(Now & " Package: " & eaPackage.Name)
-			recExport eaPackage,XmiExportType,strXMImodFolder,pI
+			'recExport eaPackage,XmiExportType,strXMImodFolder,pI
 		next
 	next
 	

@@ -19,21 +19,40 @@ sub recListMissingDefinitions(p)
 	Repository.WriteOutput "Script", Now & " Package: " & p.Name, 0
 	dim el as EA.Element
 	for each el In p.elements
-		if el.Type="Class" then 'and el.Stereotype <> "codeList" and el.Stereotype <> "CodeList" and el.Stereotype <> "enumeration"
+		if el.Type="Class" then 
 			Repository.WriteOutput "Script", Now & " " & el.Stereotype & " " & el.Name, 0
 			if el.Notes = "" then
-				Repository.WriteOutput "Error", "Missing element definition: " & el.Name,0
+				Repository.WriteOutput "Error", "Missing definition for " & el.Type & " in package """ & p.Name & """: " & el.Name,0
 			end if
 			dim attr as EA.Attribute
 			for each attr in el.Attributes
 				Repository.WriteOutput "Script", Now & " " & el.Name & "." & attr.Name, 0
 				if attr.Notes = "" then
 					if el.Stereotype = "codeList" or el.Stereotype = "CodeList" or el.Stereotype = "enumeration" then
-						Repository.WriteOutput "Error", "Missing code value definition: " & el.Name & "." & attr.Name,0	
+						Repository.WriteOutput "Error", "Missing definition for code value in package """ & p.Name & """: " & el.Name & "." & attr.Name,0	
 				    else
-						Repository.WriteOutput "Error", "Missing attribute definition: " & el.Name & "." & attr.Name,0
+						Repository.WriteOutput "Error", "Missing definition for attribute in package """ & p.Name & """: " & el.Name & "." & attr.Name,0
 					end if	
 				end if
+			next
+			dim con as EA.Connector
+			for each con in el.Connectors
+				if con.Type = "Aggregation" or con.Type = "Association" then
+					dim ce as EA.ConnectorEnd
+					dim oppositeElId
+					if con.SupplierID = el.ElementID then
+						set ce = con.ClientEnd
+						oppositeElId = con.ClientID
+					else
+						set ce = con.SupplierEnd
+						oppositeElId = con.SupplierID
+					end if	
+					dim oppositeElement as EA.Element
+					set oppositeElement = Repository.GetElementByID(oppositeElId)
+					if ce.Navigable = "Navigable" and ce.Role ="" then Repository.WriteOutput "Error", "Missing role name for " & ce.Navigable & " association in package """ & p.Name & """: " & el.Name & "." & ce.Role & " (towards " & oppositeElement.Name & ")",0	
+					if ce.Navigable = "Navigable" and ce.RoleNote ="" then Repository.WriteOutput "Error", "Missing role definition for " & ce.Navigable & " association  in package """ & p.Name & """: " & el.Name & "." & ce.Role  & " (towards " & oppositeElement.Name & ")",0
+				end if
+				
 			next
 		end if
 	next

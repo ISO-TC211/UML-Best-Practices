@@ -8,7 +8,7 @@ option explicit
 ' Date: 20151202
 
 Const strVC  = "SOSI"
-Const strPath = "Andre viktige komponenter\NVDB\NVDB Datakatalogen versjon 2.11\"
+Const svnPath = "Andre viktige komponenter\NVDB\NVDB Datakatalogen versjon 2.13\"
 
 sub subPackages2VC
 	' Show and clear the script output window
@@ -25,8 +25,10 @@ sub subPackages2VC
 	if not thePackage is nothing then
 		dim subP as EA.Package
 		for each subP in thePackage.packages
-			Repository.WriteOutput "Script", Now & "Setter opp versjonshåndtering for " & subP.Name & " (" & strPath & subP.Alias & ".xml)",0
-			subP.VersionControlAdd strVC,  strPath & subP.Alias & ".xml", "Initiell versjonering", True
+			if subP.VersionControlGetStatus = 0 then
+				Repository.WriteOutput "Script", Now & "Setter opp versjonshåndtering for " & subP.Name & " (" & svnPath & subP.Alias & ".xml)",0
+				subP.VersionControlAdd strVC,  svnPath & subP.Alias & ".xml", "Initiell versjonering", True
+			end if	
 		next
 	
 		Repository.WriteOutput "Script", Now & " Finished, check the Version Control tab", 0 
