@@ -47,10 +47,15 @@ sub recListClassifier(p)
 			dim attr as EA.Attribute
 			for each attr in el.Attributes
 				if attr.ClassifierID <> 0 then
+					Repository.WriteOutput "Script", Now & " Attribute: " & attr.Name, 0
+					set cEl = nothing
+					on error resume next
 					set cEl = Repository.GetElementByID(attr.ClassifierID)
-					pStr = namespaceString(cEl)
-					Repository.WriteOutput "Types", p.Name & "." & el.Name & "." & attr.Name & " (Data type: " & cEl.Name & " from package " & pStr & ")",0
-					Repository.WriteOutput "TypesStructured", fullPath & ";" & p.Name & ";" & el.Name & ";" & attr.Name & ";" & pStr & ";" & cEl.Name,0
+					if not cEl is nothing then 
+						pStr = namespaceString(cEl)
+						Repository.WriteOutput "Types", p.Name & "." & el.Name & "." & attr.Name & " (Data type: " & cEl.Name & " from package " & pStr & ")",0
+						Repository.WriteOutput "TypesStructured", fullPath & ";" & p.Name & ";" & el.Name & ";" & attr.Name & ";" & pStr & ";" & cEl.Name & ";" & cEl.ElementGUID,0
+					end if
 				else
 					Repository.WriteOutput "Error", "Missing data type connection for attribute: " & el.Name & "." & attr.Name & " (Data type: " & attr.Type & ")",0
 				end if
@@ -58,7 +63,7 @@ sub recListClassifier(p)
 			
 			dim con as EA.Connector
 			for each con in el.Connectors
-				dim cEnd as EA.Connector
+				dim cEnd as EA.ConnectorEnd
 				if con.SupplierID = el.ElementID then
 					set cEl = Repository.GetElementByID(con.ClientID)
 					set cEnd = con.ClientEnd
@@ -68,7 +73,14 @@ sub recListClassifier(p)
 				end if
 								
 				pStr = namespaceString(cEl)
-				Repository.WriteOutput "TypesStructured", fullPath & ";" & p.Name & ";" & el.Name & ";" & cEnd.Role & ";" & pStr & ";" & cEl.Name,0
+				dim strRole
+				if cEnd.Role = "" then 
+					strRole = con.Type
+				else
+					strRole = cEnd.Role
+				end if	
+					
+				Repository.WriteOutput "TypesStructured", fullPath & ";" & p.Name & ";" & el.Name & ";" & strRole & ";" & pStr & ";" & cEl.Name & ";" & cEl.ElementGUID,0
 					
 			next
 			
@@ -100,7 +112,7 @@ sub ControllClassifierID()
 		
 	if not thePackage is nothing and thePackage.ParentID <> 0 then
 	
-		Repository.WriteOutput "TypesStructured", "FullPath;Package;Element;Property;DependentPackage;DependendElement",0
+		Repository.WriteOutput "TypesStructured", "FullPath;Package;Element;Property;DependentPackage;DependendElement;GUID",0
 		
 
 		recListClassifier(thePackage)

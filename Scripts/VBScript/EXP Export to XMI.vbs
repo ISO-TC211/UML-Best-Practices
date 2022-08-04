@@ -6,52 +6,63 @@ option explicit
 ' Script Name: Export to XMI
 ' Author: Knut Jetlund
 ' Purpose: Export to XMI - loops trough a selected package and subpackages, and export to XMI files
-' Date: 20160616
-'
-const path="C:\DATA\GitHub\HMMG\XMI\2.1\Conceptual\"
+' Date: 20220804
 
-sub recExport(p)
-	if p.IsVersionControlled then
-		Repository.WriteOutput "Script", Now & " Exporting package: " & p.Name, 0
-		'
-		'http://www.sparxsystems.com/enterprise_architect_user_guide/12.1/automation_and_scripting/project_2.html
-		'http://sparxsystems.com/forums/smf/index.php/topic,5639.msg125930.html#msg125930
+'
+const path="C:\DATA\GitHub\ISO TC211\HMMG\XMI\ImplementationModels\"
+const maxLevels = 2
+'const XmiExportType = 18 ' this value is for xmiEA242
+'const XmiExportType = 11 ' this value is for xmiEA21
+const XmiExportType = 3 ' this value is for xmiEA11 (1.1)
+
+
+sub recExport(p,lc)
+	if lc > 0 and lc <= maxLevels then
+		Repository.WriteOutput "Script", Now & " Package for export: (level = " & lc & "): " & p.Name, 0
 		dim pI as EA.Project
 		set pI = Repository.GetProjectInterface()
-		dim XmiExportType
-		'XmiExportType = 18 ' this value is for xmiEA242
-		XmiExportType = 11 ' this value is for xmiEA21
+
 		dim result
 		dim fName 
 		fName = Replace(p.Name,":","_")
 		fName = Replace(fName,"/","")
-		Repository.WriteOutput "Script", Now & " Filename: " &  fName, 0
+		fName = path & fName & ".xml"
+		Repository.WriteOutput "Export", Now & " Exporting package to file: " &  fName, 0
+		p.IsControlled = -1
+		p.XMLPath = fName
+		p.BatchSave = 1
+		p.BatchLoad = 1
+		p.Update
 		
-		result = pI.ExportPackageXMI(p.PackageGUID, XmiExportType, 1, -1, 1, 0, path & fName & ".xmi")
+		'Repository.WriteOutput "Export", Now & " Control settings: Controlled? "  & p.IsControlled & " file: " &  fName & " Batch load: " & p.BatchLoad & " BatchSave: " & p.BatchSave, 0
+
+		result = pI.ExportPackageXMI(p.PackageGUID, XmiExportType, 1, -1, 1, 0, fName)
 		Repository.EnsureOutputVisible "Script"
-	else
-		Repository.WriteOutput "Script", Now & " Uncontrolled package: " & p.Name, 0
 	end if	
 	
 	dim subP as EA.Package
-	for each subP in p.packages
-	    recExport(subP)
-	next
+	if lc < maxLevels then
+		for each subP in p.packages
+			recExport subP,lc+1
+		next
+	end if	
 end sub
 
 sub main
 	' Show and clear the script output window
 	Repository.ClearOutput "Script"
 	Repository.EnsureOutputVisible "Script"
-	'Repository.CreateOutputTab "Error"
-	'Repository.ClearOutput "Error"
-	Repository.ClearOutput "Version Control"		
+	Repository.CreateOutputTab "Error"
+	Repository.ClearOutput "Error"
+	Repository.CreateOutputTab "Export"
+	Repository.ClearOutput "Export"
 	
 	' Get the currently selected package in the tree to work on
 	dim thePackage as EA.Package
 	set thePackage = Repository.GetTreeSelectedPackage()
 	if not thePackage is nothing then
-		recExport(thePackage)
+		Repository.WriteOutput "Script", Now & " Main package (level 0) : " & thePackage.Name, 0
+		recExport thePackage,0
 		Repository.WriteOutput "Script", Now & " Finished", 0 
 		Repository.EnsureOutputVisible "Script"
 	else
