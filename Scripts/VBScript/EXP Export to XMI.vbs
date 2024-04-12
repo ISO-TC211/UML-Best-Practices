@@ -9,8 +9,8 @@ option explicit
 ' Date: 20220804
 
 '
-const path="C:\DATA\GitHub\ISO TC211\HMMG\XMI\ImplementationModels\"
-const maxLevels = 2
+const path="C:\DATA\GitHub\ISO TC211\HMMG\XMI\ConceptualModels\"
+const maxLevels = 1
 'const XmiExportType = 18 ' this value is for xmiEA242
 'const XmiExportType = 11 ' this value is for xmiEA21
 const XmiExportType = 3 ' this value is for xmiEA11 (1.1)
@@ -34,9 +34,9 @@ sub recExport(p,lc)
 		p.BatchLoad = 1
 		p.Update
 		
-		'Repository.WriteOutput "Export", Now & " Control settings: Controlled? "  & p.IsControlled & " file: " &  fName & " Batch load: " & p.BatchLoad & " BatchSave: " & p.BatchSave, 0
+		Repository.WriteOutput "Export", Now & " Control settings: Controlled? "  & p.IsControlled & " file: " &  fName & " Batch load: " & p.BatchLoad & " BatchSave: " & p.BatchSave, 0
 
-		result = pI.ExportPackageXMI(p.PackageGUID, XmiExportType, 1, -1, 1, 0, fName)
+		'result = pI.ExportPackageXMI(p.PackageGUID, XmiExportType, 1, -1, 1, 0, fName)
 		Repository.EnsureOutputVisible "Script"
 	end if	
 	
