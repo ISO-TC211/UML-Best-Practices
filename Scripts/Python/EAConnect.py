@@ -47,29 +47,17 @@ def getElementByName(eaPck,strName):
         printTS('Existing Element "' + eaEl.Name + '"')
     return eaEl
 
-def convert2ISOtypes(eaRepo,eaAttr,strType):
-#Convert from YAML types to primitive ISO/TC 211 UML types
-    guidDT = "0"
-    if strType == "string":
-        eaAttr.Type = "CharacterString"
-        guidDT = guidCharacterString
-    elif strType == "integer":
-        eaAttr.Type = "Integer"
-        guidDT = guidInteger
-    elif strType == "number":
-        eaAttr.Type = "Real"
-        guidDT = guidReal
-    elif strType == "boolean":
-        eaAttr.Type = "Boolean"
-        guidDT = guidBoolean 
-    # Lookup type element from GUID, add reference
-    if guidDT != "0":
-        eaDTel = eaRepo.GetElementByGuid(guidDT)
-        eaAttr.ClassifierID = eaDTel.ElementID  
+def getClassifierFromDictionary(eaRepo,eaAttr,strType):
+#Set references for primitive ISO/TC 211 UML types
+    if strType in dtDict:
+        guidDT = dtDict[strType]
+        try:
+            eaDTel = eaRepo.GetElementByGuid(guidDT)
+            eaAttr.ClassifierID = eaDTel.ElementID  
+        except:
+            printTS('Referenced element not in the repository')      
     eaAttr.Update()
     return eaAttr     
-
-
 
 # --------- Test code ----------------
 
