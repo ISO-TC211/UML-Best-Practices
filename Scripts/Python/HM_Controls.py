@@ -23,9 +23,8 @@ def recDiagramCleaning(pck):
     #Loop through diagrams in the package. Set font to Cambria and hide "isSubstituable" labels
     printTS('Diagram count: ' + str(pck.Diagrams.Count))
     for eaDgr in pck.Diagrams:
-        printTS('Diagram: ' + eaDgr.Name)
-        printTS('Number of objects: ' + str(eaDgr.DiagramObjects.Count))
-        printTS('Setting element fonts to Cambria')
+        printTS('Diagram: ' + eaDgr.Name + ' (' + str(eaDgr.DiagramObjects.Count) + ' objects)') 
+        #printTS('Setting element fonts to Cambria')
         for eaDgrObj in eaDgr.DiagramObjects:
             # Set all fonts to Cambria
 
@@ -36,7 +35,7 @@ def recDiagramCleaning(pck):
                 eaDgrObj.Style = new_text
                 eaDgrObj.Update()
 
-        printTS('Hiding "isSubstitutable" labels')
+        #printTS('Hiding "isSubstitutable" labels')
         for eaDrgLink in eaDgr.DiagramLinks:
             # Hide the "isSubstitutable" label (Middle Bottom Label, LMB)
 
@@ -84,7 +83,7 @@ def recListElements(p,elDict):
 
     return elDict    
 
-def listClassifiers(eaRepo,pck,df):
+def listClassifiers(eaRepo,pck,fix=True):
     #List vlassifiers for attributes and association ends
     #First, build list of all elements in 19103 and current package, to help fixing missing classifiers 
     elDict = {}
@@ -98,10 +97,11 @@ def listClassifiers(eaRepo,pck,df):
     elDict = recListElements(pck,elDict)    
     
     # List and fix classifisers for current package  
+    df = pd.DataFrame(columns=['FullPath','Package','Element','Property','DependentPackage','DependentElement','GUID'])
     df =  recListClassifiers(eaRepo,pck,elDict,df)
     return df
 
-def recListClassifiers(eaRepo, pck,elDict,df):
+def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
     # Recursive loop through subpackages and their elements, with controll of attributes
     fullPath = namespaceString(eaRepo,pck.Element)
     #printTS('INFO|Package namespace: ' + fullPath)
@@ -110,7 +110,7 @@ def recListClassifiers(eaRepo, pck,elDict,df):
         if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE"] and not eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
             for eaAttr in eaEl.Attributes:
                 #printTS('INFO|Attribute: ' + eaAttr.Name)
-                if eaAttr.ClassifierID == 0:
+                if eaAttr.ClassifierID == 0 and fix:
                     #For primitive 19103 types: Fix references
                     if eaAttr.Type in elDict:
                         guidDT = elDict[eaAttr.Type]
@@ -159,8 +159,9 @@ def recListClassifiers(eaRepo, pck,elDict,df):
 
     return df    
 
-def listMissingDefinitions(eaRepo,pck,defDf):
+def listMissingDefinitions(eaRepo,pck):
     #List missing definitions
+    defDf = pd.DataFrame(columns=['Type','PackageName','ElementName','PropertyName','Supplier'])
     recListMissingDefinitions(eaRepo,pck,defDf)
     return defDf
 
@@ -210,3 +211,64 @@ def recListMissingDefinitions(eaRepo,pck,defDf):
         recListClassifiers(eaRepo,sPck,defDf)
 
     return defDf
+
+def duplicateElements(pck):
+    #Check for duplicate elements
+    df = pd.DataFrame(columns=['PackageName','ElementName','Type'])
+    recDuplicateElements(pck,df)    
+    return df
+
+def recDuplicateElements(pck, df):
+    #Check for duplicate elements
+    for eaEl in pck.Elements:
+        if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE","ENUMERATION"]:
+           if eaEl.Name in df['ElementName'].values:
+               printTS('ERROR|Duplicate element: ' + eaEl.Name)
+           df.loc[len(df)] = [pck.Name,eaEl.Name,eaEl.Type] 
+    
+    #Traverse the package structure
+    for sPck in pck.Packages:
+        printTS('----------------------------')
+        printTS('Package: ' + sPck.Name)
+        recDuplicateElements(sPck, df)
+
+    return df    
+
+def elementsInDiagrams(pck):
+    #Check that all elements are in diagrams
+    dfD = pd.DataFrame(columns=['DiagramName','ElementID'])
+    dfD = recDiagramObjects(pck,dfD)
+    dfE = pd.DataFrame(columns=['PackageName','ElementName','Type'])
+    recElementsInDiagrams(pck,dfD, dfE)    
+    return dfE
+
+def recDiagramObjects(pck, dfD):
+    #List diagrams and their objects
+    for eaDgr in pck.Diagrams:
+        printTS('Diagram: ' + eaDgr.Name + ' (' + str(eaDgr.DiagramObjects.Count) + ' objects)') 
+        for eaDgrObj in eaDgr.DiagramObjects:
+            dfD.loc[len(dfD)] = [eaDgr.Name,eaDgrObj.ElementID] 
+
+    #Traverse the package structure
+    for sPck in pck.Packages:
+        printTS('----------------------------')
+        printTS('Package: ' + sPck.Name)
+        recDiagramObjects(sPck, dfD)
+
+    return dfD  
+
+def recElementsInDiagrams(pck, dfD, dfE):
+    #Check for duplicate elements
+    for eaEl in pck.Elements:
+        if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE","ENUMERATION"]:
+            if not eaEl.ElementID in dfD['ElementID'].values:
+                printTS('ERROR|Element not in any diagram: ' + eaEl.Type + ' ' + pck.Name + '.' + eaEl.Name)
+                dfE.loc[len(dfE)] = [pck.Name,eaEl.Name,eaEl.Type]
+    
+    #Traverse the package structure
+    for sPck in pck.Packages:
+        printTS('----------------------------')
+        printTS('Package: ' + sPck.Name)
+        recElementsInDiagrams(sPck, dfE)
+
+    return dfE  

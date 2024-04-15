@@ -29,12 +29,17 @@ printTS('Selected package name: ' + thePackage.Name)
 
 import pandas as pd
 # df = pd.DataFrame(columns=['FullPath','Package','Element','Property','DependentPackage','DependentElement','GUID'])
-# df = listClassifiers(eaRepo,thePackage,df)
+df = listClassifiers(eaRepo,thePackage)
 
 # noRef = df[df['GUID'].isna()]
 # errCount = len(noRef)
 # printTS('')
 # printTS('Number of errors: ' + str(errCount))
 
-defDf = pd.DataFrame(columns=['Type','PackageName','ElementName','PropertyName','Supplier'])
-defDf = listMissingDefinitions(eaRepo,thePackage,defDf)
+# defDf = pd.DataFrame(columns=['Type','PackageName','ElementName','PropertyName','Supplier'])
+# defDf = listMissingDefinitions(eaRepo,thePackage,defDf)
+
+# df = duplicateElements(thePackage)
+# non_unique = df[df.duplicated(subset=['ElementName'], keep=False)]
+# errCount = len(non_unique)
+# printTS('Number of errors: ' + str(errCount))
