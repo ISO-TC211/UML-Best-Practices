@@ -36,28 +36,6 @@ def closeEA(eaRepo):
     eaRepo.Exit()   
     printTS('Repository closed!')
  
-def getElementByName(eaPck,strName):
-# Get element by name, or create if not existing
-    
-    try:
-        eaEl = eaPck.Elements.GetByName(strName)
-    except:    
-        eaEl = None
-    if eaEl != None:
-        printTS('Existing Element "' + eaEl.Name + '"')
-    return eaEl
-
-def getClassifierFromDictionary(eaRepo,eaAttr,strType):
-#Set references for primitive ISO/TC 211 UML types
-    if strType in dtDict:
-        guidDT = dtDict[strType]
-        try:
-            eaDTel = eaRepo.GetElementByGuid(guidDT)
-            eaAttr.ClassifierID = eaDTel.ElementID  
-        except:
-            printTS('Referenced element not in the repository')      
-    eaAttr.Update()
-    return eaAttr     
 
 # --------- Test code ----------------
 
