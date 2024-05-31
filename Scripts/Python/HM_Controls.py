@@ -208,7 +208,7 @@ def recListMissingDefinitions(eaRepo,pck,defDf):
     for sPck in pck.Packages:
         printTS('----------------------------')
         printTS('Package: ' + sPck.Name)
-        recListClassifiers(eaRepo,sPck,defDf)
+        recListMissingDefinitions(eaRepo,sPck,defDf)
 
     return defDf
 
@@ -269,6 +269,6 @@ def recElementsInDiagrams(pck, dfD, dfE):
     for sPck in pck.Packages:
         printTS('----------------------------')
         printTS('Package: ' + sPck.Name)
-        recElementsInDiagrams(sPck, dfE)
+        recElementsInDiagrams(sPck, dfD,dfE)
 
     return dfE  
