@@ -38,14 +38,17 @@ def recDiagramCleaning(pck):
         #printTS('Hiding "isSubstitutable" labels')
         for eaDrgLink in eaDgr.DiagramLinks:
             # Hide the "isSubstitutable" label (Middle Bottom Label, LMB)
-
-            if 'LMB=' in eaDrgLink.Geometry:
-                #Check and replace substring HDN=0 with HDN=1
-                if 'HDN=0' in eaDrgLink.Geometry:
+            geometry = eaDrgLink.Geometry
+            if 'LMB=' in geometry:
+                # If not set --> change 'LMB=;' to 'LMB=HDN=1'
+                geometry = geometry.replace("LMB=;", "LMB=HDN=1;")
+                # If set --> Check and replace substring HDN=0 with HDN=1
+                if 'HDN=0' in geometry:
                     # printTS('Diagramlink style: ' + eaDrgLink.Geometry)
-                    new_text = hideLMB(eaDrgLink.Geometry)
-                    eaDrgLink.Geometry = new_text
-                    eaDrgLink.Update()
+                    geometry = hideLMB(geometry)
+                eaDrgLink.Geometry = geometry
+                eaDrgLink.Update()        
+
 
     #Traverse the package structure
     for sPck in pck.Packages:
