@@ -1,5 +1,6 @@
 from EAConnect import *
 import pandas as pd
+import re 
 
 def replace_all_fonts(text, new_font="Cambria"):
   parts = text.split(';')
@@ -49,6 +50,12 @@ def recDiagramCleaning(pck):
                 eaDrgLink.Geometry = geometry
                 eaDrgLink.Update()        
 
+        #TODO: Set theme to ISO/TC 211
+        newStyleEx = re.sub(r"Theme=[^:]*:", "Theme=ISO/TC 211:", eaDgr.StyleEx)
+        #If errorneous setting from old script:
+        #newStyleEx = eaDgr.StyleEx.replace("Theme=ISO/TC 211;", "Theme=ISO/TC 211:119;")
+        eaDgr.StyleEx = newStyleEx
+        eaDgr.Update()
 
     #Traverse the package structure
     for sPck in pck.Packages:
