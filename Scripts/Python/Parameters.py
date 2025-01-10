@@ -6,7 +6,9 @@ modelName = 'Conceptual Models'
 xmiPath = 'C:\\DATA\\GitHub\\ISO TC211\\HMMG\\XMI\\ConceptualModels\\'
 #XmiExportType = 3
  
+
 guidISO19103 = "{A95D124A-3C6B-43e5-A347-5C084A01D1A4}"
+guidISO19103 = "{A32F1AF0-EDFD-4228-8280-12F129A6D96B}"
 
 # # //GUIDs for ISO/TC 211 Datatypes
 # guidCharacterString = "{0A614EA9-13B7-4ebe-85ED-AA187D27CBD1}"

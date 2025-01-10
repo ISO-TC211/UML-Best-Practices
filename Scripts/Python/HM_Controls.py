@@ -94,16 +94,22 @@ def recListElements(p,elDict):
     return elDict    
 
 def listClassifiers(eaRepo,pck,fix=True):
-    #List vlassifiers for attributes and association ends
+    #List classifiers for attributes and association ends
     #First, build list of all elements in 19103 and current package, to help fixing missing classifiers 
     elDict = {}
     #List all elements in 19103
     try:
         elPck = eaRepo.GetPackageByGuid(guidISO19103)
-        elDict = recListElements(elPck,elDict)      
+        elDict = recListElements(elPck,elDict)    
+        #Extra for ISO 19130-2: Include ISO 19130-1 in dictionary
+        elPck = eaRepo.GetPackageByGuid('{64043AD9-1FCA-4b4b-A771-C8E96CA5E068}')
+        elDict = recListElements(elPck,elDict)
+        #Include ISO 19107 in dictionary
+        elPck = eaRepo.GetPackageByGuid('{333A3E17-51C9-45a2-9EDF-19CE0CF1E198}')
+        elDict = recListElements(elPck,elDict)             
     except:
-        printTS('ISO 19103 package not found') 
-        # List all elements in current package
+        printTS('Package not found') 
+    # List all elements in current package
     elDict = recListElements(pck,elDict)    
     
     # List and fix classifisers for current package  
@@ -111,6 +117,50 @@ def listClassifiers(eaRepo,pck,fix=True):
     df =  recListClassifiers(eaRepo,pck,elDict,df)
     return df
 
+def process_string(s):
+    # Check if the string ends with '[n]'
+    if s.endswith('[n]'):
+        strType = s[:-3]
+        lower = '0'
+        upper = '*'
+    else:
+        # Check if the string has a number within the brackets
+        match = re.search(r'\[(\d+)\]$', s)
+        if match:
+            strType = s[:match.start()]
+            number = match.group(1)
+            lower = number
+            upper = number
+        else:
+            # Check if the string has two values delimited by '..' within the brackets
+            match = re.search(r'\[(\d+)\.\.(\d+|n|\*)\]$', s)
+            if match:
+                strType = s[:match.start()]
+                lower = match.group(1)
+                upper = match.group(2)
+                if upper in ['n', '*']:
+                    upper = '*'
+            else:
+                # Check if the string has two values divided by a comma within the brackets
+                match = re.search(r'\[(\d+),(\d+)\]$', s)
+                if match:
+                    strType = s[:match.start()]
+                    lower = match.group(1)
+                    upper = match.group(2)
+                else:
+                    # Check if the string has two values delimited by '*' within the brackets
+                    match = re.search(r'\[(\d+)\*(\d+|n)\]$', s)
+                    if match:
+                        strType = s[:match.start()]
+                        lower = match.group(1)
+                        upper = match.group(2)
+                        if upper == 'n':
+                            upper = '*'
+                    else:
+                        # If no pattern matches, return None
+                        return None
+    return strType, lower, upper
+    
 def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
     # Recursive loop through subpackages and their elements, with controll of attributes
     fullPath = namespaceString(eaRepo,pck.Element)
@@ -120,28 +170,53 @@ def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
         if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE"] and not eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
             for eaAttr in eaEl.Attributes:
                 #printTS('INFO|Attribute: ' + eaAttr.Name)
-                if eaAttr.ClassifierID == 0 and fix:
-                    #For primitive 19103 types: Fix references
-                    if eaAttr.Type in elDict:
-                        guidDT = elDict[eaAttr.Type]
-                        eaDTel = eaRepo.GetElementByGuid(guidDT)
-                        eaAttr.ClassifierID = eaDTel.ElementID  
-                        eaAttr.Update()
-                        printTS('INFO|Fixing referenced element for attribute: ' + pStr + '.' + eaDTel.Name + ' (GUID = ' + guidDT + ')')
-                if eaAttr.ClassifierID != 0:
-                    try:
-                        cEl = eaRepo.GetElementByID(eaAttr.ClassifierID)
-                        pStr = namespaceString(eaRepo,cEl)
-                        # printTS('INFO|Referenced element for attribute: ' + pStr + '.' + cEl.Name + ' (GUID = ' + cEl.ElementGUID + ')')
-                        #Add namespace etc to Dependencies list
-                        df.loc[len(df)] = [fullPath,pck.Name,eaEl.Name,eaAttr.Name,pStr,cEl.Name,cEl.ElementGUID]
-                    except Exception as e:
-                        printTS('ERROR|' + str(e))    
-                else:
-                    # Still missing classifier
-                    printTS('ERROR|Missing data type connection for attribute :' + eaEl.Name + '.' + eaAttr.Name + ' (Data type: ' + eaAttr.Type + ')')
-                    #Add namespace, attribute name and data type to Error data frame
-                    df.loc[len(df)] = [fullPath,pck.Name,eaEl.Name,eaAttr.Name,None, eaAttr.Type, None]
+                # --------------------------------------
+                # # Special for ISO 19130-2 error: Convert f.ex. Real[2] to Real + lower and upper bounds
+                # result = process_string(eaAttr.Type)
+                # if result:
+                #     strType, lower, upper = result
+                #     printTS('INFO|Fixing name and cardinality for attribute: ' + fullPath + '.' + eaAttr.Name)
+                #     eaAttr.Type = strType
+                #     eaAttr.LowerBound = lower
+                #     eaAttr.UpperBound = upper
+                #     eaAttr.Update()
+                # if eaAttr.Type == 'dateTime': eaAttr.Type = 'DateTime'
+                # if eaAttr.Type == 'int': 
+                #     eaAttr.Type = 'Integer'
+                #     eaAttr.Update()
+
+                # # Fix measure types
+                # if eaAttr.Type in ['Angle','Distance','Energy','Frequency','Length','Speed','Velocity','Weight']:
+                #     eaAttr.Notes = '(Measure type: ' + eaAttr.Type + ')'
+                #     eaAttr.Type = 'Measure'
+                #     eaAttr.Update()
+                # # ------------------------------------------------
+                if eaAttr.Type != '':
+                    if eaAttr.ClassifierID == 0 and fix:
+                    # if fix:                    
+                        #For primitive 19103 types: Fix references
+                        if eaAttr.Type in elDict:
+                            guidDT = elDict[eaAttr.Type]
+                            eaDTel = eaRepo.GetElementByGuid(guidDT)
+                            eaAttr.ClassifierID = eaDTel.ElementID  
+                            eaAttr.Update()
+                            printTS('INFO|Fixing referenced element for attribute: ' + fullPath + '.' + eaDTel.Name + ' (GUID = ' + guidDT + ')')
+                    if eaAttr.ClassifierID != 0:
+                        try:
+                            cEl = eaRepo.GetElementByID(eaAttr.ClassifierID)
+                            pStr = namespaceString(eaRepo,cEl)
+                            # printTS('INFO|Referenced element for attribute: ' + pStr + '.' + cEl.Name + ' (GUID = ' + cEl.ElementGUID + ')')
+                            #Add namespace etc to Dependencies list
+                            df.loc[len(df)] = [fullPath,pck.Name,eaEl.Name,eaAttr.Name,pStr,cEl.Name,cEl.ElementGUID]
+                        except Exception as e:
+                            eaAttr.ClassifierID = 0
+                            eaAttr.Update()
+                            printTS('ERROR|' + str(e))    
+                    else:
+                        # Still missing classifier
+                        printTS('ERROR|Missing data type connection for attribute :' + eaEl.Name + '.' + eaAttr.Name + ' (Data type: ' + eaAttr.Type + ')')
+                        #Add namespace, attribute name and data type to Error data frame
+                        df.loc[len(df)] = [fullPath,pck.Name,eaEl.Name,eaAttr.Name,None, eaAttr.Type, None]
 
             #Loop for connector dependencies
             for eaCon in eaEl.Connectors:
@@ -248,12 +323,12 @@ def elementsInDiagrams(pck):
     #Check that all elements are in diagrams
     dfD = pd.DataFrame(columns=['DiagramName','ElementID'])
     dfD = recDiagramObjects(pck,dfD)
-    dfE = pd.DataFrame(columns=['PackageName','ElementName','Type'])
+    dfE = pd.DataFrame(columns=['PackageName','ElementName','Type','GUID'])
     recElementsInDiagrams(pck,dfD, dfE)    
     return dfE
 
 def recDiagramObjects(pck, dfD):
-    #List diagrams and their objects
+    #List all diagrams and their objects
     for eaDgr in pck.Diagrams:
         printTS('Diagram: ' + eaDgr.Name + ' (' + str(eaDgr.DiagramObjects.Count) + ' objects)') 
         for eaDgrObj in eaDgr.DiagramObjects:
@@ -268,13 +343,13 @@ def recDiagramObjects(pck, dfD):
     return dfD  
 
 def recElementsInDiagrams(pck, dfD, dfE):
-    #Check for duplicate elements
+    #Check for missing elements
     for eaEl in pck.Elements:
         if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE","ENUMERATION"]:
             if not eaEl.ElementID in dfD['ElementID'].values:
                 printTS('ERROR|Element not in any diagram: ' + eaEl.Type + ' ' + pck.Name + '.' + eaEl.Name)
-                dfE.loc[len(dfE)] = [pck.Name,eaEl.Name,eaEl.Type]
-    
+                dfE.loc[len(dfE)] = [pck.Name,eaEl.Name,eaEl.Type,eaEl.ElementGUID]
+
     #Traverse the package structure
     for sPck in pck.Packages:
         printTS('----------------------------')
@@ -282,3 +357,49 @@ def recElementsInDiagrams(pck, dfD, dfE):
         recElementsInDiagrams(sPck, dfD,dfE)
 
     return dfE  
+
+def fixCSL(eaRepo,pck):
+    #Fix data types and classifier types for 19103 
+    #First, build list of all elements in 19103, to help fixing core types
+    elDict = {}
+    #List all elements in 19103
+    try:
+        elPck = eaRepo.GetPackageByGuid(guidISO19103)
+        elDict = recListElements(elPck,elDict)      
+    except:
+        printTS('ISO 19103 package not found') 
+     
+    # List and fix classifisers for current package  
+    df = pd.DataFrame(columns=['FullPath','Package','Element','Property','DependentPackage','DependentElement','GUID'])
+    df =  recfixCSL(eaRepo,pck,elDict,df)
+    return df
+
+def recfixCSL(eaRepo, pck,elDict,df,fix=True):
+    # Recursive loop through subpackages and their elements, with upgrade to ISO 19103 Ed2
+    fullPath = namespaceString(eaRepo,pck.Element)
+    #printTS('INFO|Package namespace: ' + fullPath)
+    for eaEl in pck.Elements:
+        #printTS('INFO|Element: ' + eaEl.Stereotype + " " + eaEl.Name)
+        if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE"] and not eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
+            for eaAttr in eaEl.Attributes:            
+                    #For primitive 19103 types: Fix references
+                    if eaAttr.Type in elDict:
+                        guidDT = elDict[eaAttr.Type]
+                        eaDTel = eaRepo.GetElementByGuid(guidDT)
+                        if eaAttr.ClassifierID != eaDTel.ElementID:
+                            eaAttr.ClassifierID = eaDTel.ElementID  
+                            eaAttr.Update()
+                            printTS('INFO|Fixing referenced element for attribute: ' + fullPath + '.' + eaDTel.Name + ' (GUID = ' + guidDT + ')')
+        # For Elements: Set correct classifier type and stereotype
+        # Type.upper = CLASS AND Stereotype.upper = "" --> Stereotype == ISO19103::GI_Class
+        # Type.upper = CLASS AND Stereotype.upper = "CODELIST" (or GML::CODELIST) 
+        # --> Type == DataType, Stereotype == ISO19103::GI_CodeSet
+
+        
+    #Traverse the package structure
+    for sPck in pck.Packages:
+        printTS('----------------------------')
+        printTS('Package: ' + sPck.Name)
+        recfixCSL(eaRepo,sPck,elDict,df)
+
+    return df    
