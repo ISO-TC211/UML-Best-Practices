@@ -169,6 +169,8 @@ def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
         #printTS('INFO|Element: ' + eaEl.Stereotype + " " + eaEl.Name)
         if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE"] and not eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
             for eaAttr in eaEl.Attributes:
+                eaAttr.Visibility = 'Public'
+                eaAttr.Update()
                 #printTS('INFO|Attribute: ' + eaAttr.Name)
                 # --------------------------------------
                 # # Special for ISO 19130-2 error: Convert f.ex. Real[2] to Real + lower and upper bounds
@@ -184,8 +186,12 @@ def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
                 # if eaAttr.Type == 'int': 
                 #     eaAttr.Type = 'Integer'
                 #     eaAttr.Update()
-
-                # # Fix measure types
+                if eaAttr.Type.upper() == 'CHARACTERSTRING': 
+                    eaAttr.Type = 'CharacterString'
+                    eaAttr.Update()
+                if eaAttr.Type.upper() == 'DECIMAL': 
+                    eaAttr.Type = 'Real'
+                    eaAttr.Update()                # # Fix measure types
                 # if eaAttr.Type in ['Angle','Distance','Energy','Frequency','Length','Speed','Velocity','Weight']:
                 #     eaAttr.Notes = '(Measure type: ' + eaAttr.Type + ')'
                 #     eaAttr.Type = 'Measure'
@@ -244,6 +250,47 @@ def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
 
     return df    
 
+def listAllDefinitions(eaRepo,pck):
+    #List all definitions
+    defDf = pd.DataFrame(columns=['GUID','Type','PackageName','ElementName','PropertyName','Supplier','Definition'])
+    recListAllDefinitions(eaRepo,pck,defDf)
+    return defDf
+
+def recListAllDefinitions(eaRepo,pck,defDf):
+    #Recursive loop for missing definitons
+    for eaEl in pck.Elements:
+        if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE","ENUMERATION"]:
+            defDf.loc[len(defDf)] = [eaEl.ElementGUID, eaEl.Type,pck.Name,eaEl.Name,None,None, eaEl.Notes]
+            for eaAttr in eaEl.Attributes:   
+                if eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
+                    defDf.loc[len(defDf)] = [eaAttr.AttributeGUID,'Code value',pck.Name,eaEl.Name,eaAttr.Name,None,eaAttr.Notes]
+                else:
+                    defDf.loc[len(defDf)] = [eaAttr.AttributeGUID,'Attribute',pck.Name,eaEl.Name,eaAttr.Name,None,eaAttr.Notes]
+
+            #Loop for connector end definitions
+            for eaCon in eaEl.Connectors:
+                if eaCon.Type in ["Aggregation","Association"]:
+                    if eaCon.SupplierID == eaEl.ElementID:
+                        cEnd = eaCon.ClientEnd
+                        oppositeElId = eaCon.ClientID
+                    else:
+                        cEnd = eaCon.SupplierEnd
+                        oppositeElId = eaCon.SupplierID
+                    cEl = eaRepo.GetElementByID(oppositeElId)
+
+                    if cEnd.Navigable == "Navigable":
+                        defDf.loc[len(defDf)] = [eaCon.ConnectorGUID,'Role name',pck.Name,eaEl.Name,None,cEl.Name, None]
+                        defDf.loc[len(defDf)] = [eaCon.ConnectorGUID,'Role',pck.Name,eaEl.Name,cEnd.Role,cEl.Name, cEnd.RoleNote]
+
+    #Traverse the package structure
+    for sPck in pck.Packages:
+        printTS('----------------------------')
+        printTS('Package: ' + sPck.Name)
+        recListAllDefinitions(eaRepo,sPck,defDf)
+
+    return defDf
+
+
 def listMissingDefinitions(eaRepo,pck):
     #List missing definitions
     defDf = pd.DataFrame(columns=['Type','PackageName','ElementName','PropertyName','Supplier'])
@@ -259,7 +306,7 @@ def recListMissingDefinitions(eaRepo,pck,defDf):
                 #Add to missing definitions list
                 defDf.loc[len(defDf)] = [eaEl.Type,pck.Name,eaEl.Name,None,None]
             for eaAttr in eaEl.Attributes:   
-                if eaAttr.Notes == "":
+                if eaAttr.Notes == "" or eaAttr.Notes == "<memo>":
                     if eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
                         printTS('ERROR|Missing definition for code value in package ' + pck.Name + ': ' + eaEl.Name + "." + eaAttr.Name)
                         #Add to missing definitions list
@@ -381,19 +428,51 @@ def recfixCSL(eaRepo, pck,elDict,df,fix=True):
     for eaEl in pck.Elements:
         #printTS('INFO|Element: ' + eaEl.Stereotype + " " + eaEl.Name)
         if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE"] and not eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
-            for eaAttr in eaEl.Attributes:            
-                    #For primitive 19103 types: Fix references
-                    if eaAttr.Type in elDict:
-                        guidDT = elDict[eaAttr.Type]
-                        eaDTel = eaRepo.GetElementByGuid(guidDT)
-                        if eaAttr.ClassifierID != eaDTel.ElementID:
-                            eaAttr.ClassifierID = eaDTel.ElementID  
-                            eaAttr.Update()
-                            printTS('INFO|Fixing referenced element for attribute: ' + fullPath + '.' + eaDTel.Name + ' (GUID = ' + guidDT + ')')
-        # For Elements: Set correct classifier type and stereotype
-        # Type.upper = CLASS AND Stereotype.upper = "" --> Stereotype == ISO19103::GI_Class
-        # Type.upper = CLASS AND Stereotype.upper = "CODELIST" (or GML::CODELIST) 
-        # --> Type == DataType, Stereotype == ISO19103::GI_CodeSet
+             for eaAttr in eaEl.Attributes:            
+                #For primitive 19103 types: Fix references
+                if eaAttr.Type in elDict:
+                    guidDT = elDict[eaAttr.Type]
+                    eaDTel = eaRepo.GetElementByGuid(guidDT)
+                    if eaAttr.ClassifierID != eaDTel.ElementID:
+                        eaAttr.ClassifierID = eaDTel.ElementID  
+                        eaAttr.Update()
+                        printTS('INFO|Fixing referenced element for attribute: ' + fullPath + '.' + eaDTel.Name + ' (GUID = ' + guidDT + ')')
+                #Stereotype for attributes and association end: GI_Property
+                eaAttr.StereotypeEx = ''
+                eaAttr.Stereotype = 'ISO19103::GI_Property'
+                eaAttr.Update()
+
+             for eaCon in eaEl.Connectors:
+                 cEnd = eaCon.ClientEnd
+                 if cEnd.Role != '':
+                    cEnd.StereotypeEx = ''
+                    cEnd.Stereotype = 'ISO19103::GI_Property'
+                    cEnd.Update()
+                 sEnd = eaCon.SupplierEnd
+                 if sEnd.Role != '':
+                    sEnd.StereotypeEx = ''
+                    sEnd.Stereotype = 'ISO19103::GI_Property'
+                    sEnd.Update()
+
+            
+
+        if eaEl.Type.upper() == 'CLASS' and 'FEATURE TYPE' in eaEl.StereotypeEx.upper():
+            eaEl.StereotypeEx = ''
+            eaEl.Stereotype = 'ISO19109::FeatureType'
+            eaEl.Update()
+            printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
+        if eaEl.Type.upper() == 'CLASS' and eaEl.Stereotype.upper() == 'DATA TYPE':
+            eaEl.Type = 'DataType'
+            eaEl.StereotypeEx = ''
+            eaEl.Stereotype = 'ISO19103::GI_DataType'
+            eaEl.Update()
+            printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
+        if eaEl.Type.upper() == 'DATATYPE' and 'DATA TYPE' in eaEl.StereotypeEx.upper():
+            eaEl.StereotypeEx = ''
+            eaEl.Stereotype = 'ISO19103::GI_DataType'
+            eaEl.Update()
+            printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
+
 
         
     #Traverse the package structure

@@ -34,7 +34,7 @@ sub recExport(p,lc)
 		p.BatchLoad = 1
 		p.Update
 		
-		Repository.WriteOutput "Export", Now & " Control settings: Controlled? "  & p.IsControlled & " file: " &  fName & " Batch load: " & p.BatchLoad & " BatchSave: " & p.BatchSave, 0
+		'Repository.WriteOutput "Export", Now & " Control settings: Controlled? "  & p.IsControlled & " file: " &  fName & " Batch load: " & p.BatchLoad & " BatchSave: " & p.BatchSave, 0
 
 		'result = pI.ExportPackageXMI(p.PackageGUID, XmiExportType, 1, -1, 1, 0, fName)
 		Repository.EnsureOutputVisible "Script"

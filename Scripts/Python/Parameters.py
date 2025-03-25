@@ -1,5 +1,9 @@
 # Parameters
 
+# mainFolder = "C:\\Data\\GitHub\\ISO TC211\\HMMG\EditorialVersion\\OGC"
+# repo_path = mainFolder + "\\SWE Models.qea"
+# modelName = 'Model'
+
 mainFolder = "C:\\Data\\GitHub\\ISO TC211\\HMMG\EditorialVersion"
 repo_path = mainFolder + "\\ISOTC211_HM EditorialVersion.qea"
 modelName = 'Conceptual Models'
