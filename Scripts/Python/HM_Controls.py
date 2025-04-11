@@ -164,7 +164,7 @@ def process_string(s):
 def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
     # Recursive loop through subpackages and their elements, with controll of attributes
     fullPath = namespaceString(eaRepo,pck.Element)
-    #printTS('INFO|Package namespace: ' + fullPath)
+    printTS('INFO|Package namespace: ' + fullPath)
     for eaEl in pck.Elements:
         #printTS('INFO|Element: ' + eaEl.Stereotype + " " + eaEl.Name)
         if eaEl.Type.upper() in ["CLASS","INTERFACE", "DATATYPE"] and not eaEl.Stereotype.upper() in ["CODELIST","ENUMERATION"]:
@@ -172,34 +172,15 @@ def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
                 eaAttr.Visibility = 'Public'
                 eaAttr.Update()
                 #printTS('INFO|Attribute: ' + eaAttr.Name)
-                # --------------------------------------
-                # # Special for ISO 19130-2 error: Convert f.ex. Real[2] to Real + lower and upper bounds
-                # result = process_string(eaAttr.Type)
-                # if result:
-                #     strType, lower, upper = result
-                #     printTS('INFO|Fixing name and cardinality for attribute: ' + fullPath + '.' + eaAttr.Name)
-                #     eaAttr.Type = strType
-                #     eaAttr.LowerBound = lower
-                #     eaAttr.UpperBound = upper
-                #     eaAttr.Update()
-                # if eaAttr.Type == 'dateTime': eaAttr.Type = 'DateTime'
-                # if eaAttr.Type == 'int': 
-                #     eaAttr.Type = 'Integer'
-                #     eaAttr.Update()
                 if eaAttr.Type.upper() == 'CHARACTERSTRING': 
                     eaAttr.Type = 'CharacterString'
                     eaAttr.Update()
                 if eaAttr.Type.upper() == 'DECIMAL': 
                     eaAttr.Type = 'Real'
-                    eaAttr.Update()                # # Fix measure types
-                # if eaAttr.Type in ['Angle','Distance','Energy','Frequency','Length','Speed','Velocity','Weight']:
-                #     eaAttr.Notes = '(Measure type: ' + eaAttr.Type + ')'
-                #     eaAttr.Type = 'Measure'
-                #     eaAttr.Update()
-                # # ------------------------------------------------
+                    eaAttr.Update()                
                 if eaAttr.Type != '':
-                    if eaAttr.ClassifierID == 0 and fix:
-                    # if fix:                    
+                    #if eaAttr.ClassifierID == 0 and fix:
+                    if fix:                    
                         #For primitive 19103 types: Fix references
                         if eaAttr.Type in elDict:
                             guidDT = elDict[eaAttr.Type]
@@ -461,19 +442,35 @@ def recfixCSL(eaRepo, pck,elDict,df,fix=True):
             eaEl.Stereotype = 'ISO19109::FeatureType'
             eaEl.Update()
             printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
-        if eaEl.Type.upper() == 'CLASS' and eaEl.Stereotype.upper() == 'DATA TYPE':
+        elif eaEl.Type.upper() == 'CLASS' and eaEl.Stereotype == '':
+            eaEl.StereotypeEx = ''
+            eaEl.Stereotype = 'ISO19103::GI_Class'
+            eaEl.Update()
+            printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
+
+        elif eaEl.Type.upper() == 'CLASS' and eaEl.Stereotype.upper() == 'DATATYPE':
             eaEl.Type = 'DataType'
             eaEl.StereotypeEx = ''
             eaEl.Stereotype = 'ISO19103::GI_DataType'
             eaEl.Update()
             printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
-        if eaEl.Type.upper() == 'DATATYPE' and 'DATA TYPE' in eaEl.StereotypeEx.upper():
+        elif eaEl.Type.upper() == 'DATATYPE' and 'DATA TYPE' in eaEl.StereotypeEx.upper():
             eaEl.StereotypeEx = ''
             eaEl.Stereotype = 'ISO19103::GI_DataType'
             eaEl.Update()
             printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
+        
+        elif eaEl.Type.upper() == 'CLASS' and eaEl.Stereotype.upper() == 'CODELIST':
+            eaEl.Type = 'DataType'
+            eaEl.StereotypeEx = ''
+            eaEl.Stereotype = 'ISO19103::GI_CodeSet'
+            eaEl.Update()
+            printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)            
 
-
+        else:
+            printTS('INFO|Element type not handled for upgrade: ' + eaEl.Stereotype + ' ' + fullPath + '.' + eaEl.Name)            
+        # TODO: Enumeration --> GI_Enumeration
+        # TODO: Interface --> GI_Interface or GI_Class
         
     #Traverse the package structure
     for sPck in pck.Packages:
