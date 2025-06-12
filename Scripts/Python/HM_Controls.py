@@ -172,6 +172,9 @@ def recListClassifiers(eaRepo, pck,elDict,df,fix=True):
                 eaAttr.Visibility = 'Public'
                 eaAttr.Update()
                 #printTS('INFO|Attribute: ' + eaAttr.Name)
+                if eaAttr.Type.upper() == 'STRING': 
+                    eaAttr.Type = 'CharacterString'
+                    eaAttr.Update()
                 if eaAttr.Type.upper() == 'CHARACTERSTRING': 
                     eaAttr.Type = 'CharacterString'
                     eaAttr.Update()
@@ -448,7 +451,7 @@ def recfixCSL(eaRepo, pck,elDict,df,fix=True):
             eaEl.Update()
             printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)
 
-        elif eaEl.Type.upper() == 'CLASS' and eaEl.Stereotype.upper() == 'DATATYPE':
+        elif eaEl.Type.upper() == 'CLASS' and (eaEl.Stereotype.upper() == 'DATATYPE' or eaEl.Stereotype.upper() == 'DATA TYPE'):
             eaEl.Type = 'DataType'
             eaEl.StereotypeEx = ''
             eaEl.Stereotype = 'ISO19103::GI_DataType'
