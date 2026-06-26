@@ -470,6 +470,12 @@ def recfixCSL(eaRepo, pck,elDict,df,fix=True):
             eaEl.Update()
             printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)            
 
+        elif eaEl.Type.upper() == 'CLASS' and eaEl.Stereotype.upper() == 'INTERFACE':
+            eaEl.Type = 'Interface'
+            eaEl.StereotypeEx = ''
+            eaEl.Stereotype = 'ISO19103::GI_Interface'
+            eaEl.Update()
+            printTS('INFO|Fixing stereotype for element: ' + fullPath + '.' + eaEl.Name)       
         else:
             printTS('INFO|Element type not handled for upgrade: ' + eaEl.Stereotype + ' ' + fullPath + '.' + eaEl.Name)            
         # TODO: Enumeration --> GI_Enumeration
